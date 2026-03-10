@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Chick N Fish</title>
+  <meta name="description" content="Browse the full Chick N Fish menu. Fried chicken, fish and chips, wings, sides, and more.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ---- Menu Page Specific Styles ---- */
+    .menu-section-label {
+      font-family: var(--font-display-sc);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .menu-category {
+      margin-bottom: var(--space-3xl);
+    }
+
+    .menu-category-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--text-dark);
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-md);
+      border-bottom: 2px solid var(--beige);
+    }
+
+    .menu-subcategory {
+      margin-bottom: var(--space-xl);
+    }
+
+    .menu-subcategory-title {
+      font-family: var(--font-display-sc);
+      font-size: var(--text-sm);
+      letter-spacing: 0.1em;
+      color: var(--brown);
+      text-transform: uppercase;
+      margin-bottom: var(--space-md);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--beige);
+    }
+
+    .menu-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(237, 230, 214, 0.6);
+      gap: var(--space-md);
+    }
+
+    .menu-row:last-child {
+      border-bottom: none;
+    }
+
+    .menu-row-name {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      color: var(--text-dark);
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .menu-row-note {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--brown-light);
+      font-style: italic;
+      font-weight: 400;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .menu-row-price {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--brown-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-row-combo-price {
+      display: flex;
+      gap: var(--space-lg);
+      flex-shrink: 0;
+    }
+
+    .menu-row-combo-price span {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      color: var(--text-body);
+      white-space: nowrap;
+    }
+
+    .menu-row-combo-price span strong {
+      color: var(--brown-dark);
+      font-weight: 700;
+    }
+
+    .menu-note {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--brown);
+      font-style: italic;
+      background-color: rgba(198, 123, 60, 0.08);
+      border-left: 3px solid var(--amber);
+      padding: var(--space-sm) var(--space-md);
+      margin-bottom: var(--space-lg);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .menu-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+    }
+
+    @media (max-width: 768px) {
+      .menu-columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+
+      .menu-row-combo-price {
+        flex-direction: column;
+        gap: 4px;
+        text-align: right;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu-row {
+        padding: 12px 0;
+      }
+
+      .menu-row-name {
+        font-size: var(--text-sm);
+      }
+
+      .menu-row-price {
+        font-size: var(--text-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">Chick <span class="logo-accent">N</span> Fish</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Menu</a>
+          <a href="offers.html">Offers</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="offers.html">Offers</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Find Us</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="padding-top: 72px; background-color: var(--brown-dark); color: var(--cream);">
+    <div class="container" style="padding: var(--space-3xl) 0;">
+      <div class="section-header" style="margin-bottom: 0;">
+        <span class="label" style="color: var(--amber);">Chick N Fish</span>
+        <h1 style="color: var(--cream); font-size: clamp(2rem, 5vw, 3.5rem);">The Menu</h1>
+        <div class="section-divider"></div>
+        <p style="color: var(--beige); opacity: 0.85;">Everything battered, fried, and served fresh.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY TABS -->
+  <div class="container">
+    <div class="category-tabs">
+      <button class="category-tab active" data-category="all">All</button>
+      <button class="category-tab" data-category="chicken">Chicken</button>
+      <button class="category-tab" data-category="fish">Fish &amp; Chips</button>
+      <button class="category-tab" data-category="sandwiches">Sandwiches</button>
+      <button class="category-tab" data-category="family">Family Combos</button>
+      <button class="category-tab" data-category="sides">Sides</button>
+      <button class="category-tab" data-category="drinks">Drinks</button>
+    </div>
+  </div>
+
+  <!-- MENU CONTENT -->
+  <section class="menu-content section">
+    <div class="container">
+
+      <!-- ===== CHICKEN ===== -->
+      <div class="menu-category reveal" data-category="chicken">
+        <span class="menu-section-label">Fried Chicken</span>
+        <h2 class="menu-category-title">Chicken</h2>
+
+        <div class="menu-columns">
+
+          <!-- Individual Pieces -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Individual Pieces</p>
+            <div class="menu-note">Add $1.10 to substitute white meat</div>
+            <div class="menu-row"><span class="menu-row-name">1 Piece</span><span class="menu-row-price">$3.10</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pieces</span><span class="menu-row-price">$6.20</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pieces</span><span class="menu-row-price">$9.30</span></div>
+            <div class="menu-row"><span class="menu-row-name">4 Pieces</span><span class="menu-row-price">$12.40</span></div>
+            <div class="menu-row"><span class="menu-row-name">6 Pieces</span><span class="menu-row-price">$18.60</span></div>
+            <div class="menu-row"><span class="menu-row-name">9 Pieces</span><span class="menu-row-price">$25.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">12 Pieces</span><span class="menu-row-price">$33.60</span></div>
+            <div class="menu-row"><span class="menu-row-name">15 Pieces</span><span class="menu-row-price">$40.50</span></div>
+            <div class="menu-row"><span class="menu-row-name">20 Pieces</span><span class="menu-row-price">$52.00</span></div>
+            <div class="menu-row"><span class="menu-row-name">30 Pieces</span><span class="menu-row-price">$77.99</span></div>
+          </div>
+
+          <!-- Chicken Combos -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Chicken Combos</p>
+            <div class="menu-note">Served with fries and a drink</div>
+            <div class="menu-row"><span class="menu-row-name">1 Pc Combo</span><span class="menu-row-price">$8.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc Combo</span><span class="menu-row-price">$11.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc Combo</span><span class="menu-row-price">$13.60</span></div>
+            <div class="menu-row"><span class="menu-row-name">6 Pc Combo</span><span class="menu-row-price">$22.49</span></div>
+          </div>
+
+          <!-- Chicken Strips -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Chicken Strips</p>
+            <div class="menu-row">
+              <span class="menu-row-name">3 Pieces<span class="menu-row-note">Strips only</span></span>
+              <div class="menu-row-combo-price">
+                <span>Only <strong>$9.99</strong></span>
+                <span>Combo <strong>$12.99</strong></span>
+              </div>
+            </div>
+            <div class="menu-row">
+              <span class="menu-row-name">6 Pieces<span class="menu-row-note">Strips only</span></span>
+              <div class="menu-row-combo-price">
+                <span>Only <strong>$19.99</strong></span>
+                <span>Combo <strong>$22.99</strong></span>
+              </div>
+            </div>
+            <div class="menu-row"><span class="menu-row-name">9 Pieces</span><span class="menu-row-price">$27.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">12 Pieces</span><span class="menu-row-price">$35.99</span></div>
+          </div>
+
+          <!-- Chicken Wings -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Chicken Wings</p>
+            <div class="menu-row">
+              <span class="menu-row-name">6 Wings<span class="menu-row-note">Wings only</span></span>
+              <div class="menu-row-combo-price">
+                <span>Only <strong>$8.99</strong></span>
+                <span>Combo <strong>$10.99</strong></span>
+              </div>
+            </div>
+            <div class="menu-row">
+              <span class="menu-row-name">12 Wings<span class="menu-row-note">Wings only</span></span>
+              <div class="menu-row-combo-price">
+                <span>Only <strong>$15.99</strong></span>
+                <span>Combo <strong>$17.99</strong></span>
+              </div>
+            </div>
+            <div class="menu-row"><span class="menu-row-name">24 Wings</span><span class="menu-row-price">$25.99</span></div>
+          </div>
+
+          <!-- Snack Packs -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Chicken Snack Packs</p>
+            <div class="menu-note">Served with fries</div>
+            <div class="menu-row"><span class="menu-row-name">2 Piece Snack Pack</span><span class="menu-row-price">$9.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Piece Snack Pack</span><span class="menu-row-price">$12.60</span></div>
+            <div class="menu-row"><span class="menu-row-name">4 Piece Snack Pack</span><span class="menu-row-price">$15.49</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== FISH & CHIPS ===== -->
+      <div class="menu-category reveal" data-category="fish">
+        <span class="menu-section-label">From the Fryer</span>
+        <h2 class="menu-category-title">Fish &amp; Chips</h2>
+
+        <div class="menu-columns">
+
+          <!-- English Fish & Chips -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">English Fish &amp; Chips</p>
+
+            <div class="menu-row"><span class="menu-row-name">1 Pc Pollock</span><span class="menu-row-price">$10.50</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc Pollock</span><span class="menu-row-price">$14.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc Pollock</span><span class="menu-row-price">$17.99</span></div>
+
+            <div class="menu-row"><span class="menu-row-name">1 Pc Cod / Haddock</span><span class="menu-row-price">$13.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc Cod / Haddock</span><span class="menu-row-price">$20.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc Cod / Haddock</span><span class="menu-row-price">$26.49</span></div>
+
+            <div class="menu-row"><span class="menu-row-name">1 Pc Halibut</span><span class="menu-row-price">$22.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc Halibut</span><span class="menu-row-price">$35.99</span></div>
+          </div>
+
+          <!-- Spicy Fish & Chips -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Spicy Fish &amp; Chips</p>
+            <div class="menu-row"><span class="menu-row-name">1 Pc Spicy Fish</span><span class="menu-row-price">$10.50</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc Spicy Fish</span><span class="menu-row-price">$14.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">4 Pc Spicy Fish</span><span class="menu-row-price">$17.99</span></div>
+          </div>
+
+          <!-- Butterfly Shrimp -->
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Butterfly Shrimp</p>
+            <div class="menu-note">Served with seafood sauce and fries</div>
+            <div class="menu-row"><span class="menu-row-name">6 Pc Butterfly Shrimp</span><span class="menu-row-price">$11.99</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== SANDWICHES ===== -->
+      <div class="menu-category reveal" data-category="sandwiches">
+        <span class="menu-section-label">On a Bun</span>
+        <h2 class="menu-category-title">Sandwiches</h2>
+
+        <div style="max-width: 560px;">
+          <div class="menu-note">Combo includes fries and a drink</div>
+          <div class="menu-row">
+            <span class="menu-row-name">Chicken Sandwich</span>
+            <div class="menu-row-combo-price">
+              <span>Only <strong>$9.99</strong></span>
+              <span>Combo <strong>$11.99</strong></span>
+            </div>
+          </div>
+          <div class="menu-row">
+            <span class="menu-row-name">Fish Sandwich</span>
+            <div class="menu-row-combo-price">
+              <span>Only <strong>$10.49</strong></span>
+              <span>Combo <strong>$12.49</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== FAMILY COMBOS ===== -->
+      <div class="menu-category reveal" data-category="family">
+        <span class="menu-section-label">Feed the Crew</span>
+        <h2 class="menu-category-title">Family Combos</h2>
+
+        <div style="max-width: 600px;">
+          <div class="menu-row">
+            <span class="menu-row-name">Family Combo #1<span class="menu-row-note">Wings only — no strips</span></span>
+            <span class="menu-row-price">$48.99</span>
+          </div>
+          <div class="menu-row">
+            <span class="menu-row-name">Family Combo #2<span class="menu-row-note">Wings only — no strips</span></span>
+            <span class="menu-row-price">$59.99</span>
+          </div>
+          <div class="menu-row">
+            <span class="menu-row-name">Family Combo #3</span>
+            <span class="menu-row-price">$36.99</span>
+          </div>
+          <div class="menu-row">
+            <span class="menu-row-name">Family Combo #4</span>
+            <span class="menu-row-price">$42.99</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SIDES ===== -->
+      <div class="menu-category reveal" data-category="sides">
+        <span class="menu-section-label">On the Side</span>
+        <h2 class="menu-category-title">Sides</h2>
+
+        <div class="menu-columns">
+
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Fries</p>
+            <div class="menu-row"><span class="menu-row-name">Medium Fries</span><span class="menu-row-price">$5.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">Large Fries</span><span class="menu-row-price">$6.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">Poutine</span><span class="menu-row-price">$9.99</span></div>
+          </div>
+
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Gravy</p>
+            <div class="menu-row"><span class="menu-row-name">Medium Gravy</span><span class="menu-row-price">$1.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">Large Gravy</span><span class="menu-row-price">$3.50</span></div>
+          </div>
+
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Extras</p>
+            <div class="menu-row"><span class="menu-row-name">Potato Wedges (12 Pc)</span><span class="menu-row-price">$6.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">Breaded Mushrooms</span><span class="menu-row-price">$8.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">Onion Rings</span><span class="menu-row-price">$5.99</span></div>
+          </div>
+
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Salads</p>
+            <div class="menu-row"><span class="menu-row-name">Potato Salad</span><span class="menu-row-price">$2.50</span></div>
+            <div class="menu-row"><span class="menu-row-name">Macaroni Salad</span><span class="menu-row-price">$2.50</span></div>
+            <div class="menu-row"><span class="menu-row-name">Coleslaw</span><span class="menu-row-price">$2.50</span></div>
+          </div>
+
+          <div class="menu-subcategory">
+            <p class="menu-subcategory-title">Samosas &amp; Rice</p>
+            <div class="menu-row"><span class="menu-row-name">Veggie Samosas (4)</span><span class="menu-row-price">$4.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">Chicken / Beef Samosas (4)</span><span class="menu-row-price">$6.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">Chicken Biryani</span><span class="menu-row-price">$8.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">Beef Biryani</span><span class="menu-row-price">$8.99</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== DRINKS ===== -->
+      <div class="menu-category reveal" data-category="drinks">
+        <span class="menu-section-label">To Wash It Down</span>
+        <h2 class="menu-category-title">Drinks</h2>
+
+        <div style="max-width: 400px;">
+          <div class="menu-row"><span class="menu-row-name">Can</span><span class="menu-row-price">$1.99</span></div>
+          <div class="menu-row"><span class="menu-row-name">2 Litre Bottle</span><span class="menu-row-price">$4.75</span></div>
+          <div class="menu-row"><span class="menu-row-name">Water</span><span class="menu-row-price">$1.99</span></div>
+          <div class="menu-row"><span class="menu-row-name">Juice</span><span class="menu-row-price">$3.75</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FIND US CTA -->
+  <section class="featured-strip">
+    <div class="container" style="text-align: center; padding: var(--space-2xl) 0;">
+      <h2 style="color: var(--cream); font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: var(--space-md);">Come In and Order</h2>
+      <p style="color: var(--beige); opacity: 0.8; margin-bottom: var(--space-xl); max-width: 450px; margin-left: auto; margin-right: auto;">Find us on the high street. Fresh, made to order, every time.</p>
+      <a href="contact.html" class="btn btn-amber btn-lg">Find Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Chick <span class="accent">N</span> Fish</h3>
+          <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <a href="menu.html">Chicken</a>
+          <a href="menu.html">Fish &amp; Chips</a>
+          <a href="menu.html">Sandwiches</a>
+          <a href="menu.html">Sides &amp; Drinks</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a href="gallery.html">Gallery</a>
+          <a href="offers.html">Offers</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="tel:02012345678">020 1234 5678</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chick N Fish. All rights reserved.</p>
+        <p>Made with care in London.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

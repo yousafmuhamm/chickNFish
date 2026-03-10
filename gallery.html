@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Chick N Fish</title>
+  <meta name="description" content="See the food, the space, and the people behind Chick N Fish.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">Chick <span class="logo-accent">N</span> Fish</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="offers.html">Offers</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="contact.html">Find Us</a>
+          <a href="menu.html" class="btn btn-primary btn-sm nav-order-btn">Order Now</a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="offers.html">Offers</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Find Us</a>
+    <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="padding-top: 72px; background-color: var(--brown-dark); color: var(--cream);">
+    <div class="container" style="padding: var(--space-3xl) 0;">
+      <div class="section-header" style="margin-bottom: 0;">
+        <span class="label" style="color: var(--amber);">A Look Inside</span>
+        <h1 style="color: var(--cream); font-size: clamp(2rem, 5vw, 3.5rem);">The Gallery</h1>
+        <div class="section-divider"></div>
+        <p style="color: var(--beige); opacity: 0.85;">The food, the space, the atmosphere. This is Chick N Fish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY: FOOD -->
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom: var(--space-2xl);">
+        <span class="label label-accent">The Food</span>
+        <h2 style="margin-top: var(--space-sm);">Fresh From the Kitchen</h2>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" style="background-image: url('images/fish-and-chicken-combo.png'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fried-chicken-tray.png'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fish-and-chips-1.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fried-chicken-1.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/chicken-burger.png'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fish-and-chips-2.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fried-chicken-2.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/fish-fillets-shrimp.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="gallery-item" style="background-image: url('images/samosas.jpg'); background-size: cover; background-position: center;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color: var(--brown-dark); padding: var(--space-3xl) 0;">
+    <div class="container" style="text-align: center;">
+      <h2 style="color: var(--cream); font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: var(--space-md);">See It for Yourself</h2>
+      <p style="color: var(--beige); opacity: 0.8; margin-bottom: var(--space-xl); max-width: 450px; margin-left: auto; margin-right: auto;">Photos only tell part of the story. Come visit, take a seat, and experience Chick N Fish in person.</p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Find Us</a>
+        <a href="menu.html" class="btn btn-outline-light btn-lg">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Chick <span class="accent">N</span> Fish</h3>
+          <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <a href="menu.html">Fish & Chips</a>
+          <a href="menu.html">Fried Chicken</a>
+          <a href="menu.html">Burgers & Wraps</a>
+          <a href="menu.html">Sides & Drinks</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a href="gallery.html">Gallery</a>
+          <a href="offers.html">Offers</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="tel:02012345678">020 1234 5678</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chick N Fish. All rights reserved.</p>
+        <p>Made with care in London.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

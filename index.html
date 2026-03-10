@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chick N Fish — Proper Fish & Chips. Proper Fried Chicken.</title>
+  <meta name="description" content="Chick N Fish serves proper fish and chips and fried chicken. Golden-battered, hand-cut, and made fresh. Order now or visit us.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          Chick <span class="logo-accent">N</span> Fish
+        </a>
+
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="offers.html">Offers</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Find Us</a>
+          <a href="menu.html" class="btn btn-primary btn-sm nav-order-btn">Order Now</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="offers.html">Offers</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Find Us</a>
+    <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
+  </div>
+
+  <!-- ========== HERO — SVG LOGO DRAW ANIMATION ========== -->
+  <section class="hero-draw" id="heroSection">
+
+    <div class="hero-draw-center">
+      <svg class="logo-draw-svg" id="logoDrawSvg" viewBox="0 0 600 560" xmlns="http://www.w3.org/2000/svg" aria-label="Chick N Fish logo">
+
+        <!-- === CHICKEN (upper-left, facing right) === -->
+        <!-- Body -->
+        <path class="draw" d="M 160 170 Q 150 130 165 100 Q 180 72 210 65 Q 235 60 255 72 Q 275 60 295 72 Q 315 88 310 120 Q 305 148 285 168 Q 260 188 230 190 Q 200 190 175 178 Z" />
+        <!-- Comb -->
+        <path class="draw" d="M 218 65 Q 212 45 220 38 Q 228 30 235 42 Q 242 30 250 38 Q 257 46 250 62" />
+        <!-- Beak -->
+        <path class="draw" d="M 155 115 L 138 108 L 150 126 Z" />
+        <!-- Eye -->
+        <circle class="draw" cx="168" cy="110" r="4" />
+        <!-- Wattle -->
+        <path class="draw" d="M 150 125 Q 158 138 150 146 Q 142 142 145 132" />
+        <!-- Wing detail -->
+        <path class="draw" d="M 245 130 Q 260 118 275 125 Q 270 140 255 148" />
+        <!-- Tail feathers -->
+        <path class="draw" d="M 290 95 Q 320 65 345 58 Q 360 70 352 90 Q 330 108 305 112" />
+
+        <!-- === FISH (lower-right, facing left) === -->
+        <!-- Body -->
+        <path class="draw" d="M 195 265 Q 215 210 310 203 Q 405 197 430 265 Q 405 333 310 340 Q 215 347 195 265 Z" />
+        <!-- Tail fin -->
+        <path class="draw" d="M 430 251 Q 465 223 484 239 Q 472 265 484 291 Q 465 307 430 279" />
+        <!-- Mouth -->
+        <path class="draw" d="M 195 258 Q 186 265 195 272" />
+        <!-- Eye -->
+        <circle class="draw" cx="244" cy="265" r="6" />
+        <!-- Gill line -->
+        <path class="draw" d="M 298 211 Q 286 265 298 319" />
+        <!-- Body stripes -->
+        <path class="draw" d="M 322 217 L 402 217" />
+        <path class="draw" d="M 320 243 L 404 243" />
+        <path class="draw" d="M 322 269 L 402 269" />
+
+        <!-- === 4-POINTED SPARKLE === -->
+        <path class="draw" d="M 380 120 L 383 134 L 397 137 L 383 140 L 380 154 L 377 140 L 363 137 L 377 134 Z" />
+
+        <!-- === BRAND TEXT: CHICK'N FISH === -->
+        <!-- C -->
+        <path class="draw" d="M 128 445 Q 110 435 110 422 Q 110 406 128 398 Q 138 392 146 397" />
+        <!-- H -->
+        <path class="draw" d="M 154 392 L 154 448 M 154 420 L 178 420 M 178 392 L 178 448" />
+        <!-- I -->
+        <path class="draw" d="M 190 392 L 190 448" />
+        <!-- C -->
+        <path class="draw" d="M 216 445 Q 198 435 198 422 Q 198 406 216 398 Q 226 392 234 397" />
+        <!-- K -->
+        <path class="draw" d="M 242 392 L 242 448 M 242 420 L 268 392 M 242 420 L 268 448" />
+        <!-- N -->
+        <path class="draw" d="M 280 448 L 280 392 L 308 448 L 308 392" />
+        <!-- F -->
+        <path class="draw" d="M 334 392 L 334 448 M 334 392 L 358 392 M 334 416 L 352 416" />
+        <!-- I -->
+        <path class="draw" d="M 368 392 L 368 448" />
+        <!-- S -->
+        <path class="draw" d="M 394 400 Q 380 392 380 406 Q 380 418 394 420 Q 408 422 408 436 Q 408 450 394 445" />
+        <!-- H -->
+        <path class="draw" d="M 420 392 L 420 448 M 420 420 L 444 420 M 444 392 L 444 448" />
+        <!-- Left dash -->
+        <line class="draw" x1="88" y1="420" x2="104" y2="420" />
+        <!-- Right dash -->
+        <line class="draw" x1="454" y1="420" x2="470" y2="420" />
+
+        <!-- === SUBTITLE: FISH & CHIPS === -->
+        <!-- Left rule -->
+        <line class="draw" x1="118" y1="480" x2="170" y2="480" />
+        <!-- Right rule -->
+        <line class="draw" x1="428" y1="480" x2="480" y2="480" />
+        <!-- F -->
+        <path class="draw" d="M 182 470 L 182 494 M 182 470 L 196 470 M 182 482 L 194 482" />
+        <!-- I -->
+        <path class="draw" d="M 206 470 L 206 494" />
+        <!-- S -->
+        <path class="draw" d="M 224 476 Q 216 470 216 478 Q 216 484 224 486 Q 232 488 232 496 Q 232 502 224 498" />
+        <!-- H -->
+        <path class="draw" d="M 244 470 L 244 494 M 244 482 L 258 482 M 258 470 L 258 494" />
+        <!-- & -->
+        <path class="draw" d="M 280 492 Q 272 484 276 477 Q 280 470 286 477 Q 292 484 280 492 Q 274 498 280 502 Q 288 506 294 498" />
+        <!-- C -->
+        <path class="draw" d="M 320 498 Q 308 492 308 484 Q 308 474 320 470 Q 330 466 338 470" />
+        <!-- H -->
+        <path class="draw" d="M 348 470 L 348 494 M 348 482 L 362 482 M 362 470 L 362 494" />
+        <!-- I -->
+        <path class="draw" d="M 374 470 L 374 494" />
+        <!-- P -->
+        <path class="draw" d="M 386 470 L 386 494 M 386 470 L 400 470 Q 408 476 408 482 Q 408 488 400 482 L 386 482" />
+        <!-- S -->
+        <path class="draw" d="M 424 476 Q 416 470 416 478 Q 416 484 424 486 Q 432 488 432 496 Q 432 502 424 498" />
+
+      </svg>
+    </div>
+
+    <!-- Tagline below (fades in after draw) -->
+    <p class="hero-draw-tagline" id="heroDrawTagline">Hot chicken. Fresh fish. No compromises.</p>
+
+    <!-- Scroll mouse indicator -->
+    <div class="hero-draw-scroll" id="heroDrawScroll">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== PROMO TICKER ========== -->
+  <div class="promo-banner">
+    <div class="promo-ticker">
+      <span>Family Feast Deal — Feed 4 for £24.99</span>
+      <span>Free Delivery on Orders Over £20</span>
+      <span>New: Spicy Nashville Chicken Now Available</span>
+      <span>Lunch Combo from £6.99 — Mon to Fri</span>
+    </div>
+  </div>
+
+  <!-- ========== SIGNATURE ITEMS ========== -->
+  <section id="signatures" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">From Our Kitchen</span>
+        <h2>The Signatures</h2>
+        <div class="section-divider"></div>
+        <p>The dishes that built our name. Battered, fried, and served with pride.</p>
+      </div>
+
+      <div class="food-grid">
+        <div class="food-card reveal reveal-delay-1">
+          <div class="food-card-img" style="background-image: url('images/fish-and-chips-1.jpg');">
+            <span class="food-card-badge">Signature</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Classic Cod & Chips</h3>
+            <p class="food-card-desc">Beer-battered Atlantic cod, hand-cut chips, mushy peas, and homemade tartare sauce.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£8.99</span>
+              <button class="food-card-btn" aria-label="Order Classic Cod & Chips">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-2">
+          <div class="food-card-img" style="background-image: url('images/chicken-burger.png');">
+            <span class="food-card-badge">Popular</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Crispy Chicken Burger</h3>
+            <p class="food-card-desc">Buttermilk-marinated chicken thigh, brioche bun, house slaw, and signature sauce.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£7.49</span>
+              <button class="food-card-btn" aria-label="Order Crispy Chicken Burger">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-3">
+          <div class="food-card-img" style="background-image: url('images/fried-chicken-1.jpg');">
+            <span class="food-card-badge">Signature</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">3 Piece Fried Chicken</h3>
+            <p class="food-card-desc">Three golden pieces of our secret-recipe fried chicken. Crispy outside, juicy inside.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£6.99</span>
+              <button class="food-card-btn" aria-label="Order 3 Piece Fried Chicken">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-4">
+          <div class="food-card-img" style="background-image: url('images/fried-chicken-2.jpg');">
+            <span class="food-card-badge">New</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Nashville Hot Wings</h3>
+            <p class="food-card-desc">Six crispy wings tossed in our Nashville hot glaze. Served with ranch and celery sticks.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£5.99</span>
+              <button class="food-card-btn" aria-label="Order Nashville Hot Wings">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED STRIP ========== -->
+  <section class="featured-strip">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="featured-text reveal-left">
+          <span class="label">Limited Time</span>
+          <h2>The Family Feast</h2>
+          <p>Eight pieces of fried chicken, two large chips, four drinks, coleslaw, and gravy. Enough to bring everyone to the table.</p>
+          <div style="display: flex; align-items: baseline; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+            <span class="deal-price">£24.99</span>
+            <span class="deal-price"><span class="original">£34.99</span></span>
+          </div>
+          <a href="offers.html" class="btn btn-amber btn-lg">Grab This Deal</a>
+        </div>
+        <div class="featured-image reveal-right reveal-delay-2" style="background-image: url('images/fish-and-chicken-combo.png'); background-size: cover; background-position: center;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CROWD FAVOURITES ========== -->
+  <section class="section deals-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">What Everyone Orders</span>
+        <h2>Crowd Favourites</h2>
+        <div class="section-divider"></div>
+        <p>These are the ones that fly out the kitchen. Tried, tested, and always in demand.</p>
+      </div>
+
+      <div class="food-grid">
+        <div class="food-card reveal reveal-delay-1">
+          <div class="food-card-img" style="background-image: url('images/fish-fillets-shrimp.jpg');"></div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Chicken Strip Meal</h3>
+            <p class="food-card-desc">Five golden chicken strips with chips, drink, and your choice of dip.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£7.99</span>
+              <button class="food-card-btn" aria-label="Order Chicken Strip Meal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-2">
+          <div class="food-card-img" style="background-image: url('images/fish-and-chips-2.jpg');"></div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Haddock & Chips</h3>
+            <p class="food-card-desc">Lightly battered haddock fillet served with chips, mushy peas, and lemon.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£9.49</span>
+              <button class="food-card-btn" aria-label="Order Haddock & Chips">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-3">
+          <div class="food-card-img" style="background-image: url('images/samosas.jpg');"></div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Loaded Chip Box</h3>
+            <p class="food-card-desc">Chips loaded with grilled chicken, cheese, jalapenos, and our house drizzle.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>£6.49</span>
+              <button class="food-card-btn" aria-label="Order Loaded Chip Box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-outline">See Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEALS PREVIEW ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">Today's Deals</span>
+        <h2>More for Less</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="deal-card reveal-scale">
+        <div class="deal-card-content">
+          <span class="label">Lunch Special — Mon to Fri</span>
+          <h3>Any Wrap + Chips + Drink</h3>
+          <p>Choose any wrap from the menu, add regular chips and a soft drink. Available 11am–3pm, weekdays only.</p>
+          <div style="display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-lg);">
+            <span class="deal-price">£6.99</span>
+          </div>
+          <a href="offers.html" class="btn btn-amber">View All Offers</a>
+        </div>
+        <div class="deal-image"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR STORY TEASER ========== -->
+  <section class="section story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image reveal-left" style="background-image: url('images/fried-chicken-tray.png'); background-size: cover; background-position: center;">
+        </div>
+        <div class="story-text reveal-right reveal-delay-2">
+          <h2>Built on Simple Food, Done Properly</h2>
+          <p>Chick N Fish started with a simple idea: serve the best fish and chips and fried chicken you can make, and do it the same way every time. No shortcuts, no compromises.</p>
+          <blockquote>"We believe great food doesn't need to be complicated. It just needs to be done right."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU PREVIEW ========== -->
+  <section class="section" style="background-color: var(--beige);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">Quick Look</span>
+        <h2>From the Menu</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="menu-list" style="max-width: 700px; margin: 0 auto;">
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">2 Piece Chicken & Chips</h4>
+            <p class="menu-item-desc">Two pieces of fried chicken with regular chips</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">£5.49</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">Cod Fillet Burger</h4>
+            <p class="menu-item-desc">Battered cod fillet in a soft bun with tartare and lettuce</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">£6.99</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-3">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">Chicken Wrap</h4>
+            <p class="menu-item-desc">Grilled or crispy chicken, salad, and garlic mayo in a tortilla</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">£5.99</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-4">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">10 Piece Boneless Bucket</h4>
+            <p class="menu-item-desc">Ten boneless chicken pieces with two dips of your choice</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">£9.99</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-secondary">Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION CTA ========== -->
+  <section class="section location-section">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <span class="label" style="color: var(--amber); margin-bottom: var(--space-md); display: block;">Come Find Us</span>
+          <h2>Visit Chick N Fish</h2>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h4>Address</h4>
+              <p>123 High Street, London, SE1 1AA</p>
+            </div>
+          </div>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>Mon – Sat: 11:00 AM – 11:00 PM</p>
+              <p>Sunday: 12:00 PM – 10:00 PM</p>
+            </div>
+          </div>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h4>Call Us</h4>
+              <p>020 1234 5678</p>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-amber">Get Directions</a>
+            <a href="tel:02012345678" class="btn btn-outline-light">Call to Order</a>
+          </div>
+        </div>
+
+        <div class="location-map reveal reveal-delay-2">
+          <!-- Map placeholder -->
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--beige);opacity:0.4;font-family:var(--font-display-sc);font-size:var(--text-sm);letter-spacing:0.15em;">MAP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Chick <span class="accent">'N</span> Fish</h3>
+          <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <a href="menu.html">Fish & Chips</a>
+          <a href="menu.html">Fried Chicken</a>
+          <a href="menu.html">Burgers & Wraps</a>
+          <a href="menu.html">Sides & Drinks</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a href="gallery.html">Gallery</a>
+          <a href="offers.html">Offers</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="tel:02012345678">020 1234 5678</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chick N Fish. All rights reserved.</p>
+        <p>Made with care in London.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
