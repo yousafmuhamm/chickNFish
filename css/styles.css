@@ -425,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* --- Hero Draw Section (Seoul Fried style) --- */
+/* --- Hero Draw Section --- */
 .hero-draw {
   position: relative;
   min-height: 100vh;
@@ -462,8 +462,8 @@ h1, h2, h3, h4, h5, h6 {
 /* All drawn paths */
 .logo-draw-svg .draw {
   fill: none;
-  stroke: var(--green-bright);
-  stroke-width: 2.8;
+  stroke: var(--brown-dark);
+  stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: var(--len, 600);
@@ -473,26 +473,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Animation class — draw + fill transition */
 .logo-draw-svg.animate .draw {
-  animation: drawStroke 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation: drawStroke 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-/* After draw completes, subtle fill materializes */
+/* After draw completes, subtle warm fill materializes */
 .logo-draw-svg.filled .draw {
-  fill: rgba(45, 122, 94, 0.04);
+  fill: rgba(44, 24, 16, 0.03);
 }
 
-/* Chicken illustrations get a warmer tint */
+/* Chicken gets a warm amber tint */
 .logo-draw-svg.filled .draw:nth-child(1),
 .logo-draw-svg.filled .draw:nth-child(2),
 .logo-draw-svg.filled .draw:nth-child(5),
 .logo-draw-svg.filled .draw:nth-child(6),
 .logo-draw-svg.filled .draw:nth-child(7) {
-  fill: rgba(184, 92, 56, 0.05);
+  fill: rgba(184, 92, 56, 0.06);
 }
 
-/* Fish body gets a cooler tint */
+/* Fish body gets a cooler green tint */
 .logo-draw-svg.filled .draw:nth-child(8) {
-  fill: rgba(45, 122, 94, 0.06);
+  fill: rgba(27, 58, 46, 0.05);
 }
 
 /* Eyes and small details stay unfilled */
@@ -508,62 +508,61 @@ h1, h2, h3, h4, h5, h6 {
   fill: none;
 }
 
-/* === PHASE 1: Chicken draws first (dramatic entrance) === */
-.logo-draw-svg.animate .draw:nth-child(1)  { animation-delay: 0.00s; animation-duration: 1s; }
-.logo-draw-svg.animate .draw:nth-child(2)  { animation-delay: 0.10s; }
-.logo-draw-svg.animate .draw:nth-child(3)  { animation-delay: 0.18s; }
-.logo-draw-svg.animate .draw:nth-child(4)  { animation-delay: 0.24s; }
-.logo-draw-svg.animate .draw:nth-child(5)  { animation-delay: 0.30s; }
-.logo-draw-svg.animate .draw:nth-child(6)  { animation-delay: 0.36s; }
-.logo-draw-svg.animate .draw:nth-child(7)  { animation-delay: 0.44s; animation-duration: 0.9s; }
+/* === PHASE 1: Chicken draws first === */
+.logo-draw-svg.animate .draw:nth-child(1)  { animation-delay: 0.00s; animation-duration: 0.6s; }
+.logo-draw-svg.animate .draw:nth-child(2)  { animation-delay: 0.05s; }
+.logo-draw-svg.animate .draw:nth-child(3)  { animation-delay: 0.10s; }
+.logo-draw-svg.animate .draw:nth-child(4)  { animation-delay: 0.14s; }
+.logo-draw-svg.animate .draw:nth-child(5)  { animation-delay: 0.18s; }
+.logo-draw-svg.animate .draw:nth-child(6)  { animation-delay: 0.22s; }
+.logo-draw-svg.animate .draw:nth-child(7)  { animation-delay: 0.27s; animation-duration: 0.55s; }
 
-/* === PAUSE then PHASE 2: Fish sweeps in === */
-.logo-draw-svg.animate .draw:nth-child(8)  { animation-delay: 0.70s; animation-duration: 1s; }
-.logo-draw-svg.animate .draw:nth-child(9)  { animation-delay: 0.80s; }
-.logo-draw-svg.animate .draw:nth-child(10) { animation-delay: 0.88s; }
-.logo-draw-svg.animate .draw:nth-child(11) { animation-delay: 0.92s; }
-.logo-draw-svg.animate .draw:nth-child(12) { animation-delay: 0.98s; }
-.logo-draw-svg.animate .draw:nth-child(13) { animation-delay: 1.04s; }
-.logo-draw-svg.animate .draw:nth-child(14) { animation-delay: 1.08s; }
-.logo-draw-svg.animate .draw:nth-child(15) { animation-delay: 1.12s; }
+/* === PHASE 2: Fish sweeps in === */
+.logo-draw-svg.animate .draw:nth-child(8)  { animation-delay: 0.40s; animation-duration: 0.6s; }
+.logo-draw-svg.animate .draw:nth-child(9)  { animation-delay: 0.46s; }
+.logo-draw-svg.animate .draw:nth-child(10) { animation-delay: 0.50s; }
+.logo-draw-svg.animate .draw:nth-child(11) { animation-delay: 0.53s; }
+.logo-draw-svg.animate .draw:nth-child(12) { animation-delay: 0.56s; }
+.logo-draw-svg.animate .draw:nth-child(13) { animation-delay: 0.59s; }
+.logo-draw-svg.animate .draw:nth-child(14) { animation-delay: 0.62s; }
+.logo-draw-svg.animate .draw:nth-child(15) { animation-delay: 0.65s; }
 
-/* === PHASE 3: Sparkle burst (scale + rotate) === */
+/* === PHASE 3: Sparkle burst === */
 .logo-draw-svg.animate .draw:nth-child(16) {
-  animation: drawStroke 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards,
-             sparkleBurst 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.40s forwards;
-  animation-delay: 1.30s, 1.40s;
+  animation: drawStroke 0.35s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+             sparkleBurst 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.78s forwards;
+  animation-delay: 0.72s, 0.78s;
   transform-origin: 380px 137px;
 }
 
-/* === PAUSE then PHASE 4: Brand text writes across === */
-.logo-draw-svg.animate .draw:nth-child(17) { animation-delay: 1.60s; }
-.logo-draw-svg.animate .draw:nth-child(18) { animation-delay: 1.64s; }
-.logo-draw-svg.animate .draw:nth-child(19) { animation-delay: 1.68s; }
-.logo-draw-svg.animate .draw:nth-child(20) { animation-delay: 1.72s; }
-.logo-draw-svg.animate .draw:nth-child(21) { animation-delay: 1.76s; }
-.logo-draw-svg.animate .draw:nth-child(22) { animation-delay: 1.82s; }
-.logo-draw-svg.animate .draw:nth-child(23) { animation-delay: 1.86s; }
-.logo-draw-svg.animate .draw:nth-child(24) { animation-delay: 1.90s; }
-.logo-draw-svg.animate .draw:nth-child(25) { animation-delay: 1.94s; }
-.logo-draw-svg.animate .draw:nth-child(26) { animation-delay: 1.98s; }
-/* Decorative dashes */
-.logo-draw-svg.animate .draw:nth-child(27) { animation-delay: 2.04s; }
-.logo-draw-svg.animate .draw:nth-child(28) { animation-delay: 2.04s; }
+/* === PHASE 4: Left dash + brand text CHICK'N FISH + right dash === */
+.logo-draw-svg.animate .draw:nth-child(17) { animation-delay: 0.86s; } /* left dash */
+.logo-draw-svg.animate .draw:nth-child(18) { animation-delay: 0.90s; } /* C */
+.logo-draw-svg.animate .draw:nth-child(19) { animation-delay: 0.93s; } /* H */
+.logo-draw-svg.animate .draw:nth-child(20) { animation-delay: 0.96s; } /* I */
+.logo-draw-svg.animate .draw:nth-child(21) { animation-delay: 0.99s; } /* C */
+.logo-draw-svg.animate .draw:nth-child(22) { animation-delay: 1.02s; } /* K */
+.logo-draw-svg.animate .draw:nth-child(23) { animation-delay: 1.05s; } /* ' */
+.logo-draw-svg.animate .draw:nth-child(24) { animation-delay: 1.08s; } /* N */
+.logo-draw-svg.animate .draw:nth-child(25) { animation-delay: 1.14s; } /* F */
+.logo-draw-svg.animate .draw:nth-child(26) { animation-delay: 1.17s; } /* I */
+.logo-draw-svg.animate .draw:nth-child(27) { animation-delay: 1.20s; } /* S */
+.logo-draw-svg.animate .draw:nth-child(28) { animation-delay: 1.23s; } /* H */
+.logo-draw-svg.animate .draw:nth-child(29) { animation-delay: 1.26s; } /* right dash */
 
 /* === PHASE 5: Subtitle rules + FISH & CHIPS === */
-.logo-draw-svg.animate .draw:nth-child(29) { animation-delay: 2.20s; }
-.logo-draw-svg.animate .draw:nth-child(30) { animation-delay: 2.20s; }
-.logo-draw-svg.animate .draw:nth-child(31) { animation-delay: 2.28s; }
-.logo-draw-svg.animate .draw:nth-child(32) { animation-delay: 2.32s; }
-.logo-draw-svg.animate .draw:nth-child(33) { animation-delay: 2.36s; }
-.logo-draw-svg.animate .draw:nth-child(34) { animation-delay: 2.40s; }
-.logo-draw-svg.animate .draw:nth-child(35) { animation-delay: 2.44s; }
-.logo-draw-svg.animate .draw:nth-child(36) { animation-delay: 2.48s; }
-.logo-draw-svg.animate .draw:nth-child(37) { animation-delay: 2.52s; }
-.logo-draw-svg.animate .draw:nth-child(38) { animation-delay: 2.56s; }
-.logo-draw-svg.animate .draw:nth-child(39) { animation-delay: 2.60s; }
-.logo-draw-svg.animate .draw:nth-child(40) { animation-delay: 2.64s; }
-.logo-draw-svg.animate .draw:nth-child(41) { animation-delay: 2.68s; }
+.logo-draw-svg.animate .draw:nth-child(30) { animation-delay: 1.36s; } /* left rule */
+.logo-draw-svg.animate .draw:nth-child(31) { animation-delay: 1.40s; } /* F */
+.logo-draw-svg.animate .draw:nth-child(32) { animation-delay: 1.43s; } /* I */
+.logo-draw-svg.animate .draw:nth-child(33) { animation-delay: 1.46s; } /* S */
+.logo-draw-svg.animate .draw:nth-child(34) { animation-delay: 1.49s; } /* H */
+.logo-draw-svg.animate .draw:nth-child(35) { animation-delay: 1.52s; } /* & */
+.logo-draw-svg.animate .draw:nth-child(36) { animation-delay: 1.56s; } /* C */
+.logo-draw-svg.animate .draw:nth-child(37) { animation-delay: 1.59s; } /* H */
+.logo-draw-svg.animate .draw:nth-child(38) { animation-delay: 1.62s; } /* I */
+.logo-draw-svg.animate .draw:nth-child(39) { animation-delay: 1.65s; } /* P */
+.logo-draw-svg.animate .draw:nth-child(40) { animation-delay: 1.68s; } /* S */
+.logo-draw-svg.animate .draw:nth-child(41) { animation-delay: 1.36s; } /* right rule */
 
 @keyframes drawStroke {
   to {
@@ -581,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-draw-tagline {
   font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--text-body);
+  color: var(--text-muted);
   text-align: center;
   padding-bottom: var(--space-4xl);
   letter-spacing: 0.02em;
@@ -620,7 +619,7 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-mouse {
   width: 24px;
   height: 40px;
-  border: 1.5px solid var(--green-bright);
+  border: 1.5px solid var(--brown-light);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -630,7 +629,7 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-wheel {
   width: 2.5px;
   height: 7px;
-  background-color: var(--green-bright);
+  background-color: var(--brown-light);
   border-radius: 2px;
   animation: scrollWheel 2.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }

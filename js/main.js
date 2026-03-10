@@ -25,22 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Phase 1: Fade in SVG canvas
-    setTimeout(() => logoSvg.classList.add('visible'), 200);
+    setTimeout(() => logoSvg.classList.add('visible'), 100);
     // Phase 2: Start stroke drawing
-    setTimeout(() => logoSvg.classList.add('animate'), 500);
-    // Phase 3: After all strokes drawn, add subtle fill
-    setTimeout(() => logoSvg.classList.add('filled'), 3200);
+    setTimeout(() => logoSvg.classList.add('animate'), 250);
+    // Phase 3: After all strokes drawn, add glow
+    setTimeout(() => logoSvg.classList.add('filled'), 1800);
 
     // Phase 4: Word-by-word tagline reveal
     if (drawTagline) {
       const words = drawTagline.querySelectorAll('.word');
       words.forEach((word, i) => {
-        setTimeout(() => word.classList.add('visible'), 3600 + i * 120);
+        setTimeout(() => word.classList.add('visible'), 2000 + i * 80);
       });
     }
 
     // Phase 5: Scroll indicator fades in gently
-    setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 4600);
+    setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 2600);
   }
 
   // --- Navbar Scroll Effect ---

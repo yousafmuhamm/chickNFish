@@ -6,6 +6,138 @@
   <title>Offers — Chick N Fish</title>
   <meta name="description" content="Current deals and offers at Chick N Fish. Family meals, lunch specials, and more.">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .offers-header {
+      padding-top: 72px;
+      background-color: var(--cream);
+      border-bottom: 1px solid var(--beige);
+    }
+    .offers-header .container {
+      padding-top: var(--space-3xl);
+      padding-bottom: var(--space-2xl);
+    }
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .offer-card {
+      background-color: var(--white);
+      border: 1px solid var(--beige);
+      border-radius: var(--radius-md);
+      padding: var(--space-2xl);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-xl);
+      align-items: center;
+      transition: all var(--transition-base);
+    }
+    .offer-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(184, 92, 56, 0.2);
+    }
+    .offer-card-featured {
+      border-color: var(--amber);
+      border-width: 2px;
+      position: relative;
+    }
+    .offer-card-featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -10px;
+      left: var(--space-xl);
+      background-color: var(--amber);
+      color: var(--white);
+      font-family: var(--font-display-sc);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      padding: 3px 12px;
+      border-radius: var(--radius-sm);
+    }
+    .offer-label {
+      font-family: var(--font-display-sc);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+    .offer-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: var(--space-sm);
+    }
+    .offer-desc {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: var(--space-md);
+    }
+    .offer-terms {
+      font-size: var(--text-xs);
+      color: var(--brown-light);
+      font-style: italic;
+    }
+    .offer-pricing {
+      text-align: center;
+      flex-shrink: 0;
+      min-width: 100px;
+    }
+    .offer-price {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--brown-dark);
+      line-height: 1;
+    }
+    .offer-was {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-top: var(--space-xs);
+    }
+    .offer-save {
+      font-family: var(--font-display-sc);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      color: var(--green-bright);
+      margin-top: var(--space-xs);
+    }
+    .offers-note {
+      max-width: 800px;
+      margin: var(--space-3xl) auto 0;
+      text-align: center;
+      padding: var(--space-xl);
+      background-color: var(--beige);
+      border-radius: var(--radius-md);
+    }
+    .offers-note p {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .offers-note p strong {
+      color: var(--text-dark);
+    }
+    @media (max-width: 600px) {
+      .offer-card {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+      .offer-pricing {
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-md);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -20,7 +152,6 @@
           <a href="offers.html" class="active">Offers</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Find Us</a>
-          <a href="menu.html" class="btn btn-primary btn-sm nav-order-btn">Order Now</a>
         </div>
         <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
@@ -32,17 +163,16 @@
     <a href="offers.html">Offers</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Find Us</a>
-    <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
   </div>
 
   <!-- PAGE HEADER -->
-  <section style="padding-top: 72px; background-color: var(--brown-dark); color: var(--white);">
-    <div class="container" style="padding: var(--space-3xl) 0;">
+  <section class="offers-header">
+    <div class="container">
       <div class="section-header" style="margin-bottom: 0;">
-        <span class="label" style="color: var(--cream);">Limited Time</span>
-        <h1 style="color: var(--white); font-size: clamp(2rem, 5vw, 3.5rem);">Deals & Offers</h1>
-        <div class="section-divider" style="background-color: var(--cream);"></div>
-        <p style="color: var(--cream); opacity: 0.9;">More food, less spend. Grab these before they're gone.</p>
+        <span class="label label-accent">What's On</span>
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Offers & Specials</h1>
+        <div class="section-divider"></div>
+        <p>A few good reasons to bring the family, share with mates, or treat yourself to a bigger portion.</p>
       </div>
     </div>
   </section>
@@ -50,74 +180,79 @@
   <!-- OFFERS -->
   <section class="section">
     <div class="container">
+      <div class="offers-grid">
 
-      <!-- Deal 1 -->
-      <div class="deal-card reveal" style="margin-bottom: var(--space-2xl);">
-        <div class="deal-card-content">
-          <span class="label">Best Seller</span>
-          <h3>Family Feast</h3>
-          <p>8 pieces of fried chicken, 2 large chips, coleslaw, gravy, and 4 drinks. Feeds the whole family for less.</p>
-          <div style="display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span class="deal-price">£24.99</span>
-            <span class="deal-price"><span class="original">£34.99</span></span>
+        <!-- Featured Deal -->
+        <div class="offer-card offer-card-featured reveal">
+          <div class="offer-content">
+            <span class="offer-label">Family Deal</span>
+            <h3 class="offer-title">The Family Feast</h3>
+            <p class="offer-desc">Eight pieces of fried chicken, two large chips, coleslaw, gravy, and four drinks. Everything the table needs, in one box.</p>
+            <p class="offer-terms">Available for dine-in and collection. No minimum order.</p>
           </div>
-          <a href="menu.html" class="btn btn-amber">Order This Deal</a>
+          <div class="offer-pricing">
+            <span class="offer-price">£24.99</span>
+            <span class="offer-was">£34.99</span>
+            <span class="offer-save">Save £10</span>
+          </div>
         </div>
-        <div class="deal-image"></div>
+
+        <!-- Deal 2 -->
+        <div class="offer-card reveal">
+          <div class="offer-content">
+            <span class="offer-label">Weekday Lunch</span>
+            <h3 class="offer-title">Wrap, Chips & Drink</h3>
+            <p class="offer-desc">Any wrap from the menu with regular chips and a soft drink. A proper lunch without the fuss.</p>
+            <p class="offer-terms">Monday to Friday, 11am–3pm.</p>
+          </div>
+          <div class="offer-pricing">
+            <span class="offer-price">£6.99</span>
+          </div>
+        </div>
+
+        <!-- Deal 3 -->
+        <div class="offer-card reveal">
+          <div class="offer-content">
+            <span class="offer-label">Sharing</span>
+            <h3 class="offer-title">Boneless Bucket for Two</h3>
+            <p class="offer-desc">Twenty boneless pieces, two regular chips, two dips, and two drinks. Plenty to go round.</p>
+            <p class="offer-terms">Available all day, every day.</p>
+          </div>
+          <div class="offer-pricing">
+            <span class="offer-price">£16.99</span>
+            <span class="offer-was">£21.99</span>
+            <span class="offer-save">Save £5</span>
+          </div>
+        </div>
+
+        <!-- Deal 4 -->
+        <div class="offer-card reveal">
+          <div class="offer-content">
+            <span class="offer-label">Delivery</span>
+            <h3 class="offer-title">Free Delivery Over £20</h3>
+            <p class="offer-desc">Spend twenty pounds or more and delivery is on us. No code needed, applied automatically.</p>
+            <p class="offer-terms">Within our delivery radius. Every day, all day.</p>
+          </div>
+          <div class="offer-pricing">
+            <span class="offer-price">Free</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Deal 2 -->
-      <div class="deal-card reveal" style="margin-bottom: var(--space-2xl); background: linear-gradient(135deg, var(--green-deep) 0%, var(--brown-dark) 100%);">
-        <div class="deal-card-content">
-          <span class="label">Weekday Special</span>
-          <h3>Lunch Combo</h3>
-          <p>Any wrap from the menu, regular chips, and a soft drink. Available Monday to Friday, 11am–3pm.</p>
-          <div style="display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span class="deal-price">£6.99</span>
-          </div>
-          <a href="menu.html" class="btn btn-amber">Order This Deal</a>
-        </div>
-        <div class="deal-image"></div>
-      </div>
-
-      <!-- Deal 3 -->
-      <div class="deal-card reveal" style="margin-bottom: var(--space-2xl);">
-        <div class="deal-card-content">
-          <span class="label">Share With Mates</span>
-          <h3>Boneless Bucket for 2</h3>
-          <p>20 boneless chicken pieces, 2 regular chips, 2 dips, and 2 drinks. Perfect for sharing.</p>
-          <div style="display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span class="deal-price">£16.99</span>
-            <span class="deal-price"><span class="original">£21.99</span></span>
-          </div>
-          <a href="menu.html" class="btn btn-amber">Order This Deal</a>
-        </div>
-        <div class="deal-image"></div>
-      </div>
-
-      <!-- Deal 4 -->
-      <div class="deal-card reveal" style="background: linear-gradient(135deg, var(--green-deep) 0%, var(--brown-dark) 100%);">
-        <div class="deal-card-content">
-          <span class="label">Free Delivery</span>
-          <h3>Orders Over £20</h3>
-          <p>Spend £20 or more and we'll deliver it to your door, free of charge. Every day, all day.</p>
-          <div style="margin-bottom: var(--space-lg);">
-            <span class="deal-price">Free</span>
-          </div>
-          <a href="menu.html" class="btn btn-amber">Start Your Order</a>
-        </div>
-        <div class="deal-image"></div>
+      <div class="offers-note reveal">
+        <p><strong>All offers are subject to availability.</strong> Deals cannot be combined with other promotions. Prices may vary for delivery orders. Pop in or give us a ring if you've any questions.</p>
       </div>
 
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="background-color: var(--brown-dark); padding: var(--space-3xl) 0;">
+  <section class="section" style="background-color: var(--beige); padding: var(--space-3xl) 0;">
     <div class="container" style="text-align: center;">
-      <h2 style="color: var(--cream); font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: var(--space-md);">Hungry Yet?</h2>
-      <p style="color: var(--beige); opacity: 0.8; margin-bottom: var(--space-xl); max-width: 450px; margin-left: auto; margin-right: auto;">These deals won't last forever. Order now and get the best value on proper fish and chicken.</p>
-      <a href="menu.html" class="btn btn-primary btn-lg">See Full Menu</a>
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: var(--space-md);">Fancy Something?</h2>
+      <p style="color: var(--text-muted); margin-bottom: var(--space-xl); max-width: 450px; margin-left: auto; margin-right: auto;">Have a look at the full menu and find what takes your fancy.</p>
+      <a href="menu.html" class="btn btn-secondary">View the Menu</a>
     </div>
   </section>
 
@@ -126,7 +261,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>Chick <span class="accent">N</span> Fish</h3>
+          <h3>Chick <span class="accent">'N</span> Fish</h3>
           <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
         </div>
         <div class="footer-col">

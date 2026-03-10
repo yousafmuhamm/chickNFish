@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__nano-banana-2__generate_image"
+    ]
+  }
+}
