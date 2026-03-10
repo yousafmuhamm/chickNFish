@@ -8,23 +8,24 @@
 
 /* --- CSS Variables --- */
 :root {
-  /* Brand Colours */
-  --cream: #F5F0E1;
-  --cream-light: #FAF8F0;
-  --beige: #EDE6D6;
-  --brown: #5C3D2E;
-  --brown-dark: #3A2518;
-  --brown-light: #8B6B5A;
-  --green: #2D4A3E;
-  --green-deep: #1A3028;
-  --green-light: #3D6B5A;
-  --amber: #C67B3C;
-  --amber-light: #D4924F;
-  --gold: #B8923F;
-  --green-bright: #3A8C6A;
-  --text-dark: #2A1F17;
-  --text-body: #4A3F35;
-  --text-muted: #7A6E62;
+  /* Brand Colours — Refined Palette */
+  --cream: #FAF5EB;
+  --cream-light: #FFFCF6;
+  --beige: #EFE8D8;
+  --brown: #4A2E1E;
+  --brown-dark: #2C1810;
+  --brown-light: #7A5D4A;
+  --green: #1B3A2E;
+  --green-deep: #122820;
+  --green-light: #2D6B52;
+  --amber: #B85C38;
+  --amber-light: #CC7A52;
+  --gold: #D4A04A;
+  --green-bright: #2D7A5E;
+  --sage: #A8BFA8;
+  --text-dark: #1E150E;
+  --text-body: #3D3228;
+  --text-muted: #6B5F52;
   --white: #FFFFFF;
   --black: #1A1410;
 
@@ -467,60 +468,102 @@ h1, h2, h3, h4, h5, h6 {
   stroke-linejoin: round;
   stroke-dasharray: var(--len, 600);
   stroke-dashoffset: var(--len, 600);
+  transition: fill 0.6s ease 0.2s;
 }
 
-/* Animation class */
+/* Animation class — draw + fill transition */
 .logo-draw-svg.animate .draw {
-  animation: drawStroke 0.7s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation: drawStroke 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-/* Chicken (1-7): body, comb, beak, eye, wattle, wing, tail */
-.logo-draw-svg.animate .draw:nth-child(1)  { animation-delay: 0.00s; }
-.logo-draw-svg.animate .draw:nth-child(2)  { animation-delay: 0.06s; }
-.logo-draw-svg.animate .draw:nth-child(3)  { animation-delay: 0.10s; }
-.logo-draw-svg.animate .draw:nth-child(4)  { animation-delay: 0.13s; }
-.logo-draw-svg.animate .draw:nth-child(5)  { animation-delay: 0.16s; }
-.logo-draw-svg.animate .draw:nth-child(6)  { animation-delay: 0.19s; }
-.logo-draw-svg.animate .draw:nth-child(7)  { animation-delay: 0.22s; }
-/* Fish (8-16): body, tail, mouth, eye, gill, stripe1, stripe2, stripe3 */
-.logo-draw-svg.animate .draw:nth-child(8)  { animation-delay: 0.30s; }
-.logo-draw-svg.animate .draw:nth-child(9)  { animation-delay: 0.34s; }
-.logo-draw-svg.animate .draw:nth-child(10) { animation-delay: 0.37s; }
-.logo-draw-svg.animate .draw:nth-child(11) { animation-delay: 0.39s; }
-.logo-draw-svg.animate .draw:nth-child(12) { animation-delay: 0.42s; }
-.logo-draw-svg.animate .draw:nth-child(13) { animation-delay: 0.45s; }
-.logo-draw-svg.animate .draw:nth-child(14) { animation-delay: 0.47s; }
-.logo-draw-svg.animate .draw:nth-child(15) { animation-delay: 0.49s; }
-/* Sparkle (16) */
-.logo-draw-svg.animate .draw:nth-child(16) { animation-delay: 0.55s; }
-/* Text CHICKN FISH (17-27): C,H,I,C,K,N,F,I,S,H + dashes */
-.logo-draw-svg.animate .draw:nth-child(17) { animation-delay: 0.63s; }
-.logo-draw-svg.animate .draw:nth-child(18) { animation-delay: 0.65s; }
-.logo-draw-svg.animate .draw:nth-child(19) { animation-delay: 0.67s; }
-.logo-draw-svg.animate .draw:nth-child(20) { animation-delay: 0.69s; }
-.logo-draw-svg.animate .draw:nth-child(21) { animation-delay: 0.71s; }
-.logo-draw-svg.animate .draw:nth-child(22) { animation-delay: 0.75s; }
-.logo-draw-svg.animate .draw:nth-child(23) { animation-delay: 0.77s; }
-.logo-draw-svg.animate .draw:nth-child(24) { animation-delay: 0.79s; }
-.logo-draw-svg.animate .draw:nth-child(25) { animation-delay: 0.81s; }
-.logo-draw-svg.animate .draw:nth-child(26) { animation-delay: 0.83s; }
+/* After draw completes, subtle fill materializes */
+.logo-draw-svg.filled .draw {
+  fill: rgba(45, 122, 94, 0.04);
+}
+
+/* Chicken illustrations get a warmer tint */
+.logo-draw-svg.filled .draw:nth-child(1),
+.logo-draw-svg.filled .draw:nth-child(2),
+.logo-draw-svg.filled .draw:nth-child(5),
+.logo-draw-svg.filled .draw:nth-child(6),
+.logo-draw-svg.filled .draw:nth-child(7) {
+  fill: rgba(184, 92, 56, 0.05);
+}
+
+/* Fish body gets a cooler tint */
+.logo-draw-svg.filled .draw:nth-child(8) {
+  fill: rgba(45, 122, 94, 0.06);
+}
+
+/* Eyes and small details stay unfilled */
+.logo-draw-svg.filled .draw:nth-child(4),
+.logo-draw-svg.filled .draw:nth-child(11),
+.logo-draw-svg.filled .draw:nth-child(10),
+.logo-draw-svg.filled .draw:nth-child(3) {
+  fill: none;
+}
+
+/* Text and lines stay unfilled */
+.logo-draw-svg.filled .draw:nth-child(n+17) {
+  fill: none;
+}
+
+/* === PHASE 1: Chicken draws first (dramatic entrance) === */
+.logo-draw-svg.animate .draw:nth-child(1)  { animation-delay: 0.00s; animation-duration: 1s; }
+.logo-draw-svg.animate .draw:nth-child(2)  { animation-delay: 0.10s; }
+.logo-draw-svg.animate .draw:nth-child(3)  { animation-delay: 0.18s; }
+.logo-draw-svg.animate .draw:nth-child(4)  { animation-delay: 0.24s; }
+.logo-draw-svg.animate .draw:nth-child(5)  { animation-delay: 0.30s; }
+.logo-draw-svg.animate .draw:nth-child(6)  { animation-delay: 0.36s; }
+.logo-draw-svg.animate .draw:nth-child(7)  { animation-delay: 0.44s; animation-duration: 0.9s; }
+
+/* === PAUSE then PHASE 2: Fish sweeps in === */
+.logo-draw-svg.animate .draw:nth-child(8)  { animation-delay: 0.70s; animation-duration: 1s; }
+.logo-draw-svg.animate .draw:nth-child(9)  { animation-delay: 0.80s; }
+.logo-draw-svg.animate .draw:nth-child(10) { animation-delay: 0.88s; }
+.logo-draw-svg.animate .draw:nth-child(11) { animation-delay: 0.92s; }
+.logo-draw-svg.animate .draw:nth-child(12) { animation-delay: 0.98s; }
+.logo-draw-svg.animate .draw:nth-child(13) { animation-delay: 1.04s; }
+.logo-draw-svg.animate .draw:nth-child(14) { animation-delay: 1.08s; }
+.logo-draw-svg.animate .draw:nth-child(15) { animation-delay: 1.12s; }
+
+/* === PHASE 3: Sparkle burst (scale + rotate) === */
+.logo-draw-svg.animate .draw:nth-child(16) {
+  animation: drawStroke 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+             sparkleBurst 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.40s forwards;
+  animation-delay: 1.30s, 1.40s;
+  transform-origin: 380px 137px;
+}
+
+/* === PAUSE then PHASE 4: Brand text writes across === */
+.logo-draw-svg.animate .draw:nth-child(17) { animation-delay: 1.60s; }
+.logo-draw-svg.animate .draw:nth-child(18) { animation-delay: 1.64s; }
+.logo-draw-svg.animate .draw:nth-child(19) { animation-delay: 1.68s; }
+.logo-draw-svg.animate .draw:nth-child(20) { animation-delay: 1.72s; }
+.logo-draw-svg.animate .draw:nth-child(21) { animation-delay: 1.76s; }
+.logo-draw-svg.animate .draw:nth-child(22) { animation-delay: 1.82s; }
+.logo-draw-svg.animate .draw:nth-child(23) { animation-delay: 1.86s; }
+.logo-draw-svg.animate .draw:nth-child(24) { animation-delay: 1.90s; }
+.logo-draw-svg.animate .draw:nth-child(25) { animation-delay: 1.94s; }
+.logo-draw-svg.animate .draw:nth-child(26) { animation-delay: 1.98s; }
 /* Decorative dashes */
-.logo-draw-svg.animate .draw:nth-child(27) { animation-delay: 0.86s; }
-.logo-draw-svg.animate .draw:nth-child(28) { animation-delay: 0.86s; }
-/* Subtitle rules + FISH & CHIPS letters (29-41) */
-.logo-draw-svg.animate .draw:nth-child(29) { animation-delay: 0.90s; }
-.logo-draw-svg.animate .draw:nth-child(30) { animation-delay: 0.90s; }
-.logo-draw-svg.animate .draw:nth-child(31) { animation-delay: 0.93s; }
-.logo-draw-svg.animate .draw:nth-child(32) { animation-delay: 0.95s; }
-.logo-draw-svg.animate .draw:nth-child(33) { animation-delay: 0.97s; }
-.logo-draw-svg.animate .draw:nth-child(34) { animation-delay: 0.99s; }
-.logo-draw-svg.animate .draw:nth-child(35) { animation-delay: 1.01s; }
-.logo-draw-svg.animate .draw:nth-child(36) { animation-delay: 1.03s; }
-.logo-draw-svg.animate .draw:nth-child(37) { animation-delay: 1.05s; }
-.logo-draw-svg.animate .draw:nth-child(38) { animation-delay: 1.07s; }
-.logo-draw-svg.animate .draw:nth-child(39) { animation-delay: 1.09s; }
-.logo-draw-svg.animate .draw:nth-child(40) { animation-delay: 1.11s; }
-.logo-draw-svg.animate .draw:nth-child(41) { animation-delay: 1.13s; }
+.logo-draw-svg.animate .draw:nth-child(27) { animation-delay: 2.04s; }
+.logo-draw-svg.animate .draw:nth-child(28) { animation-delay: 2.04s; }
+
+/* === PHASE 5: Subtitle rules + FISH & CHIPS === */
+.logo-draw-svg.animate .draw:nth-child(29) { animation-delay: 2.20s; }
+.logo-draw-svg.animate .draw:nth-child(30) { animation-delay: 2.20s; }
+.logo-draw-svg.animate .draw:nth-child(31) { animation-delay: 2.28s; }
+.logo-draw-svg.animate .draw:nth-child(32) { animation-delay: 2.32s; }
+.logo-draw-svg.animate .draw:nth-child(33) { animation-delay: 2.36s; }
+.logo-draw-svg.animate .draw:nth-child(34) { animation-delay: 2.40s; }
+.logo-draw-svg.animate .draw:nth-child(35) { animation-delay: 2.44s; }
+.logo-draw-svg.animate .draw:nth-child(36) { animation-delay: 2.48s; }
+.logo-draw-svg.animate .draw:nth-child(37) { animation-delay: 2.52s; }
+.logo-draw-svg.animate .draw:nth-child(38) { animation-delay: 2.56s; }
+.logo-draw-svg.animate .draw:nth-child(39) { animation-delay: 2.60s; }
+.logo-draw-svg.animate .draw:nth-child(40) { animation-delay: 2.64s; }
+.logo-draw-svg.animate .draw:nth-child(41) { animation-delay: 2.68s; }
 
 @keyframes drawStroke {
   to {
@@ -528,20 +571,34 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Tagline below logo */
+@keyframes sparkleBurst {
+  0% { transform: scale(0.6) rotate(-30deg); opacity: 0.5; }
+  50% { transform: scale(1.3) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Tagline — word-by-word reveal */
 .hero-draw-tagline {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--text-body);
   text-align: center;
   padding-bottom: var(--space-4xl);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: 0.02em;
+  display: flex;
+  justify-content: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
 }
 
-.hero-draw-tagline.visible {
+.hero-draw-tagline .word {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-draw-tagline .word.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -553,7 +610,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-draw-scroll.visible {
@@ -561,27 +618,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scroll-mouse {
-  width: 26px;
-  height: 42px;
-  border: 2px solid var(--green-bright);
-  border-radius: 13px;
+  width: 24px;
+  height: 40px;
+  border: 1.5px solid var(--green-bright);
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   padding-top: 8px;
 }
 
 .scroll-wheel {
-  width: 3px;
-  height: 8px;
+  width: 2.5px;
+  height: 7px;
   background-color: var(--green-bright);
   border-radius: 2px;
-  animation: scrollWheel 2s ease-in-out infinite;
+  animation: scrollWheel 2.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @keyframes scrollWheel {
-  0% { opacity: 1; transform: translateY(0); }
-  50% { opacity: 0.3; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0%, 100% { opacity: 0.8; transform: translateY(0); }
+  40% { opacity: 0.15; transform: translateY(10px); }
+  80% { opacity: 0.8; transform: translateY(0); }
 }
 
 /* --- Promo Banner / Ticker --- */
@@ -1491,6 +1548,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-draw-tagline,
   .hero-draw-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-draw-tagline .word {
     opacity: 1 !important;
     transform: none !important;
   }

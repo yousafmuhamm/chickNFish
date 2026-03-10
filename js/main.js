@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawScroll = document.getElementById('heroDrawScroll');
 
   if (logoSvg) {
+    // Calculate and set stroke lengths for draw animation
     logoSvg.querySelectorAll('.draw').forEach(el => {
       try {
         const len = el.getTotalLength();
@@ -22,10 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.strokeDashoffset = 400;
       }
     });
+
+    // Phase 1: Fade in SVG canvas
     setTimeout(() => logoSvg.classList.add('visible'), 200);
-    setTimeout(() => logoSvg.classList.add('animate'), 400);
-    setTimeout(() => { if (drawTagline) drawTagline.classList.add('visible'); }, 2200);
-    setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 2600);
+    // Phase 2: Start stroke drawing
+    setTimeout(() => logoSvg.classList.add('animate'), 500);
+    // Phase 3: After all strokes drawn, add subtle fill
+    setTimeout(() => logoSvg.classList.add('filled'), 3200);
+
+    // Phase 4: Word-by-word tagline reveal
+    if (drawTagline) {
+      const words = drawTagline.querySelectorAll('.word');
+      words.forEach((word, i) => {
+        setTimeout(() => word.classList.add('visible'), 3600 + i * 120);
+      });
+    }
+
+    // Phase 5: Scroll indicator fades in gently
+    setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 4600);
   }
 
   // --- Navbar Scroll Effect ---
