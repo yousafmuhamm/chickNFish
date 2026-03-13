@@ -1,62 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offers — Chick N Fish</title>
-  <meta name="description" content="Current deals and offers at Chick N Fish. Family meals, lunch specials, and more.">
+  <title>Deals & Offers — Chick N Fish Calgary | Family Meals</title>
+  <meta name="description" content="Current deals at Chick N Fish Calgary. Family Feast for $24.99, lunch combos from $6.99, and more. Order on UberEats or DoorDash or visit us in Rundlehorn NE.">
+  <link rel="canonical" href="https://chicknfish.ca/offers.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deals & Offers — Chick N Fish Calgary">
+  <meta property="og:description" content="Family Feast, lunch combos, and more deals at Chick N Fish in Calgary NE.">
+  <meta property="og:url" content="https://chicknfish.ca/offers.html">
+  <meta property="og:image" content="https://chicknfish.ca/images/og-image.jpg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://chicknfish.ca/"},
+      {"@type": "ListItem", "position": 2, "name": "Offers", "item": "https://chicknfish.ca/offers.html"}
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .offers-header {
+    .offers-hero {
       padding-top: 72px;
-      background-color: var(--cream);
-      border-bottom: 1px solid var(--beige);
+      background: linear-gradient(165deg, var(--brown-dark) 0%, var(--green-deep) 100%);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
     }
-    .offers-header .container {
-      padding-top: var(--space-3xl);
-      padding-bottom: var(--space-2xl);
+    .offers-hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(184, 92, 56, 0.08);
+      pointer-events: none;
     }
-    .offers-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-xl);
+    .offers-hero .container {
+      padding-top: var(--space-4xl);
+      padding-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+    .offers-hero .label {
+      color: var(--amber);
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+    .offers-hero h1 {
+      color: var(--cream);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      margin-bottom: var(--space-md);
+    }
+    .offers-hero p {
+      color: var(--beige);
+      opacity: 0.8;
+      max-width: 500px;
+      font-size: var(--text-base);
+    }
+
+    /* Featured deal — large hero card */
+    .offer-featured {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
       max-width: 800px;
-      margin: 0 auto;
+      margin: calc(-1 * var(--space-3xl)) auto var(--space-3xl);
+      position: relative;
+      z-index: 2;
     }
-    .offer-card {
-      background-color: var(--white);
-      border: 1px solid var(--beige);
-      border-radius: var(--radius-md);
-      padding: var(--space-2xl);
+    .offer-featured-inner {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: var(--space-xl);
       align-items: center;
-      transition: all var(--transition-base);
+      gap: var(--space-2xl);
+      padding: var(--space-2xl) var(--space-2xl);
     }
-    .offer-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: rgba(184, 92, 56, 0.2);
-    }
-    .offer-card-featured {
-      border-color: var(--amber);
-      border-width: 2px;
-      position: relative;
-    }
-    .offer-card-featured::before {
-      content: 'Most Popular';
+    .offer-featured-badge {
       position: absolute;
-      top: -10px;
-      left: var(--space-xl);
-      background-color: var(--amber);
-      color: var(--white);
-      font-family: var(--font-display-sc);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      padding: 3px 12px;
-      border-radius: var(--radius-sm);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--amber), var(--gold));
     }
-    .offer-label {
+    .offer-featured .offer-label {
       font-family: var(--font-display-sc);
       font-size: var(--text-xs);
       letter-spacing: 0.12em;
@@ -65,57 +100,132 @@
       margin-bottom: var(--space-xs);
       display: block;
     }
-    .offer-title {
-      font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      font-weight: 700;
-      color: var(--text-dark);
+    .offer-featured h2 {
+      font-size: var(--text-3xl);
       margin-bottom: var(--space-sm);
     }
-    .offer-desc {
+    .offer-featured .offer-desc {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+      max-width: 420px;
+    }
+    .offer-featured .offer-terms {
+      font-size: var(--text-xs);
+      color: var(--brown-light);
+      font-style: italic;
+    }
+    .offer-featured-pricing {
+      text-align: center;
+      padding: var(--space-xl) var(--space-2xl);
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      min-width: 140px;
+    }
+    .offer-featured-pricing .price {
+      font-family: var(--font-display);
+      font-size: var(--text-5xl);
+      font-weight: 800;
+      color: var(--brown-dark);
+      line-height: 1;
+      display: block;
+    }
+    .offer-featured-pricing .was {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      text-decoration: line-through;
+      display: block;
+      margin-top: var(--space-xs);
+    }
+    .offer-featured-pricing .save {
+      font-family: var(--font-display-sc);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      color: var(--green-bright);
+      display: block;
+      margin-top: var(--space-sm);
+    }
+
+    /* Regular deals grid */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-xl);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .offer-card {
+      background: var(--white);
+      border: 1px solid var(--beige);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xl);
+      position: relative;
+      transition: all var(--transition-base);
+      border-left: 3px solid var(--amber);
+    }
+    .offer-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .offer-card .offer-label {
+      font-family: var(--font-display-sc);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+    .offer-card h3 {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-sm);
+    }
+    .offer-card .offer-desc {
       font-size: var(--text-sm);
       color: var(--text-muted);
       line-height: 1.65;
       margin-bottom: var(--space-md);
     }
-    .offer-terms {
+    .offer-card-footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid var(--beige);
+      padding-top: var(--space-md);
+    }
+    .offer-card .price {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--brown-dark);
+    }
+    .offer-card .was {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .offer-card .save {
+      font-family: var(--font-display-sc);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--green-bright);
+    }
+    .offer-card .offer-time {
       font-size: var(--text-xs);
       color: var(--brown-light);
       font-style: italic;
     }
-    .offer-pricing {
-      text-align: center;
-      flex-shrink: 0;
-      min-width: 100px;
-    }
-    .offer-price {
-      font-family: var(--font-display);
-      font-size: var(--text-4xl);
-      font-weight: 800;
-      color: var(--brown-dark);
-      line-height: 1;
-    }
-    .offer-was {
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      text-decoration: line-through;
-      margin-top: var(--space-xs);
-    }
-    .offer-save {
-      font-family: var(--font-display-sc);
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      color: var(--green-bright);
-      margin-top: var(--space-xs);
-    }
+
+    /* Note section */
     .offers-note {
       max-width: 800px;
       margin: var(--space-3xl) auto 0;
       text-align: center;
-      padding: var(--space-xl);
-      background-color: var(--beige);
-      border-radius: var(--radius-md);
+      padding: var(--space-lg) var(--space-xl);
+      border-top: 1px solid var(--beige);
+      border-bottom: 1px solid var(--beige);
     }
     .offers-note p {
       font-size: var(--text-sm);
@@ -125,16 +235,21 @@
     .offers-note p strong {
       color: var(--text-dark);
     }
+
     @media (max-width: 600px) {
-      .offer-card {
+      .offer-featured-inner {
         grid-template-columns: 1fr;
-        gap: var(--space-md);
+        gap: var(--space-lg);
       }
-      .offer-pricing {
+      .offer-featured-pricing {
         text-align: left;
         display: flex;
         align-items: baseline;
         gap: var(--space-md);
+        padding: var(--space-md) var(--space-lg);
+      }
+      .offers-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -165,85 +280,74 @@
     <a href="contact.html">Find Us</a>
   </div>
 
-  <!-- PAGE HEADER -->
-  <section class="offers-header">
+  <!-- HERO HEADER -->
+  <section class="offers-hero">
     <div class="container">
-      <div class="section-header" style="margin-bottom: 0;">
-        <span class="label label-accent">What's On</span>
-        <h1 style="font-size: clamp(2rem, 5vw, 3rem);">Offers & Specials</h1>
-        <div class="section-divider"></div>
-        <p>A few good reasons to bring the family, share with mates, or treat yourself to a bigger portion.</p>
-      </div>
+      <span class="label">What's On</span>
+      <h1>Offers & Specials</h1>
+      <p>A few good reasons to bring the family, share with mates, or treat yourself to a bigger portion.</p>
     </div>
   </section>
 
-  <!-- OFFERS -->
-  <section class="section">
+  <!-- FEATURED DEAL -->
+  <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="offers-grid">
-
-        <!-- Featured Deal -->
-        <div class="offer-card offer-card-featured reveal">
-          <div class="offer-content">
-            <span class="offer-label">Family Deal</span>
-            <h3 class="offer-title">The Family Feast</h3>
+      <div class="offer-featured reveal-scale">
+        <div class="offer-featured-badge"></div>
+        <div class="offer-featured-inner">
+          <div>
+            <span class="offer-label">Best Seller — Family Deal</span>
+            <h2>The Family Feast</h2>
             <p class="offer-desc">Eight pieces of fried chicken, two large chips, coleslaw, gravy, and four drinks. Everything the table needs, in one box.</p>
             <p class="offer-terms">Available for dine-in and collection. No minimum order.</p>
           </div>
-          <div class="offer-pricing">
-            <span class="offer-price">£24.99</span>
-            <span class="offer-was">£34.99</span>
-            <span class="offer-save">Save £10</span>
+          <div class="offer-featured-pricing">
+            <span class="price">£24.99</span>
+            <span class="was">£34.99</span>
+            <span class="save">Save £10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGULAR DEALS -->
+      <div class="offers-grid">
+        <div class="offer-card reveal reveal-delay-1">
+          <span class="offer-label">Weekday Lunch</span>
+          <h3>Wrap, Chips & Drink</h3>
+          <p class="offer-desc">Any wrap from the menu with regular chips and a soft drink. A proper lunch without the fuss.</p>
+          <div class="offer-card-footer">
+            <span class="price">£6.99</span>
+            <span class="offer-time">Mon–Fri, 11am–3pm</span>
           </div>
         </div>
 
-        <!-- Deal 2 -->
-        <div class="offer-card reveal">
-          <div class="offer-content">
-            <span class="offer-label">Weekday Lunch</span>
-            <h3 class="offer-title">Wrap, Chips & Drink</h3>
-            <p class="offer-desc">Any wrap from the menu with regular chips and a soft drink. A proper lunch without the fuss.</p>
-            <p class="offer-terms">Monday to Friday, 11am–3pm.</p>
-          </div>
-          <div class="offer-pricing">
-            <span class="offer-price">£6.99</span>
-          </div>
-        </div>
-
-        <!-- Deal 3 -->
-        <div class="offer-card reveal">
-          <div class="offer-content">
-            <span class="offer-label">Sharing</span>
-            <h3 class="offer-title">Boneless Bucket for Two</h3>
-            <p class="offer-desc">Twenty boneless pieces, two regular chips, two dips, and two drinks. Plenty to go round.</p>
-            <p class="offer-terms">Available all day, every day.</p>
-          </div>
-          <div class="offer-pricing">
-            <span class="offer-price">£16.99</span>
-            <span class="offer-was">£21.99</span>
-            <span class="offer-save">Save £5</span>
+        <div class="offer-card reveal reveal-delay-2">
+          <span class="offer-label">Sharing</span>
+          <h3>Boneless Bucket for Two</h3>
+          <p class="offer-desc">Twenty boneless pieces, two regular chips, two dips, and two drinks. Plenty to go round.</p>
+          <div class="offer-card-footer">
+            <div>
+              <span class="price">£16.99</span>
+              <span class="was" style="margin-left: 8px;">£21.99</span>
+            </div>
+            <span class="save">Save £5</span>
           </div>
         </div>
 
-        <!-- Deal 4 -->
-        <div class="offer-card reveal">
-          <div class="offer-content">
-            <span class="offer-label">Delivery</span>
-            <h3 class="offer-title">Free Delivery Over £20</h3>
-            <p class="offer-desc">Spend twenty pounds or more and delivery is on us. No code needed, applied automatically.</p>
-            <p class="offer-terms">Within our delivery radius. Every day, all day.</p>
-          </div>
-          <div class="offer-pricing">
-            <span class="offer-price">Free</span>
+        <div class="offer-card reveal reveal-delay-3">
+          <span class="offer-label">Delivery</span>
+          <h3>Free Delivery Over £20</h3>
+          <p class="offer-desc">Spend twenty pounds or more and delivery is on us. No code needed, applied automatically.</p>
+          <div class="offer-card-footer">
+            <span class="price" style="color: var(--green-bright);">Free</span>
+            <span class="offer-time">Every day, all day</span>
           </div>
         </div>
-
       </div>
 
       <div class="offers-note reveal">
         <p><strong>All offers are subject to availability.</strong> Deals cannot be combined with other promotions. Prices may vary for delivery orders. Pop in or give us a ring if you've any questions.</p>
       </div>
-
     </div>
   </section>
 

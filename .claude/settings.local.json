@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__nano-banana-2__generate_image"
+      "mcp__nano-banana-2__generate_image",
+      "Bash(npx serve:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:www.chicknfish.ca)"
     ]
   }
 }

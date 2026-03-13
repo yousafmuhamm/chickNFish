@@ -4,43 +4,56 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Hero SVG Logo Draw Animation ---
-  const logoSvg = document.getElementById('logoDrawSvg');
+  // --- Hero Logo Video Animation ---
+  const logoVideo = document.getElementById('logoVideo');
   const drawTagline = document.getElementById('heroDrawTagline');
   const drawScroll = document.getElementById('heroDrawScroll');
 
-  if (logoSvg) {
-    // Calculate and set stroke lengths for draw animation
-    logoSvg.querySelectorAll('.draw').forEach(el => {
-      try {
-        const len = el.getTotalLength();
-        el.style.setProperty('--len', len);
-        el.style.strokeDasharray = len;
-        el.style.strokeDashoffset = len;
-      } catch (e) {
-        el.style.setProperty('--len', 400);
-        el.style.strokeDasharray = 400;
-        el.style.strokeDashoffset = 400;
+  if (logoVideo) {
+    // Play at 2× speed
+    logoVideo.playbackRate = 2.0;
+
+    // Fade in video once it can play
+    logoVideo.addEventListener('canplay', () => {
+      logoVideo.classList.add('visible');
+    }, { once: true });
+    // Fallback: show after short delay if already loaded
+    setTimeout(() => logoVideo.classList.add('visible'), 100);
+
+    const revealAfterVideo = () => {
+      if (drawTagline) {
+        const words = drawTagline.querySelectorAll('.word');
+        words.forEach((word, i) => {
+          setTimeout(() => word.classList.add('visible'), i * 50);
+        });
       }
-    });
+      setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 350);
+    };
 
-    // Phase 1: Fade in SVG canvas
-    setTimeout(() => logoSvg.classList.add('visible'), 100);
-    // Phase 2: Start stroke drawing
-    setTimeout(() => logoSvg.classList.add('animate'), 250);
-    // Phase 3: After all strokes drawn, add glow
-    setTimeout(() => logoSvg.classList.add('filled'), 1800);
+    logoVideo.addEventListener('ended', revealAfterVideo, { once: true });
 
-    // Phase 4: Word-by-word tagline reveal
-    if (drawTagline) {
-      const words = drawTagline.querySelectorAll('.word');
-      words.forEach((word, i) => {
-        setTimeout(() => word.classList.add('visible'), 2000 + i * 80);
-      });
-    }
+    // Fallback: if video fails to load or is very long, reveal after 4s
+    setTimeout(() => {
+      if (drawTagline && !drawTagline.querySelector('.word.visible')) {
+        revealAfterVideo();
+      }
+    }, 4000);
+  }
 
-    // Phase 5: Scroll indicator fades in gently
-    setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 2600);
+  // --- Order Modal (Promo Banner click) ---
+  const promoBanner = document.getElementById('promoBanner');
+  const orderModal = document.getElementById('orderModalOverlay');
+  const orderModalClose = document.getElementById('orderModalClose');
+
+  if (promoBanner && orderModal) {
+    const openModal = () => orderModal.classList.add('active');
+    const closeModal = () => orderModal.classList.remove('active');
+
+    promoBanner.addEventListener('click', openModal);
+    promoBanner.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(); });
+    orderModalClose.addEventListener('click', closeModal);
+    orderModal.addEventListener('click', e => { if (e.target === orderModal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   }
 
   // --- Navbar Scroll Effect ---

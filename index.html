@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chick N Fish — Proper Fish & Chips. Proper Fried Chicken.</title>
-  <meta name="description" content="Chick N Fish serves proper fish and chips and fried chicken. Golden-battered, hand-cut, and made fresh. Order now or visit us.">
+  <title>Chick N Fish Calgary | Fish & Chips · Fried Chicken</title>
+  <meta name="description" content="Chick N Fish in Calgary serves crispy fish and chips and golden fried chicken. Order on UberEats or DoorDash, or visit us at 3725 Rundlehorn Drive NE.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://chicknfish.ca/">
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chick N Fish Calgary — Fish & Chips and Fried Chicken">
+  <meta property="og:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
+  <meta property="og:url" content="https://chicknfish.ca/">
+  <meta property="og:image" content="https://chicknfish.ca/images/og-image.jpg">
+  <meta property="og:site_name" content="Chick N Fish">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chick N Fish Calgary — Fish & Chips and Fried Chicken">
+  <meta name="twitter:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
+  <meta name="twitter:image" content="https://chicknfish.ca/images/og-image.jpg">
+
+  <!-- Local Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Chick N Fish",
+    "description": "Crispy fish and chips and golden fried chicken in Calgary NE.",
+    "url": "https://chicknfish.ca",
+    "telephone": "+14031234567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "120-3725 Rundlehorn Drive NE",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "postalCode": "T1Y 3Z4",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.0795,
+      "longitude": -113.9668
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "11:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "22:00"
+      }
+    ],
+    "servesCuisine": ["Fish and Chips", "Fried Chicken", "Fast Food"],
+    "priceRange": "$$",
+    "hasMenu": "https://chicknfish.ca/menu.html",
+    "sameAs": [
+      "https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w",
+      "https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/"
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Preload hero video for faster LCP -->
+  <link rel="preload" href="Logo_Animation_For_Website_Homepage.mov" as="video" type="video/mp4">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -43,113 +114,21 @@
     <a href="contact.html">Find Us</a>
   </div>
 
-  <!-- ========== HERO — SVG LOGO DRAW ANIMATION ========== -->
+  <!-- ========== HERO — LOGO VIDEO ANIMATION ========== -->
   <section class="hero-draw" id="heroSection">
 
     <div class="hero-draw-center">
-      <svg class="logo-draw-svg" id="logoDrawSvg" viewBox="0 0 540 510" xmlns="http://www.w3.org/2000/svg" aria-label="Chick N Fish logo">
-
-        <!-- === CHICKEN (upper-left, facing right) === -->
-        <!-- Body -->
-        <path class="draw" d="M 160 170 Q 150 130 165 100 Q 180 72 210 65 Q 235 60 255 72 Q 275 60 295 72 Q 315 88 310 120 Q 305 148 285 168 Q 260 188 230 190 Q 200 190 175 178 Z" />
-        <!-- Comb -->
-        <path class="draw" d="M 218 65 Q 212 45 220 38 Q 228 30 235 42 Q 242 30 250 38 Q 257 46 250 62" />
-        <!-- Beak -->
-        <path class="draw" d="M 155 115 L 138 108 L 150 126 Z" />
-        <!-- Eye -->
-        <circle class="draw" cx="168" cy="110" r="4" />
-        <!-- Wattle -->
-        <path class="draw" d="M 150 125 Q 158 138 150 146 Q 142 142 145 132" />
-        <!-- Wing detail -->
-        <path class="draw" d="M 245 130 Q 260 118 275 125 Q 270 140 255 148" />
-        <!-- Tail feathers -->
-        <path class="draw" d="M 290 95 Q 320 65 345 58 Q 360 70 352 90 Q 330 108 305 112" />
-
-        <!-- === FISH (lower-right, facing left) === -->
-        <!-- Body -->
-        <path class="draw" d="M 195 265 Q 215 210 310 203 Q 405 197 430 265 Q 405 333 310 340 Q 215 347 195 265 Z" />
-        <!-- Tail fin -->
-        <path class="draw" d="M 430 251 Q 465 223 484 239 Q 472 265 484 291 Q 465 307 430 279" />
-        <!-- Mouth -->
-        <path class="draw" d="M 195 258 Q 186 265 195 272" />
-        <!-- Eye -->
-        <circle class="draw" cx="244" cy="265" r="6" />
-        <!-- Gill line -->
-        <path class="draw" d="M 298 211 Q 286 265 298 319" />
-        <!-- Body stripes -->
-        <path class="draw" d="M 322 217 L 402 217" />
-        <path class="draw" d="M 320 243 L 404 243" />
-        <path class="draw" d="M 322 269 L 402 269" />
-
-        <!-- === 4-POINTED SPARKLE === -->
-        <path class="draw" d="M 380 120 L 383 134 L 397 137 L 383 140 L 380 154 L 377 140 L 363 137 L 377 134 Z" />
-
-        <!-- === BRAND TEXT: CHICK'N FISH (uniform monoline caps, h=40, baseline 395–435) === -->
-        <!-- Left dash -->
-        <line class="draw" x1="80" y1="415" x2="100" y2="415" />
-        <!-- C -->
-        <path class="draw" d="M 130 398 Q 114 398 114 415 Q 114 432 130 432" />
-        <!-- H -->
-        <path class="draw" d="M 142 395 L 142 435 M 142 415 L 162 415 M 162 395 L 162 435" />
-        <!-- I -->
-        <path class="draw" d="M 174 395 L 174 435" />
-        <!-- C -->
-        <path class="draw" d="M 202 398 Q 186 398 186 415 Q 186 432 202 432" />
-        <!-- K -->
-        <path class="draw" d="M 214 395 L 214 435 M 214 415 L 236 395 M 214 415 L 236 435" />
-        <!-- apostrophe -->
-        <path class="draw" d="M 244 395 L 242 403" />
-        <!-- N -->
-        <path class="draw" d="M 254 435 L 254 395 L 278 435 L 278 395" />
-        <!-- space -->
-        <!-- F -->
-        <path class="draw" d="M 302 395 L 302 435 M 302 395 L 322 395 M 302 415 L 318 415" />
-        <!-- I -->
-        <path class="draw" d="M 334 395 L 334 435" />
-        <!-- S -->
-        <path class="draw" d="M 360 400 Q 346 395 346 407 Q 346 415 360 417 Q 374 419 374 428 Q 374 435 360 432" />
-        <!-- H -->
-        <path class="draw" d="M 386 395 L 386 435 M 386 415 L 406 415 M 406 395 L 406 435" />
-        <!-- Right dash -->
-        <line class="draw" x1="418" y1="415" x2="438" y2="415" />
-
-        <!-- === SUBTITLE: FISH & CHIPS (uniform, h=20, baseline 462–482) === -->
-        <!-- Left rule -->
-        <line class="draw" x1="110" y1="472" x2="165" y2="472" />
-        <!-- F -->
-        <path class="draw" d="M 178 462 L 178 482 M 178 462 L 192 462 M 178 472 L 190 472" />
-        <!-- I -->
-        <path class="draw" d="M 200 462 L 200 482" />
-        <!-- S -->
-        <path class="draw" d="M 220 465 Q 212 462 212 469 Q 212 473 220 475 Q 228 477 228 481 Q 228 485 220 482" />
-        <!-- H -->
-        <path class="draw" d="M 236 462 L 236 482 M 236 472 L 250 472 M 250 462 L 250 482" />
-        <!-- & -->
-        <path class="draw" d="M 272 480 Q 264 474 267 468 Q 270 462 276 468 Q 282 474 272 480 Q 266 485 272 489 Q 280 493 286 486" />
-        <!-- C -->
-        <path class="draw" d="M 312 465 Q 302 462 302 472 Q 302 482 312 479" />
-        <!-- H -->
-        <path class="draw" d="M 322 462 L 322 482 M 322 472 L 336 472 M 336 462 L 336 482" />
-        <!-- I -->
-        <path class="draw" d="M 346 462 L 346 482" />
-        <!-- P -->
-        <path class="draw" d="M 356 462 L 356 482 M 356 462 Q 370 462 370 469 Q 370 476 356 472" />
-        <!-- S -->
-        <path class="draw" d="M 390 465 Q 382 462 382 469 Q 382 473 390 475 Q 398 477 398 481 Q 398 485 390 482" />
-        <!-- Right rule -->
-        <line class="draw" x1="410" y1="472" x2="465" y2="472" />
-
-      </svg>
+      <video class="logo-video" id="logoVideo" autoplay muted playsinline>
+        <source src="Logo_Animation_For_Website_Homepage.mov" type="video/mp4">
+        <source src="Logo_Animation_For_Website_Homepage.mov" type="video/quicktime">
+      </video>
     </div>
 
     <!-- Tagline below (word-by-word reveal after draw) -->
     <p class="hero-draw-tagline" id="heroDrawTagline">
-      <span class="word">Proper</span>
-      <span class="word">fish.</span>
-      <span class="word">Proper</span>
-      <span class="word">chicken.</span>
-      <span class="word">Done</span>
-      <span class="word">right.</span>
+      <span class="word">Crispy.</span>
+      <span class="word">Golden.</span>
+      <span class="word">Legendary.</span>
     </p>
 
     <!-- Scroll mouse indicator -->
@@ -162,12 +141,30 @@
   </section>
 
   <!-- ========== PROMO TICKER ========== -->
-  <div class="promo-banner">
+  <div class="promo-banner" id="promoBanner" role="button" tabindex="0" aria-label="Order online — click to choose platform">
     <div class="promo-ticker">
-      <span>Family Feast Deal — Feed 4 for £24.99</span>
-      <span>Free Delivery on Orders Over £20</span>
-      <span>New: Spicy Nashville Chicken Now Available</span>
-      <span>Lunch Combo from £6.99 — Mon to Fri</span>
+      <span>Order Now on Uber Eats</span>
+      <span>Order Now on DoorDash</span>
+      <span>Order Now on Uber Eats</span>
+      <span>Order Now on DoorDash</span>
+    </div>
+  </div>
+
+  <!-- ========== ORDER MODAL ========== -->
+  <div class="order-modal-overlay" id="orderModalOverlay" role="dialog" aria-modal="true" aria-label="Choose your delivery platform">
+    <div class="order-modal">
+      <p class="order-modal-title">Order via</p>
+      <div class="order-modal-options">
+        <a href="https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w?srsltid=AfmBOoqNAs42uZ-_oD6smNrA3ifrwcDuT8GoUMeiRlHcPeTYqMBOyafq" target="_blank" rel="noopener" class="order-modal-btn order-modal-ubereats">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a6 6 0 1 1 0 12A6 6 0 0 1 12 6z"/></svg>
+          Uber Eats
+        </a>
+        <a href="https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJjaGVzdGVyIGZyaWVkIGNoaWNrZW4iLCJpdGVtX2lkcyI6W10sInNlYXJjaF90ZXJtIjoiY2hlc3RlciBmcmllZCBjaGlja2VuIiwidmVydGljYWxfaWQiOi05OTksInZlcnRpY2FsX25hbWUiOiJhbGwiLCJxdWVyeV9pbnRlbnQiOiJTVE9SRV9SWCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener" class="order-modal-btn order-modal-doordash">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a6 6 0 1 1 0 12A6 6 0 0 1 12 6z"/></svg>
+          DoorDash
+        </a>
+      </div>
+      <button class="order-modal-close" id="orderModalClose" aria-label="Close">✕</button>
     </div>
   </div>
 
@@ -438,7 +435,7 @@
             </div>
             <div>
               <h4>Address</h4>
-              <p>123 High Street, London, SE1 1AA</p>
+              <p>120-3725 Rundlehorn Drive NE, Calgary, AB</p>
             </div>
           </div>
 
@@ -459,13 +456,13 @@
             </div>
             <div>
               <h4>Call Us</h4>
-              <p>020 1234 5678</p>
+              <p>YOUR PHONE NUMBER</p>
             </div>
           </div>
 
           <div style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
             <a href="contact.html" class="btn btn-amber">Get Directions</a>
-            <a href="tel:02012345678" class="btn btn-outline-light">Call to Order</a>
+            <a href="tel:YOUR_PHONE" class="btn btn-outline-light">Call to Order</a>
           </div>
         </div>
 
@@ -506,13 +503,13 @@
           <a href="#">Instagram</a>
           <a href="#">Facebook</a>
           <a href="#">TikTok</a>
-          <a href="tel:02012345678">020 1234 5678</a>
+          <a href="tel:YOUR_PHONE">YOUR PHONE NUMBER</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; 2026 Chick N Fish. All rights reserved.</p>
-        <p>Made with care in London.</p>
+        <p>Made with care in Calgary, AB.</p>
       </div>
     </div>
   </footer>
