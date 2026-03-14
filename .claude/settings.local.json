@@ -5,7 +5,10 @@
       "Bash(npx serve:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:www.chicknfish.ca)"
+      "WebFetch(domain:www.chicknfish.ca)",
+      "Bash(sed -i '' 's/Made with care in London\\\\./Made with care in Calgary, AB./g' menu.html)",
+      "Bash(sed -i '' 's/href=\"\"tel:02012345678\"\">020 1234 5678/href=\"\"tel:YOUR_PHONE\"\">YOUR PHONE NUMBER/g' menu.html)",
+      "Bash(sed -i '' 's/href=\"\"tel:02012345678\"\">020 1234 5678/href=\"\"tel:YOUR_PHONE\"\">YOUR PHONE NUMBER/g' offers.html)"
     ]
   }
 }

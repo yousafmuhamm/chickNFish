@@ -569,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Scroll mouse indicator */
 .hero-draw-scroll {
   position: absolute;
-  bottom: var(--space-xl);
+  bottom: var(--space-lg);
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
