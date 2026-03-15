@@ -330,17 +330,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-logo {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 800;
-  color: var(--brown-dark);
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
 }
 
-.navbar-logo .logo-accent {
-  color: var(--amber);
+.navbar-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
