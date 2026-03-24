@@ -4,40 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Hero Logo Video Animation ---
-  const logoVideo = document.getElementById('logoVideo');
-  const drawTagline = document.getElementById('heroDrawTagline');
-  const drawScroll = document.getElementById('heroDrawScroll');
-
-  if (logoVideo) {
-    // Play at 2× speed
-    logoVideo.playbackRate = 2.0;
-
-    // Fade in video once it can play
-    logoVideo.addEventListener('canplay', () => {
-      logoVideo.classList.add('visible');
-    }, { once: true });
-    // Fallback: show after short delay if already loaded
-    setTimeout(() => logoVideo.classList.add('visible'), 100);
-
-    const revealAfterVideo = () => {
-      if (drawTagline) {
-        const words = drawTagline.querySelectorAll('.word');
-        words.forEach((word, i) => {
-          setTimeout(() => word.classList.add('visible'), i * 50);
-        });
-      }
-      setTimeout(() => { if (drawScroll) drawScroll.classList.add('visible'); }, 350);
-    };
-
-    logoVideo.addEventListener('ended', revealAfterVideo, { once: true });
-
-    // Fallback: if video fails to load or is very long, reveal after 4s
-    setTimeout(() => {
-      if (drawTagline && !drawTagline.querySelector('.word.visible')) {
-        revealAfterVideo();
-      }
-    }, 4000);
+  // --- Hero Editorial Entrance Animation ---
+  const hero = document.getElementById('heroSection');
+  if (hero) {
+    // Small delay so the page settles, then trigger all entrance animations via CSS
+    requestAnimationFrame(() => {
+      setTimeout(() => hero.classList.add('animate'), 100);
+    });
   }
 
   // --- Order Modal (Promo Banner click) ---

@@ -451,160 +451,151 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-/* --- Hero Draw Section --- */
-.hero-draw {
+/* --- Hero — Editorial Layout --- */
+.hero {
   position: relative;
   min-height: 100svh;
   min-height: 100vh;
+  background-color: var(--cream);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--cream);
+}
+
+.hero-editorial {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   padding-top: 100px;
-  overflow: hidden;
+  position: relative;
 }
 
-.hero-draw-center {
+/* Giant editorial text */
+.hero-big-text {
+  grid-area: 1 / 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: var(--space-md) var(--space-xl) 0;
+  padding-left: clamp(1rem, 5vw, 4rem);
+  z-index: 1;
 }
 
-/* The main logo video */
-.logo-video {
-  width: clamp(220px, min(55vh, 80vw), 360px);
-  height: auto;
+.hero-word {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 13rem);
+  font-weight: 900;
+  color: var(--green);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
   display: block;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.logo-video.visible {
-  opacity: 1;
-}
+.hero.animate .hero-word:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.hero.animate .hero-word:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+.hero.animate .hero-word:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
 
-/* All drawn paths */
-.logo-draw-svg .draw {
-  fill: none;
-  stroke: var(--brown-dark);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: var(--len, 600);
-  stroke-dashoffset: var(--len, 600);
-  transition: fill 0.6s ease 0.2s;
-}
-
-/* Animation class — draw + fill transition */
-.logo-draw-svg.animate .draw {
-  animation: drawStroke 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-
-/* Dot separators get filled */
-.logo-draw-svg .draw-dot {
-  fill: var(--brown-dark);
-}
-
-/* Text elements fade in instead of stroke-draw */
-.logo-draw-svg .draw-text {
-  fill: var(--brown-dark);
-  stroke: none;
-  opacity: 0;
-}
-
-.logo-draw-svg.animate .draw-text {
-  animation: fadeRevealText 0.5s ease forwards;
-}
-
-.logo-draw-svg.animate .draw-amp      { animation-delay: 0.5s; }
-.logo-draw-svg.animate .draw-title    { animation-delay: 0.55s; }
-.logo-draw-svg.animate .draw-subtitle { animation-delay: 0.6s; }
-
-/* After draw completes, subtle fills on illustrations */
-.logo-draw-svg.filled .draw:nth-child(6) {
-  fill: rgba(184, 92, 56, 0.05);
-}
-
-.logo-draw-svg.filled .draw:nth-child(13) {
-  fill: rgba(27, 58, 46, 0.04);
-}
-
-/* === PHASE 1: Circles draw === */
-.logo-draw-svg.animate .draw:nth-child(2)  { animation-delay: 0s; animation-duration: 0.5s; }
-.logo-draw-svg.animate .draw:nth-child(3)  { animation-delay: 0.08s; animation-duration: 0.45s; }
-
-/* === PHASE 2: Dot separators === */
-.logo-draw-svg.animate .draw:nth-child(4)  { animation-delay: 0.28s; animation-duration: 0.15s; }
-.logo-draw-svg.animate .draw:nth-child(5)  { animation-delay: 0.28s; animation-duration: 0.15s; }
-
-/* === PHASE 3: Chicken draws === */
-.logo-draw-svg.animate .draw:nth-child(6)  { animation-delay: 0.30s; animation-duration: 0.4s; }
-.logo-draw-svg.animate .draw:nth-child(7)  { animation-delay: 0.34s; }
-.logo-draw-svg.animate .draw:nth-child(8)  { animation-delay: 0.38s; }
-.logo-draw-svg.animate .draw:nth-child(9)  { animation-delay: 0.41s; }
-.logo-draw-svg.animate .draw:nth-child(10) { animation-delay: 0.44s; }
-.logo-draw-svg.animate .draw:nth-child(11) { animation-delay: 0.47s; }
-.logo-draw-svg.animate .draw:nth-child(12) { animation-delay: 0.50s; animation-duration: 0.35s; }
-
-/* === PHASE 4: Fish draws (overlapping with chicken) === */
-.logo-draw-svg.animate .draw:nth-child(13) { animation-delay: 0.34s; animation-duration: 0.4s; }
-.logo-draw-svg.animate .draw:nth-child(14) { animation-delay: 0.38s; }
-.logo-draw-svg.animate .draw:nth-child(15) { animation-delay: 0.42s; }
-.logo-draw-svg.animate .draw:nth-child(16) { animation-delay: 0.45s; }
-.logo-draw-svg.animate .draw:nth-child(17) { animation-delay: 0.48s; }
-.logo-draw-svg.animate .draw:nth-child(18) { animation-delay: 0.51s; }
-.logo-draw-svg.animate .draw:nth-child(19) { animation-delay: 0.54s; }
-.logo-draw-svg.animate .draw:nth-child(20) { animation-delay: 0.57s; }
-
-@keyframes drawStroke {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fadeRevealText {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Tagline — word-by-word reveal */
-.hero-draw-tagline {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--text-muted);
-  text-align: center;
-  padding-bottom: var(--space-xl);
-  letter-spacing: 0.02em;
+/* Food image — overlaps the text */
+.hero-food-wrap {
+  grid-area: 1 / 1;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 0.35em;
-  flex-wrap: wrap;
-}
-
-.hero-draw-tagline .word {
+  z-index: 2;
+  pointer-events: none;
+  padding-right: 5%;
+  justify-self: end;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.92);
+  transition: opacity 0.8s ease 0.5s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
 }
 
-.hero-draw-tagline .word.visible {
+.hero.animate .hero-food-wrap {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
-/* Scroll mouse indicator */
-.hero-draw-scroll {
-  margin-top: auto;
+.hero-food-img {
+  width: clamp(250px, 42vw, 550px);
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* Floating info cards */
+.hero-cards {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: clamp(200px, 22vw, 280px);
+}
+
+.hero-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero.animate .hero-card:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.8s; }
+.hero.animate .hero-card:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 1s; }
+
+.hero-card-amber {
+  background-color: var(--amber);
+  color: var(--brown-dark);
+}
+
+.hero-card-green {
+  background-color: var(--green);
+  color: var(--cream);
+}
+
+.hero-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.hero-card p {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.hero-card-icon {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.hero-card-body {
+  flex: 1;
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  text-align: center;
   padding-bottom: var(--space-lg);
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s ease 1.2s;
 }
 
-.hero-draw-scroll.visible {
+.hero.animate .hero-scroll {
   opacity: 1;
 }
 
@@ -1473,6 +1464,33 @@ h1, h2, h3, h4, h5, h6 {
     font-size: var(--text-lg);
   }
 
+  /* Hero — stack layout on tablet */
+  .hero-editorial {
+    grid-template-rows: auto auto;
+  }
+
+  .hero-big-text {
+    padding: var(--space-xl) clamp(1rem, 5vw, 4rem);
+  }
+
+  .hero-food-wrap {
+    grid-area: auto;
+    justify-self: center;
+    padding: 0 var(--space-xl);
+  }
+
+  .hero-cards {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    width: 100%;
+    padding: var(--space-md) clamp(1rem, 5vw, 4rem);
+  }
+
+  .hero-card {
+    flex: 1;
+  }
+
   /* 2-col food grid on tablet, 1-col below */
   .food-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1529,12 +1547,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  .hero-actions {
-    flex-direction: column;
+  /* Hero cards stack below on small screens */
+  .hero-cards {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    width: 100%;
+    padding: var(--space-md);
   }
 
-  .hero-actions .btn {
-    width: 100%;
+  .hero-card {
+    flex: 1;
+    padding: var(--space-md);
+  }
+
+  .hero-food-wrap {
+    padding-right: 0;
+    justify-self: center;
   }
 
   .deal-card {
@@ -1611,15 +1640,10 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
   }
 
-  .logo-video {
-    opacity: 1 !important;
-  }
-  .hero-draw-tagline,
-  .hero-draw-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .hero-draw-tagline .word {
+  .hero-word,
+  .hero-food-wrap,
+  .hero-card,
+  .hero-scroll {
     opacity: 1 !important;
     transform: none !important;
   }
