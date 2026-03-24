@@ -1433,6 +1433,18 @@ h1, h2, h3, h4, h5, h6 {
    RESPONSIVE
    ============================================ */
 
+/* Lock hero margins on all desktop sizes so layout is identical regardless of resolution */
+@media (min-width: 769px) {
+  .hero-big-text {
+    padding-left: 4rem;
+  }
+
+  .hero-cards {
+    right: 3rem;
+    width: 260px;
+  }
+}
+
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
