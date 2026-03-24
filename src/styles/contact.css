@@ -1,0 +1,66 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.form-group label {
+  font-family: var(--font-display-sc);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  color: var(--text-dark);
+}
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: 14px 16px;
+  border: 1.5px solid var(--beige);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  color: var(--text-dark);
+  transition: border-color var(--transition-fast);
+  min-height: 48px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(45, 74, 62, 0.1);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.hours-table tr {
+  border-bottom: 1px solid var(--beige);
+}
+.hours-table td {
+  padding: 12px 0;
+  font-size: var(--text-sm);
+}
+.hours-table td:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--text-muted);
+}
+.hours-table tr.today {
+  background-color: rgba(198, 123, 60, 0.08);
+}
+.hours-table tr.today td {
+  padding: 12px 8px;
+  color: var(--brown-dark);
+  font-weight: 600;
+}

@@ -332,6 +332,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-logo {
   display: flex;
   align-items: center;
+  margin-left: -1.5rem;
 }
 
 .navbar-logo-img {
@@ -507,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   z-index: 2;
   pointer-events: none;
-  padding-right: 5%;
+  padding-right: 15%;
   justify-self: end;
   opacity: 0;
   transform: scale(0.92);
@@ -520,7 +521,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-food-img {
-  width: clamp(250px, 42vw, 550px);
+  width: clamp(250px, 34vw, 550px);
   height: auto;
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -1433,7 +1434,73 @@ h1, h2, h3, h4, h5, h6 {
    RESPONSIVE
    ============================================ */
 
+@media (max-width: 1200px) {
+  .hero-word {
+    font-size: clamp(3.5rem, 10vw, 9rem);
+  }
+
+  .hero-food-wrap {
+    padding-right: 8%;
+  }
+
+  .hero-food-img {
+    width: clamp(220px, 30vw, 380px);
+  }
+
+  .hero-cards {
+    width: clamp(180px, 20vw, 240px);
+    right: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .hero-card h3 {
+    font-size: var(--text-base);
+  }
+
+  .hero-card p {
+    font-size: var(--text-xs);
+  }
+
+  .hero-card {
+    padding: var(--space-md);
+  }
+}
+
 @media (max-width: 1024px) {
+  .hero-word {
+    font-size: clamp(3rem, 9vw, 7rem);
+  }
+
+  .hero-food-wrap {
+    padding-right: 3%;
+  }
+
+  .hero-food-img {
+    width: clamp(200px, 28vw, 340px);
+  }
+
+  .hero-cards {
+    width: clamp(150px, 18vw, 210px);
+    right: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .hero-card {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .hero-card h3 {
+    font-size: var(--text-sm);
+  }
+
+  .hero-card p {
+    font-size: var(--text-xs);
+  }
+
+  .hero-card-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1462,15 +1529,29 @@ h1, h2, h3, h4, h5, h6 {
   /* Navbar logo fits on mobile */
   .navbar-logo {
     font-size: var(--text-lg);
+    margin-left: 0;
   }
 
   /* Hero — stack layout on tablet */
+  .hero {
+    min-height: auto;
+  }
+
   .hero-editorial {
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding-top: 100px;
   }
 
   .hero-big-text {
+    grid-area: auto;
     padding: var(--space-xl) clamp(1rem, 5vw, 4rem);
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-word {
+    font-size: clamp(3rem, 12vw, 6rem);
   }
 
   .hero-food-wrap {
@@ -1479,16 +1560,29 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 var(--space-xl);
   }
 
+  .hero-food-img {
+    width: clamp(250px, 55vw, 400px);
+  }
+
   .hero-cards {
     position: static;
     transform: none;
     flex-direction: row;
     width: 100%;
-    padding: var(--space-md) clamp(1rem, 5vw, 4rem);
+    padding: var(--space-lg) clamp(1rem, 5vw, 4rem);
   }
 
   .hero-card {
     flex: 1;
+    padding: var(--space-lg);
+  }
+
+  .hero-card h3 {
+    font-size: var(--text-lg);
+  }
+
+  .hero-card p {
+    font-size: var(--text-sm);
   }
 
   /* 2-col food grid on tablet, 1-col below */
@@ -1547,23 +1641,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  /* Hero cards stack below on small screens */
+  /* Hero cards stack on small screens */
   .hero-cards {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    width: 100%;
+    flex-direction: column;
     padding: var(--space-md);
   }
 
   .hero-card {
-    flex: 1;
     padding: var(--space-md);
   }
 
   .hero-food-wrap {
-    padding-right: 0;
-    justify-self: center;
+    padding: 0 var(--space-md);
+  }
+
+  .hero-food-img {
+    width: clamp(220px, 75vw, 350px);
+  }
+
+  .hero-word {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
   }
 
   .deal-card {

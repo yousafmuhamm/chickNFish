@@ -9,7 +9,10 @@
       "Bash(sed -i '' 's/Made with care in London\\\\./Made with care in Calgary, AB./g' menu.html)",
       "Bash(sed -i '' 's/href=\"\"tel:02012345678\"\">020 1234 5678/href=\"\"tel:YOUR_PHONE\"\">YOUR PHONE NUMBER/g' menu.html)",
       "Bash(sed -i '' 's/href=\"\"tel:02012345678\"\">020 1234 5678/href=\"\"tel:YOUR_PHONE\"\">YOUR PHONE NUMBER/g' offers.html)",
-      "Bash(npx html-validate:*)"
+      "Bash(npx html-validate:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)"
     ]
   }
 }
