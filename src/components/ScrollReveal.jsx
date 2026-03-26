@@ -7,6 +7,13 @@ export default function ScrollReveal({ children, className = 'reveal', delay = 0
     const el = ref.current
     if (!el) return
 
+    // If already in viewport on mount, make visible immediately
+    const rect = el.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible')
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -16,7 +23,7 @@ export default function ScrollReveal({ children, className = 'reveal', delay = 0
           }
         })
       },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.05, rootMargin: '0px' }
     )
 
     observer.observe(el)
