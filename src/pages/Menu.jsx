@@ -87,7 +87,7 @@ export default function Menu() {
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Individual Pieces</p>
                     <div className="menu-note">Add $1.10 to substitute white meat</div>
-                    {[['1 Piece','$3.10'],['2 Pieces','$6.20'],['3 Pieces','$9.30'],['4 Pieces','$12.40'],['6 Pieces','$18.60'],['9 Pieces','$25.99'],['12 Pieces','$33.60'],['15 Pieces','$40.50'],['20 Pieces','$52.00'],['30 Pieces','$77.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['1 Piece','$3.10'],['2 Pieces','$6.20'],['3 Pieces','$9.30'],['4 Pieces','$12.40'],['6 Pieces','$18.60'],['9 Pieces','$25.99'],['12 Pieces','$33.60'],['15 Pieces','$40.49'],['20 Pieces','$51.99'],['30 Pieces','$77.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
 
                   <div className="menu-subcategory">
@@ -130,12 +130,12 @@ export default function Menu() {
                 <div className="menu-columns">
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">English Fish &amp; Chips</p>
-                    {[['1 Pc Pollock','$10.50'],['2 Pc Pollock','$14.99'],['3 Pc Pollock','$17.99'],['1 Pc Cod / Haddock','$13.49'],['2 Pc Cod / Haddock','$20.99'],['3 Pc Cod / Haddock','$26.49'],['1 Pc Halibut','$22.99'],['2 Pc Halibut','$35.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['1 Pc Pollock','$10.49'],['2 Pc Pollock','$14.99'],['3 Pc Pollock','$17.99'],['1 Pc Cod / Haddock','$13.49'],['2 Pc Cod / Haddock','$20.99'],['3 Pc Cod / Haddock','$26.49'],['1 Pc Halibut','$22.99'],['2 Pc Halibut','$35.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
 
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Spicy Fish &amp; Chips</p>
-                    {[['1 Pc Spicy Fish','$10.50'],['2 Pc Spicy Fish','$14.99'],['4 Pc Spicy Fish','$17.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['1 Pc Spicy Fish','$10.49'],['2 Pc Spicy Fish','$14.99'],['4 Pc Spicy Fish','$17.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
 
                   <div className="menu-subcategory">
@@ -192,7 +192,7 @@ export default function Menu() {
                   </div>
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Gravy</p>
-                    {[['Medium Gravy','$1.99'],['Large Gravy','$3.50']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['Medium Gravy','$1.99'],['Large Gravy','$3.49']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Extras</p>
@@ -200,7 +200,7 @@ export default function Menu() {
                   </div>
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Salads</p>
-                    {[['Potato Salad','$2.50'],['Macaroni Salad','$2.50'],['Coleslaw','$2.50']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['Potato Salad','$2.49'],['Macaroni Salad','$2.49'],['Coleslaw','$2.49']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Samosas &amp; Rice</p>
