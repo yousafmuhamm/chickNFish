@@ -4,14 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- Hero Editorial Entrance Animation ---
-  const hero = document.getElementById('heroSection');
-  if (hero) {
-    // Small delay so the page settles, then trigger all entrance animations via CSS
-    requestAnimationFrame(() => {
-      setTimeout(() => hero.classList.add('animate'), 100);
-    });
-  }
+  // --- (Hero animations handled by CSS keyframes) ---
 
   // --- Order Modal (Promo Banner click) ---
   const promoBanner = document.getElementById('promoBanner');

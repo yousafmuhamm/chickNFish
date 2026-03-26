@@ -2,23 +2,86 @@
 # AI-readable content guide for language models and AI search engines
 
 ## About
-Chick N Fish is a fast-food restaurant in Calgary, Alberta, Canada, specialising in crispy fish and chips and golden fried chicken. Located at 120-3725 Rundlehorn Drive NE, Calgary, AB.
+Chick N Fish is a **100% Halal Certified** fast-food restaurant in Calgary, Alberta, Canada, specialising in hand-battered English-style fish and chips and crispy fried chicken. Located at 120-3725 Rundlehorn Drive NE, Calgary, AB T1Y 3Z4. All chicken and meat products are halal-certified.
 
-## What We Serve
-- Fish and chips (cod, haddock, battered and fried)
-- Fried chicken (whole pieces, boneless, strips, wings)
-- Chicken burgers and wraps
-- Loaded chip boxes
-- Sides: mushy peas, coleslaw, gravy, dips
-- Soft drinks
+## 100% Halal Certified
+Every item on the menu is halal. Chick N Fish is fully halal-certified, serving the diverse communities of NE Calgary including Rundle, Pineridge, Temple, Whitehorn, Falconridge, and Castleridge.
+
+## Menu Categories & Pricing (CAD)
+
+### Fried Chicken — Individual Pieces
+- 1 Piece: $3.10 | 2 Pieces: $6.20 | 3 Pieces: $9.30
+- 6 Pieces: $18.60 | 9 Pieces: $25.99 | 12 Pieces: $33.60
+- 15 Pieces: $40.49 | 20 Pieces: $51.99 | 30 Pieces: $77.99
+- Add $1.10 to substitute white meat
+
+### Fried Chicken — Combos (served with fries and a drink)
+- 1 Pc Combo: $8.99 | 2 Pc Combo: $11.49
+- 3 Pc Combo: $13.60 | 6 Pc Combo: $22.49
+
+### Chicken Strips
+- 3 Pieces: $9.99 (Combo $12.99)
+- 6 Pieces: $19.99 (Combo $22.99)
+- 9 Pieces: $27.99 | 12 Pieces: $35.99
+
+### Chicken Wings
+- 6 Wings: $8.99 (Combo $10.99)
+- 12 Wings: $15.99 (Combo $17.99)
+- 24 Wings: $25.99
+
+### Chicken Snack Packs (served with fries)
+- 2 Piece Snack Pack: $9.99
+- 3 Piece Snack Pack: $12.60
+- 4 Piece Snack Pack: $15.49
+
+### Fish & Chips — English Style
+- 1 Pc Pollock: $10.49 | 2 Pc: $14.99 | 3 Pc: $17.99
+- 1 Pc Cod/Haddock: $13.49 | 2 Pc: $20.99 | 3 Pc: $26.49
+- 1 Pc Halibut: $22.99 | 2 Pc: $35.99
+
+### Spicy Fish & Chips
+- 1 Pc: $10.49 | 2 Pc: $14.99 | 4 Pc: $17.99
+
+### Butterfly Shrimp
+- 6 Pc Butterfly Shrimp (with seafood sauce and fries): $11.99
+
+### Sandwiches (combo includes fries and a drink)
+- Chicken Sandwich: $9.99 (Combo $11.99)
+- Fish Sandwich: $10.49 (Combo $12.49)
+
+### Family Combos
+- Family Combo #1 (wings only — no strips): $48.99
+- Family Combo #2 (wings only — no strips): $59.99
+- Family Combo #3: $36.99
+- Family Combo #4: $42.99
+
+### Sides
+- Medium Fries: $5.49 | Large Fries: $6.99
+- Poutine: $9.99
+- Medium Gravy: $1.99 | Large Gravy: $3.49
+- Potato Wedges (12 Pc): $6.49
+- Breaded Mushrooms: $8.49
+- Onion Rings: $5.99
+- Potato Salad: $2.49 | Macaroni Salad: $2.49 | Coleslaw: $2.49
+- Veggie Samosas (4): $4.99
+- Chicken/Beef Samosas (4): $6.99
+- Chicken Biryani: $8.99 | Beef Biryani: $8.99
+
+### Drinks
+- Can: $1.99
+- 2 Litre Bottle: $4.75
+- Water: $1.99
+- Juice: $3.75
 
 ## Ordering
 - Online via Uber Eats: https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w
 - Online via DoorDash: https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/
-- In-store at 120-3725 Rundlehorn Drive NE, Calgary, AB
+- In-store at 120-3725 Rundlehorn Drive NE, Calgary, AB T1Y 3Z4
+- Phone: (403) 123-4567 [placeholder — verify before calling]
 
 ## Opening Hours
-- Monday to Saturday: 11:00 AM – 11:00 PM
+- Monday to Thursday: 11:00 AM – 11:00 PM
+- Friday & Saturday: 11:00 AM – 12:00 AM (midnight)
 - Sunday: 12:00 PM – 10:00 PM
 
 ## Key Pages

@@ -466,94 +466,83 @@ h1, h2, h3, h4, h5, h6 {
 .hero-editorial {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   padding-top: 100px;
-  position: relative;
 }
 
-/* Giant editorial text */
+/* Left column — big text */
 .hero-big-text {
-  grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: clamp(1rem, 5vw, 4rem);
-  z-index: 1;
+  padding: var(--space-lg) 0 var(--space-lg) clamp(1rem, 5vw, 4rem);
 }
 
 .hero-word {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 14vw, 13rem);
+  font-size: clamp(4.5rem, 11vw, 12rem);
   font-weight: 900;
   color: var(--green);
   line-height: 0.88;
   letter-spacing: -0.02em;
   display: block;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+  animation: heroWordReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero.animate .hero-word:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-.hero.animate .hero-word:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-.hero.animate .hero-word:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.hero-word:nth-child(1) { animation-delay: 0.1s; }
+.hero-word:nth-child(2) { animation-delay: 0.3s; }
+.hero-word:nth-child(3) { animation-delay: 0.5s; }
 
-/* Food image — overlaps the text */
-.hero-food-wrap {
-  grid-area: 1 / 1;
+@keyframes heroWordReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Right column — image with overlaid cards */
+.hero-right {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  pointer-events: none;
-  padding-right: 15%;
-  justify-self: end;
+  padding: var(--space-lg) clamp(1rem, 4vw, 3rem);
   opacity: 0;
-  transform: scale(0.92);
-  transition: opacity 0.8s ease 0.5s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
-}
-
-.hero.animate .hero-food-wrap {
-  opacity: 1;
-  transform: scale(1);
+  animation: heroWordReveal 0.8s ease 0.4s forwards;
 }
 
 .hero-food-img {
-  width: clamp(250px, 34vw, 550px);
+  width: 100%;
+  max-width: 520px;
   height: auto;
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
 
-/* Floating info cards */
+/* Cards above slogan */
 .hero-cards {
-  position: absolute;
-  right: clamp(1rem, 4vw, 3rem);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
   display: flex;
-  flex-direction: column;
   gap: var(--space-md);
-  width: clamp(200px, 22vw, 280px);
+  max-width: 560px;
+  margin-bottom: var(--space-lg);
 }
 
 .hero-card {
+  flex: 1;
   border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
   opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: heroCardReveal 0.5s ease forwards;
 }
 
-.hero.animate .hero-card:nth-child(1) { opacity: 1; transform: translateX(0); transition-delay: 0.8s; }
-.hero.animate .hero-card:nth-child(2) { opacity: 1; transform: translateX(0); transition-delay: 1s; }
+.hero-card:nth-child(1) { animation-delay: 0.8s; }
+.hero-card:nth-child(2) { animation-delay: 1s; }
+
+@keyframes heroCardReveal {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .hero-card-amber {
   background-color: var(--amber);
@@ -567,7 +556,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-card h3 {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 4px;
@@ -579,11 +568,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
-.hero-card-icon {
-  flex-shrink: 0;
-  opacity: 0.6;
-}
-
 .hero-card-body {
   flex: 1;
 }
@@ -593,11 +577,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   padding-bottom: var(--space-lg);
   opacity: 0;
-  transition: opacity 0.8s ease 1.2s;
-}
-
-.hero.animate .hero-scroll {
-  opacity: 1;
+  animation: heroWordReveal 0.5s ease 1.2s forwards;
 }
 
 .scroll-mouse {
@@ -814,6 +794,13 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.food-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .food-card-img::after {
   display: none;
 }
@@ -939,6 +926,13 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   aspect-ratio: 4/3;
   background-color: var(--green);
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .featured-illustration {
@@ -1181,6 +1175,13 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .story-image::after {
   content: '';
   position: absolute;
@@ -1358,6 +1359,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-lg);
 }
 
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .gallery-item:nth-child(1) {
   grid-column: span 2;
   grid-row: span 2;
@@ -1430,77 +1438,24 @@ h1, h2, h3, h4, h5, h6 {
 .reveal-delay-4 { transition-delay: 0.32s; }
 .reveal-delay-5 { transition-delay: 0.40s; }
 
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
 
-@media (max-width: 1200px) {
-  .hero-word {
-    font-size: clamp(3.5rem, 10vw, 9rem);
-  }
-
-  .hero-food-wrap {
-    padding-right: 8%;
-  }
-
-  .hero-food-img {
-    width: clamp(220px, 30vw, 380px);
-  }
-
-  .hero-cards {
-    width: clamp(180px, 20vw, 240px);
-    right: clamp(0.5rem, 2vw, 1.5rem);
-  }
-
-  .hero-card h3 {
-    font-size: var(--text-base);
-  }
-
-  .hero-card p {
-    font-size: var(--text-xs);
-  }
-
-  .hero-card {
-    padding: var(--space-md);
-  }
-}
-
 @media (max-width: 1024px) {
-  .hero-word {
-    font-size: clamp(3rem, 9vw, 7rem);
-  }
-
-  .hero-food-wrap {
-    padding-right: 3%;
-  }
-
-  .hero-food-img {
-    width: clamp(200px, 28vw, 340px);
-  }
-
-  .hero-cards {
-    width: clamp(150px, 18vw, 210px);
-    right: clamp(0.5rem, 1.5vw, 1rem);
-  }
-
-  .hero-card {
-    padding: var(--space-sm) var(--space-md);
-    gap: var(--space-sm);
-  }
-
-  .hero-card h3 {
-    font-size: var(--text-sm);
-  }
-
-  .hero-card p {
-    font-size: var(--text-xs);
-  }
-
-  .hero-card-icon {
-    width: 24px;
-    height: 24px;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1532,57 +1487,26 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0;
   }
 
-  /* Hero — stack layout on tablet */
-  .hero {
-    min-height: auto;
-  }
-
+  /* Hero — stack on tablet */
   .hero-editorial {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    padding-top: 100px;
   }
 
   .hero-big-text {
-    grid-area: auto;
-    padding: var(--space-xl) clamp(1rem, 5vw, 4rem);
     text-align: center;
     align-items: center;
   }
 
   .hero-word {
-    font-size: clamp(3rem, 12vw, 6rem);
+    font-size: clamp(3.5rem, 14vw, 6rem);
   }
 
-  .hero-food-wrap {
-    grid-area: auto;
-    justify-self: center;
-    padding: 0 var(--space-xl);
-  }
-
-  .hero-food-img {
-    width: clamp(250px, 55vw, 400px);
-  }
-
-  .hero-cards {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    width: 100%;
+  .hero-right {
     padding: var(--space-lg) clamp(1rem, 5vw, 4rem);
   }
 
-  .hero-card {
-    flex: 1;
-    padding: var(--space-lg);
-  }
-
-  .hero-card h3 {
-    font-size: var(--text-lg);
-  }
-
-  .hero-card p {
-    font-size: var(--text-sm);
+  .hero-cards {
+    max-width: 100%;
   }
 
   /* 2-col food grid on tablet, 1-col below */
@@ -1641,26 +1565,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  /* Hero cards stack on small screens */
+  /* Hero — tighter on phones */
   .hero-cards {
     flex-direction: column;
-    padding: var(--space-md);
   }
 
   .hero-card {
     padding: var(--space-md);
-  }
-
-  .hero-food-wrap {
-    padding: 0 var(--space-md);
-  }
-
-  .hero-food-img {
-    width: clamp(220px, 75vw, 350px);
-  }
-
-  .hero-word {
-    font-size: clamp(2.5rem, 14vw, 4.5rem);
   }
 
   .deal-card {
@@ -1738,10 +1649,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-word,
-  .hero-food-wrap,
+  .hero-right,
   .hero-card,
   .hero-scroll {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
   }
 }
