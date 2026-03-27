@@ -1,75 +1,598 @@
 <!DOCTYPE html>
 <html lang="en-CA">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chick N Fish Calgary | Fish &amp; Chips &middot; Fried Chicken</title>
-    <meta name="description" content="Chick N Fish in Calgary serves crispy fish and chips and golden fried chicken. Order on UberEats or DoorDash, or visit us at 3725 Rundlehorn Drive NE.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chick N Fish Calgary | Halal Fish &amp; Chips · Fried Chicken</title>
+  <meta name="description" content="100% halal-certified fish and chips and fried chicken in Calgary NE. Hand-battered cod, haddock, and halibut. Crispy fried chicken made fresh to order. Visit us at Rundlehorn Drive.">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://chicknfish.ca/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://chicknfish.ca/">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Chick N Fish Calgary — Fish &amp; Chips and Fried Chicken">
-    <meta property="og:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
-    <meta property="og:url" content="https://chicknfish.ca/">
-    <meta property="og:image" content="https://chicknfish.ca/images/og-image.jpg">
-    <meta property="og:site_name" content="Chick N Fish">
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chick N Fish Calgary — Fish &amp; Chips and Fried Chicken">
+  <meta property="og:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
+  <meta property="og:url" content="https://chicknfish.ca/">
+  <meta property="og:image" content="https://chicknfish.ca/images/og-image.jpg">
+  <meta property="og:site_name" content="Chick N Fish">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Chick N Fish Calgary — Fish &amp; Chips and Fried Chicken">
-    <meta name="twitter:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
-    <meta name="twitter:image" content="https://chicknfish.ca/images/og-image.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chick N Fish Calgary — Fish &amp; Chips and Fried Chicken">
+  <meta name="twitter:description" content="Crispy fish and chips and golden fried chicken in Calgary NE. Order on UberEats or DoorDash.">
+  <meta name="twitter:image" content="https://chicknfish.ca/images/og-image.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/favicon.png">
-
-    <!-- Local Business Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FastFoodRestaurant",
-      "name": "Chick N Fish",
-      "description": "Crispy fish and chips and golden fried chicken in Calgary NE.",
-      "url": "https://chicknfish.ca",
-      "telephone": "+14031234567",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "120-3725 Rundlehorn Drive NE",
-        "addressLocality": "Calgary",
-        "addressRegion": "AB",
-        "postalCode": "T1Y 3Z4",
-        "addressCountry": "CA"
+  <!-- Local Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "@id": "https://chicknfish.ca/#restaurant",
+    "name": "Chick N Fish",
+    "description": "100% halal-certified fish and chips and fried chicken restaurant in Calgary NE. Hand-battered cod, haddock, halibut, and crispy fried chicken made fresh to order.",
+    "image": "https://chicknfish.ca/images/og-image.jpg",
+    "logo": "https://chicknfish.ca/images/logo.png",
+    "url": "https://chicknfish.ca",
+    "telephone": "+14031234567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "120-3725 Rundlehorn Drive NE",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "postalCode": "T1Y 3Z4",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.0795,
+      "longitude": -113.9668
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "11:00",
+        "closes": "23:00"
       },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-          "opens": "11:00",
-          "closes": "23:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "12:00",
-          "closes": "22:00"
-        }
-      ],
-      "servesCuisine": ["Fish and Chips", "Fried Chicken", "Fast Food"],
-      "priceRange": "$$",
-      "hasMenu": "https://chicknfish.ca/menu",
-      "sameAs": [
-        "https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w",
-        "https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/"
-      ]
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday","Saturday"],
+        "opens": "11:00",
+        "closes": "00:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "22:00"
+      }
+    ],
+    "servesCuisine": ["Fish and Chips", "Fried Chicken", "Halal", "Fast Food"],
+    "acceptsReservations": false,
+    "currenciesAccepted": "CAD",
+    "paymentAccepted": "Cash, Credit Card, Debit",
+    "priceRange": "$$",
+    "hasMenu": "https://chicknfish.ca/menu.html",
+    "areaServed": [
+      {"@type": "City", "name": "Calgary"},
+      {"@type": "Place", "name": "Rundle, Calgary"},
+      {"@type": "Place", "name": "Pineridge, Calgary"},
+      {"@type": "Place", "name": "Temple, Calgary"},
+      {"@type": "Place", "name": "Whitehorn, Calgary"},
+      {"@type": "Place", "name": "Falconridge, Calgary"},
+      {"@type": "Place", "name": "Castleridge, Calgary"}
+    ],
+    "sameAs": [
+      "https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w",
+      "https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/"
+    ]
+  }
+  </script>
+
+  <!-- WebSite Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Chick N Fish",
+    "url": "https://chicknfish.ca",
+    "description": "Halal-certified fish and chips and fried chicken restaurant in Calgary NE",
+    "publisher": {
+      "@type": "Restaurant",
+      "name": "Chick N Fish"
     }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://chicknfish.ca/"}
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Halal Bar -->
+  <div class="halal-bar"><span>100% Halal Certified</span></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo"><img src="images/logo.png" alt="Chick N Fish - Halal Restaurant in Calgary NE" class="navbar-logo-img" width="180" height="60"></a>
+
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="offers.html">Offers</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="offers.html">Offers</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Find Us</a>
+  </div>
+
+  <main>
+
+  <!-- ========== HERO — EDITORIAL ========== -->
+  <section class="hero" id="heroSection">
+    <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Halal Fish &amp; Chips and Fried Chicken in Calgary NE</h1>
+    <div class="hero-editorial">
+
+      <!-- Left — cards + big text -->
+      <div class="hero-big-text">
+        <div class="hero-cards">
+          <div class="hero-card hero-card-amber">
+            <div class="hero-card-body">
+              <h3>THE LOCAL FAVOURITE.</h3>
+              <p>Hand-battered to order, every single time.</p>
+            </div>
+          </div>
+          <div class="hero-card hero-card-green">
+            <div class="hero-card-body">
+              <h3>FRESH TO ORDER.</h3>
+              <p>Made when you order it, every single time.</p>
+            </div>
+          </div>
+        </div>
+        <span class="hero-word">CRISPY</span>
+        <span class="hero-word">GOLDEN</span>
+        <span class="hero-word">CLASSIC</span>
+      </div>
+
+      <!-- Right — image -->
+      <div class="hero-right">
+        <picture>
+          <source srcset="images/fish-and-chips-hero.webp" type="image/webp">
+          <img src="images/fish-and-chips-hero.jpg" alt="Crispy halal fish and chips served at Chick N Fish Calgary" class="hero-food-img" width="800" height="600" fetchpriority="high">
+        </picture>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========== PROMO TICKER ========== -->
+  <div class="promo-banner" id="promoBanner" role="button" tabindex="0" aria-label="Order online — click to choose platform">
+    <div class="promo-ticker">
+      <span>Order Now on Uber Eats</span>
+      <span>Order Now on DoorDash</span>
+      <span>Order Now on Uber Eats</span>
+      <span>Order Now on DoorDash</span>
+    </div>
+  </div>
+
+  <!-- ========== ORDER MODAL ========== -->
+  <div class="order-modal-overlay" id="orderModalOverlay" role="dialog" aria-modal="true" aria-label="Choose your delivery platform">
+    <div class="order-modal">
+      <p class="order-modal-title">Order via</p>
+      <div class="order-modal-options">
+        <a href="https://www.ubereats.com/ca/store/chick-n-fish-120-3725-rundlehorn-drive-northeast/mnSukbwOX7aZphIKcEyl5w?srsltid=AfmBOoqNAs42uZ-_oD6smNrA3ifrwcDuT8GoUMeiRlHcPeTYqMBOyafq" target="_blank" rel="noopener" class="order-modal-btn order-modal-ubereats">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a6 6 0 1 1 0 12A6 6 0 0 1 12 6z"/></svg>
+          Uber Eats
+        </a>
+        <a href="https://www.doordash.com/store/chesters-chicken-calgary-1051488/36186009/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJjaGVzdGVyIGZyaWVkIGNoaWNrZW4iLCJpdGVtX2lkcyI6W10sInNlYXJjaF90ZXJtIjoiY2hlc3RlciBmcmllZCBjaGlja2VuIiwidmVydGljYWxfaWQiOi05OTksInZlcnRpY2FsX25hbWUiOiJhbGwiLCJxdWVyeV9pbnRlbnQiOiJTVE9SRV9SWCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener" class="order-modal-btn order-modal-doordash">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a6 6 0 1 1 0 12A6 6 0 0 1 12 6z"/></svg>
+          DoorDash
+        </a>
+      </div>
+      <button class="order-modal-close" id="orderModalClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+
+  <!-- ========== SIGNATURE ITEMS ========== -->
+  <section id="signatures" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">From Our Kitchen</span>
+        <h2>The Signatures</h2>
+        <div class="section-divider"></div>
+        <p>The dishes that built our name. Battered, fried, and served with pride.</p>
+      </div>
+
+      <div class="food-grid">
+        <div class="food-card reveal reveal-delay-1">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/fish-and-chips-1.webp" type="image/webp">
+              <img src="images/fish-and-chips-1.jpg" alt="Classic cod and chips with tartar sauce at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+            <span class="food-card-badge">Signature</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Classic Cod &amp; Chips</h3>
+            <p class="food-card-desc">Hand-battered Atlantic cod, golden fries, coleslaw, and homemade tartar sauce.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>$13.49</span>
+              <button class="food-card-btn" aria-label="Order Classic Cod &amp; Chips">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-2">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/chicken-burger.webp" type="image/webp">
+              <img src="images/chicken-burger.png" alt="Crispy chicken burger on a brioche bun at Chick N Fish" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+            <span class="food-card-badge">Popular</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Crispy Chicken Burger</h3>
+            <p class="food-card-desc">Buttermilk-marinated chicken thigh, brioche bun, house slaw, and signature sauce.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>$9.99</span>
+              <button class="food-card-btn" aria-label="Order Crispy Chicken Burger">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-3">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/5pc_chicken.webp" type="image/webp">
+              <img src="images/5pc_chicken.jpg" alt="Fried chicken pieces at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+            <span class="food-card-badge">Signature</span>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">3 Piece Fried Chicken</h3>
+            <p class="food-card-desc">Three golden pieces of our secret-recipe fried chicken. Crispy outside, juicy inside.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>$9.30</span>
+              <button class="food-card-btn" aria-label="Order 3 Piece Fried Chicken">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED STRIP ========== -->
+  <section class="featured-strip">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="featured-text reveal-left">
+          <span class="label">Best Value</span>
+          <h2>Family Combo #4</h2>
+          <p>Feed the whole crew without breaking the bank. Everything you need for a proper family dinner — all in one box, ready to share.</p>
+          <div style="display: flex; align-items: baseline; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+            <span class="deal-price" style="color: var(--cream);">$42.99</span>
+          </div>
+          <a href="menu.html" class="btn btn-amber btn-lg">Order Now</a>
+        </div>
+        <div class="featured-image reveal-right reveal-delay-2">
+          <picture>
+            <source srcset="images/fish-and-chicken-combo.webp" type="image/webp">
+            <img src="images/fish-and-chicken-combo.png" alt="Family combo with fish and chips and fried chicken at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CROWD FAVOURITES ========== -->
+  <section class="section deals-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">What Everyone Orders</span>
+        <h2>Crowd Favourites</h2>
+        <div class="section-divider"></div>
+        <p>These are the ones that fly out the kitchen. Tried, tested, and always in demand.</p>
+      </div>
+
+      <div class="food-grid">
+        <div class="food-card reveal reveal-delay-1">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/fish-fillets-shrimp.webp" type="image/webp">
+              <img src="images/fish-fillets-shrimp.jpg" alt="Golden butterfly shrimp with fries at Chick N Fish" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Butterfly Shrimp</h3>
+            <p class="food-card-desc">Six crispy butterfly shrimp served with seafood sauce and golden fries.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price">$11.99</span>
+              <button class="food-card-btn" aria-label="Order Butterfly Shrimp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-2">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/fish-and-chips-2.webp" type="image/webp">
+              <img src="images/fish-and-chips-2.jpg" alt="Hand-battered haddock and chips at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Haddock &amp; Chips</h3>
+            <p class="food-card-desc">Lightly battered haddock fillet served with golden fries and tartar sauce.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>$13.49</span>
+              <button class="food-card-btn" aria-label="Order Haddock &amp; Chips">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="food-card reveal reveal-delay-3">
+          <div class="food-card-img">
+            <picture>
+              <source srcset="images/samosas.webp" type="image/webp">
+              <img src="images/samosas.jpg" alt="Flaky beef samosas at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400">
+            </picture>
+          </div>
+          <div class="food-card-body">
+            <h3 class="food-card-title">Beef Samosas</h3>
+            <p class="food-card-desc">Flaky, golden samosas stuffed with seasoned beef. Available in packs of 4 or 12.</p>
+            <div class="food-card-footer">
+              <span class="food-card-price"><span class="from">from </span>$6.99</span>
+              <button class="food-card-btn" aria-label="Order Beef Samosas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-outline">See Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEALS PREVIEW ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">Today's Deals</span>
+        <h2>More for Less</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div style="max-width: 650px; margin: 0 auto; background: var(--white); border: 1px solid var(--beige); border-radius: var(--radius-md); padding: var(--space-2xl); text-align: center;" class="reveal-scale">
+        <span class="label label-accent" style="display: block; margin-bottom: var(--space-sm);">Feed the Crew</span>
+        <h3 style="margin-bottom: var(--space-sm);">6 Piece Chicken Combo</h3>
+        <p style="color: var(--text-muted); font-size: var(--text-sm); margin-bottom: var(--space-lg); max-width: 450px; margin-left: auto; margin-right: auto;">Six pieces of our signature fried chicken served with fries, fresh salad, and a drink. Perfect for sharing.</p>
+        <span style="font-family: var(--font-display); font-size: var(--text-4xl); font-weight: 800; color: var(--brown-dark); display: block; margin-bottom: var(--space-lg);">$22.49</span>
+        <a href="offers.html" class="btn btn-outline">View All Offers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR STORY TEASER ========== -->
+  <section class="section story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image reveal-left">
+          <picture>
+            <source srcset="images/fried-chicken-tray.webp" type="image/webp">
+            <img src="images/fried-chicken-tray.png" alt="Tray of crispy fried chicken at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);">
+          </picture>
+        </div>
+        <div class="story-text reveal-right reveal-delay-2">
+          <h2>Built on Simple Food, Done Properly</h2>
+          <p>Chick N Fish started with a simple idea: serve the best fish and chips and fried chicken you can make, and do it the same way every time. No shortcuts, no compromises.</p>
+          <blockquote>"We believe great food doesn't need to be complicated. It just needs to be done right."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU PREVIEW ========== -->
+  <section class="section" style="background-color: var(--beige);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label label-accent">Quick Look</span>
+        <h2>From the Menu</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="menu-list" style="max-width: 700px; margin: 0 auto;">
+        <div class="menu-item reveal reveal-delay-1">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">2 Pc Haddock &amp; Chips</h4>
+            <p class="menu-item-desc">Two hand-battered haddock fillets with golden fries and tartar sauce</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">$20.99</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-2">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">6 Pc Chicken Combo</h4>
+            <p class="menu-item-desc">Six pieces of fried chicken served with fries and a drink</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">$22.49</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-3">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">1 Pc Halibut &amp; Chips</h4>
+            <p class="menu-item-desc">Premium halibut fillet, hand-battered and fried to order with fries</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">$22.99</span>
+          </div>
+        </div>
+
+        <div class="menu-item reveal reveal-delay-4">
+          <div class="menu-item-img"></div>
+          <div class="menu-item-info">
+            <h4 class="menu-item-title">Family Combo #1</h4>
+            <p class="menu-item-desc">A full spread for the family — chicken, wings, fries, and more</p>
+          </div>
+          <div class="menu-item-right">
+            <span class="menu-item-price">$48.99</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-secondary">Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION CTA ========== -->
+  <section class="section location-section">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <span class="label" style="color: var(--amber); margin-bottom: var(--space-md); display: block;">Come Find Us</span>
+          <h2>Visit Chick N Fish</h2>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h4>Address</h4>
+              <p>120-3725 Rundlehorn Drive NE, Calgary, AB T1Y 3Z4</p>
+            </div>
+          </div>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>Mon – Sat: 11:00 AM – 11:00 PM</p>
+              <p>Sunday: 12:00 PM – 10:00 PM</p>
+            </div>
+          </div>
+
+          <div class="location-detail">
+            <div class="location-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h4>Call Us</h4>
+              <p>(403) 123-4567</p>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-amber">Get Directions</a>
+            <a href="tel:+14031234567" class="btn btn-outline-light">Call to Order</a>
+          </div>
+        </div>
+
+        <div class="location-map reveal reveal-delay-2">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.8!2d-113.9668!3d51.0795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA0JzQ2LjIiTiAxMTPCsDU4JzAwLjUiVw!5e0!3m2!1sen!2sca!4v1" width="100%" height="300" style="border:0;border-radius:var(--radius-md);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chick N Fish location on Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Chick <span class="accent">'N</span> Fish</h3>
+          <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <a href="menu.html">Fish &amp; Chips</a>
+          <a href="menu.html">Fried Chicken</a>
+          <a href="menu.html">Burgers &amp; Wraps</a>
+          <a href="menu.html">Sides &amp; Drinks</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <a href="gallery.html">Gallery</a>
+          <a href="offers.html">Offers</a>
+          <a href="contact.html">Find Us</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="tel:+14031234567">(403) 123-4567</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chick N Fish. All rights reserved.</p>
+        <p>Made with care in Calgary, AB.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
