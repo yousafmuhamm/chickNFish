@@ -38,7 +38,7 @@
     "mainEntity": {
       "@type": "FastFoodRestaurant",
       "name": "Chick N Fish",
-      "telephone": "+14031234567",
+      "telephone": "+14032442222",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "120-3725 Rundlehorn Drive NE",
@@ -163,10 +163,35 @@
     </div>
   </section>
 
-  <!-- MAP -->
-  <section>
-    <div class="location-map" style="height: 350px; border-radius: 0;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.8!2d-113.9668!3d51.0795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA0JzQ2LjIiTiAxMTPCsDU4JzAwLjUiVw!5e0!3m2!1sen!2sca!4v1" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chick N Fish location on Google Maps"></iframe>
+  <!-- MAP BANNER -->
+  <section class="map-banner">
+    <div class="container">
+      <div class="map-banner-inner">
+        <div class="map-banner-text">
+          <div class="map-banner-pin">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="map-banner-info">
+            <h3>120-3725 Rundlehorn Drive NE</h3>
+            <p>Calgary, AB T1Y 3Z4 &nbsp;·&nbsp; Rundlehorn Plaza, Calgary NE</p>
+          </div>
+        </div>
+        <div class="map-banner-actions">
+          <a
+            href="https://www.google.com/maps/place/Chick+N+Fish/@51.0710703,-113.9858073,17z/data=!3m2!4b1!5s0x537164c580597df9:0xa4d02a6f640fa95a!4m6!3m5!1s0x537164cf3c34adff:0xf00d5373d7f20454!8m2!3d51.071067!4d-113.9809364!16s%2Fg%2F11f4_60d37?entry=ttu&g_ep=EgoyMDI2MDMyMy4xIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-amber"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Get Directions
+          </a>
+          <a href="tel:+14032442222" class="btn btn-outline-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            (403) 244-2222
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -196,7 +221,7 @@
             </div>
             <div>
               <h4 style="color: var(--text-dark);">Phone</h4>
-              <p><a href="tel:+14031234567" style="color: var(--text-body);">(403) 123-4567</a></p>
+              <p><a href="tel:+14032442222" style="color: var(--text-body);">(403) 244-2222</a></p>
             </div>
           </div>
 
@@ -238,7 +263,7 @@
           <span class="label label-accent" style="display: block; margin-bottom: var(--space-md);">Get in Touch</span>
           <h2 style="margin-bottom: var(--space-xl);">Send Us a Message</h2>
 
-          <form class="contact-form" onsubmit="return false;">
+          <form class="contact-form" action="https://formspree.io/f/mwvwpqpo" method="POST">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
@@ -301,10 +326,10 @@
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TikTok</a>
-          <a href="tel:+14031234567">(403) 123-4567</a>
+          <a href="https://www.instagram.com/chicknfish/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/chesterschickenandfish/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.tiktok.com/@chknnfish" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="tel:+14032442222">(403) 244-2222</a>
         </div>
       </div>
       <div class="footer-bottom">
