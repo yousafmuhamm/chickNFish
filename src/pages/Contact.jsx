@@ -1,41 +1,44 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import ScrollReveal from '../components/ScrollReveal'
 import '../styles/contact.css'
 
 const hours = [
-  { day: 'Monday', time: '11:00 AM – 11:00 PM' },
-  { day: 'Tuesday', time: '11:00 AM – 11:00 PM' },
-  { day: 'Wednesday', time: '11:00 AM – 11:00 PM' },
-  { day: 'Thursday', time: '11:00 AM – 11:00 PM' },
-  { day: 'Friday', time: '11:00 AM – 12:00 AM' },
-  { day: 'Saturday', time: '11:00 AM – 12:00 AM' },
-  { day: 'Sunday', time: '12:00 PM – 10:00 PM' },
+  { day: 'Monday', time: '12:00 PM – 8:30 PM' },
+  { day: 'Tuesday', time: '11:30 AM – 9:00 PM' },
+  { day: 'Wednesday', time: '11:30 AM – 9:00 PM' },
+  { day: 'Thursday', time: '11:30 AM – 9:00 PM' },
+  { day: 'Friday', time: '11:30 AM – 9:00 PM' },
+  { day: 'Saturday', time: '12:00 PM – 9:00 PM' },
+  { day: 'Sunday', time: '12:00 PM – 8:30 PM' },
 ]
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
-
-  const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // TODO: wire up form submission
-  }
-
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long' })
 
   return (
     <>
-      <PageHeader label="Come Visit" title="Find Us" subtitle="We're easy to find and always happy to see you." />
+      <PageHeader label="Come Visit" title="Find Chick N Fish in Calgary NE" subtitle="We're easy to find and always happy to see you." />
 
       {/* Map */}
-      <section>
-        <div className="location-map" style={{ height: 350, borderRadius: 0 }}>
-          <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--beige)', opacity: 0.4, fontFamily: 'var(--font-display-sc)', fontSize: 'var(--text-sm)', letterSpacing: '0.15em', backgroundColor: 'var(--brown)' }}>GOOGLE MAP EMBED</div>
+      <section className="map-banner">
+        <div className="container">
+          <div className="map-banner-inner">
+            <div className="map-banner-text">
+              <div className="map-banner-pin">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div className="map-banner-info">
+                <h3>120-3725 Rundlehorn Drive NE</h3>
+                <p>Calgary, AB T1Y 3Z4</p>
+              </div>
+            </div>
+            <div className="map-banner-actions">
+              <a href="https://www.google.com/maps/place/Chick+N+Fish/@51.0710703,-113.9858073,17z/data=!3m2!4b1!5s0x537164c580597df9:0xa4d02a6f640fa95a!4m6!3m5!1s0x537164cf3c34adff:0xf00d5373d7f20454!8m2!3d51.071067!4d-113.9809364!16s%2Fg%2F11f4_60d37?entry=ttu" target="_blank" rel="noopener noreferrer" className="btn btn-amber">Google Maps</a>
+              <a href="https://maps.apple.com/?address=120-3725+Rundlehorn+Drive+NE,+Calgary,+AB+T1Y+3Z4&ll=51.071067,-113.980936&q=Chick+N+Fish" target="_blank" rel="noopener noreferrer" className="btn btn-amber">Apple Maps</a>
+              <a href="tel:+14032442222" className="btn btn-outline-light">(403) 244-2222</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -66,7 +69,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ color: 'var(--text-dark)' }}>Phone</h4>
-                    <p><a href="tel:YOUR_PHONE" style={{ color: 'var(--text-body)' }}>YOUR PHONE NUMBER</a></p>
+                    <p><a href="tel:+14032442222" style={{ color: 'var(--text-body)' }}>(403) 244-2222</a></p>
                   </div>
                 </div>
 
@@ -90,22 +93,22 @@ export default function Contact() {
                 <span className="label label-accent" style={{ display: 'block', marginBottom: 'var(--space-md)' }}>Get in Touch</span>
                 <h2 style={{ marginBottom: 'var(--space-xl)' }}>Send Us a Message</h2>
 
-                <form className="contact-form" onSubmit={handleSubmit}>
+                <form className="contact-form" action="https://formspree.io/f/mwvwpqpo" method="POST">
                   <div className="form-group">
                     <label htmlFor="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="e.g. John Smith" required value={formData.name} onChange={handleChange} />
+                    <input type="text" id="name" name="name" placeholder="e.g. John Smith" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="e.g. john@email.com" required value={formData.email} onChange={handleChange} />
+                    <input type="email" id="email" name="email" placeholder="e.g. john@email.com" required />
                   </div>
                   <div className="form-group">
                     <label htmlFor="phone">Phone (Optional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="e.g. (403) 123-4567" value={formData.phone} onChange={handleChange} />
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. (403) 123-4567" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" placeholder="How can we help?" required value={formData.message} onChange={handleChange} />
+                    <textarea id="message" name="message" placeholder="How can we help?" required />
                   </div>
                   <button type="submit" className="btn btn-primary btn-lg" style={{ alignSelf: 'flex-start' }}>Send Message</button>
                 </form>

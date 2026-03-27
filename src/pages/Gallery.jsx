@@ -3,15 +3,15 @@ import PageHeader from '../components/PageHeader'
 import ScrollReveal from '../components/ScrollReveal'
 
 const galleryImages = [
-  '/images/fish-and-chicken-combo.png',
-  '/images/fried-chicken-tray.png',
-  '/images/fish-and-chips-1.jpg',
-  '/images/fried-chicken-1.jpg',
-  '/images/chicken-burger.png',
-  '/images/fish-and-chips-2.jpg',
-  '/images/fried-chicken-2.jpg',
-  '/images/fish-fillets-shrimp.jpg',
-  '/images/samosas.jpg',
+  { webp: '/images/fish-and-chicken-combo.webp', fallback: '/images/fish-and-chicken-combo.png', alt: 'Fish and chicken combo platter' },
+  { webp: '/images/fried-chicken-tray.webp', fallback: '/images/fried-chicken-tray.png', alt: 'Tray of crispy fried chicken' },
+  { webp: '/images/fish-and-chips-1.webp', fallback: '/images/fish-and-chips-1.jpg', alt: 'Classic fish and chips' },
+  { webp: '/images/fried-chicken-1.webp', fallback: '/images/fried-chicken-1.jpg', alt: 'Golden fried chicken pieces' },
+  { webp: '/images/chicken-burger.webp', fallback: '/images/chicken-burger.png', alt: 'Crispy chicken burger' },
+  { webp: '/images/fish-and-chips-2.webp', fallback: '/images/fish-and-chips-2.jpg', alt: 'Hand-battered fish and chips' },
+  { webp: '/images/fried-chicken-2.webp', fallback: '/images/fried-chicken-2.jpg', alt: 'Fried chicken meal' },
+  { webp: '/images/fish-fillets-shrimp.webp', fallback: '/images/fish-fillets-shrimp.jpg', alt: 'Fish fillets and butterfly shrimp' },
+  { webp: '/images/samosas.webp', fallback: '/images/samosas.jpg', alt: 'Flaky beef samosas' },
 ]
 
 export default function Gallery() {
@@ -29,11 +29,12 @@ export default function Gallery() {
           <ScrollReveal>
             <div className="gallery-grid">
               {galleryImages.map((img, i) => (
-                <div
-                  key={i}
-                  className="gallery-item"
-                  style={{ backgroundImage: `url('${img}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                />
+                <div key={i} className="gallery-item">
+                  <picture>
+                    <source srcSet={img.webp} type="image/webp" />
+                    <img src={img.fallback} alt={img.alt} loading="lazy" decoding="async" width="600" height="400" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </picture>
+                </div>
               ))}
             </div>
           </ScrollReveal>

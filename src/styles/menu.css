@@ -126,6 +126,37 @@
   }
 }
 
+.fish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: 0;
+}
+
+.fish-card {
+  background: rgba(237, 230, 214, 0.25);
+  border: 1px solid var(--beige);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.fish-card .menu-subcategory-title {
+  border-bottom: 1px solid var(--beige);
+  margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .fish-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .fish-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .menu-row {
     padding: 12px 0;

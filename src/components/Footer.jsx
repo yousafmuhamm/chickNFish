@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <h3>Chick <span className="accent">'N</span> Fish</h3>
-            <p>Proper fish and chips. Proper fried chicken. Serving the neighbourhood since day one.</p>
+            <p>Hits different every time.</p>
           </div>
 
           <div className="footer-col">
             <h4>Menu</h4>
+            <Link to="/menu">Chicken</Link>
             <Link to="/menu">Fish &amp; Chips</Link>
-            <Link to="/menu">Fried Chicken</Link>
-            <Link to="/menu">Burgers &amp; Wraps</Link>
+            <Link to="/menu">Sandwiches</Link>
             <Link to="/menu">Sides &amp; Drinks</Link>
           </div>
 
@@ -27,10 +27,10 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Connect</h4>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">TikTok</a>
-            <a href="tel:YOUR_PHONE">YOUR PHONE NUMBER</a>
+            <a href="https://www.instagram.com/chicknfish/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/chesterschickenandfish/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.tiktok.com/@chknnfish" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="tel:+14032442222">(403) 244-2222</a>
           </div>
         </div>
 

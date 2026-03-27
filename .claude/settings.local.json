@@ -15,7 +15,9 @@
       "Bash(npx vite:*)",
       "Bash(python3 skills/ui-ux-pro-max/scripts/search.py \"restaurant food editorial magazine landing hero\" --design-system -p \"Chick N Fish\")",
       "Bash(git clone:*)",
-      "Bash(ls -lhS /Users/muhammadyousaf/chickNFish-2/images/*.jpg /Users/muhammadyousaf/chickNFish-2/images/*.png)"
+      "Bash(ls -lhS /Users/muhammadyousaf/chickNFish-2/images/*.jpg /Users/muhammadyousaf/chickNFish-2/images/*.png)",
+      "WebFetch(domain:chicknfish.ca)",
+      "Bash(wc -l /Users/muhammadyousaf/chickNFish-2/src/styles/*.css)"
     ]
   }
 }

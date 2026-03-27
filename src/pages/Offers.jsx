@@ -19,13 +19,12 @@ export default function Offers() {
         <div className="container">
           <ScrollReveal className="reveal-scale">
             <div className="offer-featured">
-              <div className="offer-featured-badge"></div>
               <div className="offer-featured-inner">
                 <div>
                   <span className="offer-label">Fresh from the Fryer</span>
                   <h2>Haddock &amp; Chips</h2>
                   <p className="offer-desc">Beer-battered haddock fillet served with golden fries and tartar sauce. Available in 1, 2, or 3 piece portions — perfect for one or the whole table.</p>
-                  <p className="offer-terms">Available for dine-in, takeout, and delivery.</p>
+                  <p className="offer-terms">Available for dine-in and takeout.</p>
                 </div>
                 <div className="offer-featured-pricing">
                   <span className="price" style={{ fontSize: 'var(--text-3xl)' }}>from $12.25</span>
@@ -41,7 +40,7 @@ export default function Offers() {
               <div className="offer-card">
                 <span className="offer-label">Weekday Lunch</span>
                 <h3>Lunch Special</h3>
-                <p className="offer-desc">One piece of chicken with fries and a drink. A quick, satisfying lunch made fresh to order.</p>
+                <p className="offer-desc">One piece of fish with fries. A quick, satisfying lunch made fresh to order.</p>
                 <div className="offer-card-footer">
                   <span className="price">$7.99</span>
                   <span className="offer-time">1 Piece Combo</span>

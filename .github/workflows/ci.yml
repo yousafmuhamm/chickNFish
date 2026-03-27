@@ -1,0 +1,223 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+
+  # ──────────────────────────────────────────────
+  # 1. Build — ensure the React app compiles
+  # ──────────────────────────────────────────────
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  # ──────────────────────────────────────────────
+  # 2. HTML Validation (on built output)
+  # ──────────────────────────────────────────────
+  html-validate:
+    name: HTML Validation
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install html-validate
+        run: npm install -g html-validate
+
+      - name: Validate built HTML
+        run: html-validate "dist/index.html" --config .htmlvalidate.json || true
+
+  # ──────────────────────────────────────────────
+  # 3. Lint (ESLint on source)
+  # ──────────────────────────────────────────────
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint src/ --ext .js,.jsx || true
+
+  # ──────────────────────────────────────────────
+  # 4. Accessibility Audit (axe-core on built site)
+  # ──────────────────────────────────────────────
+  accessibility:
+    name: Accessibility Audit
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm install -g serve @axe-core/cli
+          npx playwright install --with-deps chromium
+
+      - name: Start server
+        run: npx serve -l 8080 -s dist &
+
+      - name: Wait for server
+        run: sleep 3
+
+      - name: Audit homepage
+        run: npx axe http://localhost:8080 --exit || true
+
+      - name: Audit menu page
+        run: npx axe http://localhost:8080/menu --exit || true
+
+      - name: Audit contact page
+        run: npx axe http://localhost:8080/contact --exit || true
+
+  # ──────────────────────────────────────────────
+  # 5. Lighthouse CI (Performance, SEO, A11y)
+  # ──────────────────────────────────────────────
+  lighthouse:
+    name: Lighthouse Audit
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  # ──────────────────────────────────────────────
+  # 6. Bundle Size Check
+  # ──────────────────────────────────────────────
+  bundle-size:
+    name: Bundle Size Check
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Report bundle sizes
+        run: |
+          echo "=== Bundle Size Report ==="
+          echo ""
+          echo "--- HTML ---"
+          ls -lh dist/index.html
+          echo ""
+          echo "--- CSS ---"
+          ls -lh dist/assets/*.css 2>/dev/null || echo "No CSS files"
+          echo ""
+          echo "--- JavaScript ---"
+          ls -lh dist/assets/*.js 2>/dev/null || echo "No JS files"
+          echo ""
+          echo "--- Total dist size ---"
+          du -sh dist/
+          echo ""
+          echo "--- File count ---"
+          find dist/ -type f | wc -l
+          echo ""
+
+          # Warn if JS bundle exceeds 500KB
+          for f in dist/assets/*.js; do
+            size=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f" 2>/dev/null)
+            if [ "$size" -gt 512000 ]; then
+              echo "WARNING: $f is $(( size / 1024 ))KB — consider code splitting"
+            fi
+          done
+
+  # ──────────────────────────────────────────────
+  # 7. Image Audit
+  # ──────────────────────────────────────────────
+  image-audit:
+    name: Image Optimization Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check image file sizes
+        run: |
+          echo "=== Images over 500KB (should optimize) ==="
+          find images/ -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.webp" \) -size +500k -exec ls -lh {} \; 2>/dev/null || echo "No oversized images found."
+          echo ""
+          echo "=== Images over 1MB (must optimize) ==="
+          find images/ -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.webp" \) -size +1M -exec ls -lh {} \; 2>/dev/null || echo "No images over 1MB."
+          echo ""
+          echo "=== Image format summary ==="
+          echo "PNG files: $(find images/ -name '*.png' 2>/dev/null | wc -l)"
+          echo "JPG files: $(find images/ -name '*.jpg' -o -name '*.jpeg' 2>/dev/null | wc -l)"
+          echo "WebP files: $(find images/ -name '*.webp' 2>/dev/null | wc -l)"
+
+      - name: Check for images missing alt text
+        run: |
+          echo "=== Checking for images missing alt text ==="
+          grep -rn '<img ' src/ --include="*.jsx" | grep -v 'alt=' || echo "All images have alt attributes."

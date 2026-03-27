@@ -92,7 +92,7 @@ export default function Menu() {
 
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Chicken Combos</p>
-                    <div className="menu-note">Served with fries and a drink</div>
+                    <div className="menu-note">Served with fries, a drink, and a side of gravy</div>
                     {[['1 Pc Combo','$8.99'],['2 Pc Combo','$11.49'],['3 Pc Combo','$13.60'],['6 Pc Combo','$22.49']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
 
@@ -127,17 +127,25 @@ export default function Menu() {
               <div className="menu-category">
                 <span className="menu-section-label">From the Fryer</span>
                 <h2 className="menu-category-title">Fish &amp; Chips</h2>
-                <div className="menu-columns">
-                  <div className="menu-subcategory">
-                    <p className="menu-subcategory-title">English Fish &amp; Chips</p>
-                    {[['1 Pc Pollock','$10.49'],['2 Pc Pollock','$14.99'],['3 Pc Pollock','$17.99'],['1 Pc Cod / Haddock','$13.49'],['2 Pc Cod / Haddock','$20.99'],['3 Pc Cod / Haddock','$26.49'],['1 Pc Halibut','$22.99'],['2 Pc Halibut','$35.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                <div className="fish-grid">
+                  <div className="fish-card">
+                    <p className="menu-subcategory-title">Pollock</p>
+                    {[['1 Pc','$10.49'],['2 Pc','$14.99'],['3 Pc','$17.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
-
+                  <div className="fish-card">
+                    <p className="menu-subcategory-title">Cod / Haddock</p>
+                    {[['1 Pc','$13.49'],['2 Pc','$20.99'],['3 Pc','$26.49']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                  </div>
+                  <div className="fish-card">
+                    <p className="menu-subcategory-title">Halibut</p>
+                    {[['1 Pc','$22.99'],['2 Pc','$35.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                  </div>
+                </div>
+                <div className="menu-columns" style={{ marginTop: 'var(--space-xl)' }}>
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Spicy Fish &amp; Chips</p>
-                    {[['1 Pc Spicy Fish','$10.49'],['2 Pc Spicy Fish','$14.99'],['4 Pc Spicy Fish','$17.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
+                    {[['1 Pc Spicy Fish','$10.49'],['2 Pc Spicy Fish','$14.99'],['3 Pc Spicy Fish','$17.99']].map(([n,p]) => <MenuRow key={n} name={n} price={p} />)}
                   </div>
-
                   <div className="menu-subcategory">
                     <p className="menu-subcategory-title">Butterfly Shrimp</p>
                     <div className="menu-note">Served with seafood sauce and fries</div>
@@ -170,10 +178,10 @@ export default function Menu() {
                 <span className="menu-section-label">Feed the Crew</span>
                 <h2 className="menu-category-title">Family Combos</h2>
                 <div style={{ maxWidth: 600 }}>
-                  <MenuRow name="Family Combo #1" note="Wings only — no strips" price="$48.99" />
-                  <MenuRow name="Family Combo #2" note="Wings only — no strips" price="$59.99" />
-                  <MenuRow name="Family Combo #3" price="$36.99" />
-                  <MenuRow name="Family Combo #4" price="$42.99" />
+                  <MenuRow name="Family Combo #1" note="9 pc fried chicken, 6 wings, medium fries, 2 salads, 2 L pop" price="$48.99" />
+                  <MenuRow name="Family Combo #2" note="12 pc fried chicken, 10 wings, large fries, 3 salads, 2 L pop" price="$59.99" />
+                  <MenuRow name="Family Combo #3" note="4 pc fried chicken, 2 pc fish &amp; chips, 2 salads, 2 L pop" price="$36.99" />
+                  <MenuRow name="Family Combo #4" note="4 pc fried chicken, 3 pc fish &amp; chips, 3 salads, 2 L pop" price="$42.99" />
                 </div>
               </div>
             </ScrollReveal>

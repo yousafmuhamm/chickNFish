@@ -1,24 +1,31 @@
-import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useOrderModal } from '../components/OrderModal'
 import PromoBanner from '../components/PromoBanner'
 import ScrollReveal from '../components/ScrollReveal'
 
-function FoodCard({ image, badge, title, desc, price, delay }) {
+function getWebpPath(src) {
+  return src.replace(/\.(jpg|jpeg|png)$/i, '.webp')
+}
+
+function FoodCard({ image, badge, title, desc, price, hasFrom, delay }) {
   return (
     <ScrollReveal delay={delay}>
       <div className="food-card">
-        <div className="food-card-img" style={{ backgroundImage: `url('${image}')` }}>
+        <div className="food-card-img">
+          <picture>
+            <source srcSet={getWebpPath(image)} type="image/webp" />
+            <img src={image} alt={title} loading="lazy" decoding="async" width="600" height="400" />
+          </picture>
           {badge && <span className="food-card-badge">{badge}</span>}
         </div>
         <div className="food-card-body">
           <h3 className="food-card-title">{title}</h3>
           <p className="food-card-desc">{desc}</p>
           <div className="food-card-footer">
-            <span className="food-card-price"><span className="from">from </span>{price}</span>
-            <button className="food-card-btn" aria-label={`Order ${title}`}>
+            <span className="food-card-price">{hasFrom && <span className="from">from </span>}{price}</span>
+            <Link to="/menu" className="food-card-btn" aria-label={`View ${title} on menu`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -27,57 +34,44 @@ function FoodCard({ image, badge, title, desc, price, delay }) {
 }
 
 export default function Home() {
-  const heroRef = useRef(null)
   const { open: openOrderModal } = useOrderModal()
-
-  useEffect(() => {
-    const hero = heroRef.current
-    if (hero) {
-      requestAnimationFrame(() => {
-        setTimeout(() => hero.classList.add('animate'), 100)
-      })
-    }
-  }, [])
 
   return (
     <>
       {/* Hero */}
-      <section className="hero" id="heroSection" ref={heroRef}>
+      <section className="hero" id="heroSection">
+        <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: 0 }}>Halal Fish &amp; Chips and Fried Chicken in Calgary NE</h1>
         <div className="hero-editorial">
+
+          {/* Left — cards + big text */}
           <div className="hero-big-text">
-            <span className="hero-word">CRISPY.</span>
-            <span className="hero-word">GOLDEN.</span>
-            <span className="hero-word">CATCH.</span>
-          </div>
-
-          <div className="hero-food-wrap">
-            <img src="/image.png" alt="Crispy fish and chips with fried chicken" className="hero-food-img" />
-          </div>
-
-          <div className="hero-cards">
-            <div className="hero-card hero-card-amber">
-              <div className="hero-card-body">
-                <h3>THE LOCAL FAVOURITE.</h3>
-                <p>Hand-battered to order, every single time.</p>
+            <div className="hero-cards">
+              <div className="hero-card hero-card-amber">
+                <div className="hero-card-body">
+                  <h3>THE LOCAL FAVOURITE.</h3>
+                  <p>Hand-battered to order, every single time.</p>
+                </div>
               </div>
-              <svg className="hero-card-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
-            </div>
-            <div className="hero-card hero-card-green">
-              <div className="hero-card-body">
-                <h3>100% HALAL CERTIFIED.</h3>
-                <p>Trusted sourcing, certified preparation.</p>
+              <div className="hero-card hero-card-green">
+                <div className="hero-card-body">
+                  <h3>FRESH TO ORDER.</h3>
+                  <p>Made when you order it, every single time.</p>
+                </div>
               </div>
-              <svg className="hero-card-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
             </div>
+            <span className="hero-word">CRISPY</span>
+            <span className="hero-word">GOLDEN</span>
+            <span className="hero-word">CLASSIC</span>
           </div>
 
-          <button className="hero-mobile-cta" onClick={openOrderModal}>Order Now</button>
-        </div>
-
-        <div className="hero-scroll" id="heroScroll">
-          <div className="scroll-mouse">
-            <div className="scroll-wheel"></div>
+          {/* Right — image */}
+          <div className="hero-right">
+            <picture>
+              <source srcSet="/images/fish-and-chips-hero.webp" type="image/webp" />
+              <img src="/images/fish-and-chips-hero.jpg" alt="Crispy halal fish and chips served at Chick N Fish Calgary" className="hero-food-img" width="800" height="600" fetchPriority="high" />
+            </picture>
           </div>
+
         </div>
       </section>
 
@@ -97,10 +91,9 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="food-grid">
-            <FoodCard image="/images/fish-and-chips-1.jpg" badge="Signature" title="Classic Cod &amp; Chips" desc="Beer-battered Atlantic cod, golden fries, coleslaw, and homemade tartar sauce." price="$13.49" delay={1} />
-            <FoodCard image="/images/chicken-burger.png" badge="Popular" title="Crispy Chicken Burger" desc="Buttermilk-marinated chicken thigh, brioche bun, house slaw, and signature sauce." price="$9.99" delay={2} />
-            <FoodCard image="/images/fried-chicken-1.jpg" badge="Signature" title="3 Piece Fried Chicken" desc="Three golden pieces of our secret-recipe fried chicken. Crispy outside, juicy inside." price="$9.30" delay={3} />
-            <FoodCard image="/images/fried-chicken-2.jpg" badge="New" title="Nashville Hot Wings" desc="Six crispy wings tossed in our Nashville hot glaze. Served with ranch and celery sticks." price="$8.99" delay={4} />
+            <FoodCard image="/images/fish-and-chips-1.jpg" badge="Signature" title="Classic Cod &amp; Chips" desc="Hand-battered Atlantic cod, golden fries, coleslaw, and homemade tartar sauce." price="$13.49" hasFrom delay={1} />
+            <FoodCard image="/images/chicken-burger.png" badge="Popular" title="Crispy Chicken Burger" desc="Buttermilk-marinated chicken thigh, brioche bun, house slaw, and signature sauce." price="$9.99" hasFrom delay={2} />
+            <FoodCard image="/images/5pc_chicken.jpg" badge="Signature" title="3 Piece Fried Chicken" desc="Three golden pieces of our secret-recipe fried chicken. Crispy outside, juicy inside." price="$9.30" hasFrom delay={3} />
           </div>
         </div>
       </section>
@@ -111,18 +104,25 @@ export default function Home() {
           <div className="featured-grid">
             <ScrollReveal className="reveal-left">
               <div className="featured-text">
-                <span className="label">Limited Time</span>
-                <h2>The Family Feast</h2>
-                <p>Eight pieces of fried chicken, two large chips, four drinks, coleslaw, and gravy. Enough to bring everyone to the table.</p>
+                <span className="label">Best Value</span>
+                <h2>Family Combo #4</h2>
+                <p>Feed the whole crew without breaking the bank. Everything you need for a proper family dinner — all in one box, ready to share.</p>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--space-lg)', marginBottom: 'var(--space-xl)' }}>
-                  <span className="deal-price" style={{ color: 'var(--cream)' }}>$34.99</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-sm)', color: 'var(--beige)', opacity: 0.5, textDecoration: 'line-through' }}>$44.99</span>
+                  <span className="deal-price" style={{ color: 'var(--cream)' }}>$42.99</span>
                 </div>
-                <Link to="/offers" className="btn btn-amber btn-lg">See the Deal</Link>
+                <a href="tel:+14032442222" className="btn btn-amber btn-lg">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Call to Order
+                </a>
               </div>
             </ScrollReveal>
             <ScrollReveal className="reveal-right" delay={2}>
-              <div className="featured-image" style={{ backgroundImage: "url('/images/fish-and-chicken-combo.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+              <div className="featured-image">
+                <picture>
+                  <source srcSet="/images/fish-and-chicken-combo.webp" type="image/webp" />
+                  <img src="/images/fish-and-chicken-combo.png" alt="Family combo with fish and chips and fried chicken at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
+                </picture>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -141,9 +141,9 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="food-grid">
-            <FoodCard image="/images/fish-fillets-shrimp.jpg" title="Chicken Strip Meal" desc="Five golden chicken strips with chips, drink, and your choice of dip." price="$11.49" delay={1} />
-            <FoodCard image="/images/fish-and-chips-2.jpg" title="Haddock &amp; Chips" desc="Lightly battered haddock fillet served with golden fries, coleslaw, and lemon." price="$13.49" delay={2} />
-            <FoodCard image="/images/samosas.jpg" title="Loaded Chip Box" desc="Fries loaded with grilled chicken, cheese, jalapenos, and our house drizzle." price="$9.49" delay={3} />
+            <FoodCard image="/images/fish-fillets-shrimp.jpg" title="Butterfly Shrimp" desc="Six crispy butterfly shrimp served with seafood sauce and golden fries." price="$11.99" delay={1} />
+            <FoodCard image="/images/fish-and-chips-2.jpg" title="Haddock &amp; Chips" desc="Lightly battered haddock fillet served with golden fries and tartar sauce." price="$13.49" hasFrom delay={2} />
+            <FoodCard image="/images/samosas.jpg" title="Beef Samosas" desc="Flaky, golden samosas stuffed with seasoned beef. Available in packs of 4 or 12." price="$6.99" hasFrom delay={3} />
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 'var(--space-2xl)' }}>
@@ -165,10 +165,10 @@ export default function Home() {
 
           <ScrollReveal className="reveal-scale">
             <div style={{ maxWidth: 650, margin: '0 auto', background: 'var(--white)', border: '1px solid var(--beige)', borderRadius: 'var(--radius-md)', padding: 'var(--space-2xl)', textAlign: 'center' }}>
-              <span className="label label-accent" style={{ display: 'block', marginBottom: 'var(--space-sm)' }}>Lunch Special — Mon to Fri</span>
-              <h3 style={{ marginBottom: 'var(--space-sm)' }}>Any Wrap + Chips + Drink</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-lg)', maxWidth: 450, marginLeft: 'auto', marginRight: 'auto' }}>Choose any wrap from the menu, add regular chips and a soft drink. Available 11am–3pm, weekdays only.</p>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-4xl)', fontWeight: 800, color: 'var(--brown-dark)', display: 'block', marginBottom: 'var(--space-lg)' }}>$9.99</span>
+              <span className="label label-accent" style={{ display: 'block', marginBottom: 'var(--space-sm)' }}>Feed the Crew</span>
+              <h3 style={{ marginBottom: 'var(--space-sm)' }}>6 Piece Chicken Combo</h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-lg)', maxWidth: 450, marginLeft: 'auto', marginRight: 'auto' }}>Six pieces of our signature fried chicken served with fries, fresh salad, and a drink. Perfect for sharing.</p>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-4xl)', fontWeight: 800, color: 'var(--brown-dark)', display: 'block', marginBottom: 'var(--space-lg)' }}>$22.49</span>
               <Link to="/offers" className="btn btn-outline">View All Offers</Link>
             </div>
           </ScrollReveal>
@@ -180,7 +180,12 @@ export default function Home() {
         <div className="container">
           <div className="story-grid">
             <ScrollReveal className="reveal-left">
-              <div className="story-image" style={{ backgroundImage: "url('/images/fried-chicken-tray.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+              <div className="story-image">
+                <picture>
+                  <source srcSet="/images/fried-chicken-tray.webp" type="image/webp" />
+                  <img src="/images/fried-chicken-tray.png" alt="Tray of crispy fried chicken at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
+                </picture>
+              </div>
             </ScrollReveal>
             <ScrollReveal className="reveal-right" delay={2}>
               <div className="story-text">
@@ -206,14 +211,13 @@ export default function Home() {
 
           <div className="menu-list" style={{ maxWidth: 700, margin: '0 auto' }}>
             {[
-              { title: '2 Piece Chicken & Chips', desc: 'Two pieces of fried chicken with regular chips', price: '$8.49', delay: 1 },
-              { title: 'Cod Fillet Burger', desc: 'Battered cod fillet in a soft bun with tartare and lettuce', price: '$9.99', delay: 2 },
-              { title: 'Chicken Wrap', desc: 'Grilled or crispy chicken, salad, and garlic mayo in a tortilla', price: '$8.99', delay: 3 },
-              { title: '10 Piece Boneless Bucket', desc: 'Ten boneless chicken pieces with two dips of your choice', price: '$14.99', delay: 4 },
+              { title: '2 Pc Haddock & Chips', desc: 'Two hand-battered haddock fillets with golden fries and tartar sauce', price: '$20.99', delay: 1 },
+              { title: '6 Pc Chicken Combo', desc: 'Six pieces of fried chicken served with fries and a drink', price: '$22.49', delay: 2 },
+              { title: '1 Pc Halibut & Chips', desc: 'Premium halibut fillet, hand-battered and fried to order with fries', price: '$22.99', delay: 3 },
+              { title: 'Family Combo #1', desc: 'A full spread for the family — chicken, wings, fries, and more', price: '$48.99', delay: 4 },
             ].map(item => (
               <ScrollReveal key={item.title} delay={item.delay}>
                 <div className="menu-item">
-                  <div className="menu-item-img"></div>
                   <div className="menu-item-info">
                     <h4 className="menu-item-title">{item.title}</h4>
                     <p className="menu-item-desc">{item.desc}</p>
@@ -247,7 +251,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4>Address</h4>
-                    <p>120-3725 Rundlehorn Drive NE, Calgary, AB</p>
+                    <p>120-3725 Rundlehorn Drive NE, Calgary, AB T1Y 3Z4</p>
                   </div>
                 </div>
 
@@ -257,8 +261,9 @@ export default function Home() {
                   </div>
                   <div>
                     <h4>Opening Hours</h4>
-                    <p>Mon – Sat: 11:00 AM – 11:00 PM</p>
-                    <p>Sunday: 12:00 PM – 10:00 PM</p>
+                    <p>Tue – Fri: 11:30 AM – 9:00 PM</p>
+                    <p>Sat: 12:00 PM – 9:00 PM</p>
+                    <p>Sun – Mon: 12:00 PM – 8:30 PM</p>
                   </div>
                 </div>
 
@@ -268,20 +273,46 @@ export default function Home() {
                   </div>
                   <div>
                     <h4>Call Us</h4>
-                    <p>YOUR PHONE NUMBER</p>
+                    <p>(403) 244-2222</p>
                   </div>
                 </div>
 
                 <div style={{ marginTop: 'var(--space-xl)', display: 'flex', gap: 'var(--space-md)', flexWrap: 'wrap' }}>
                   <Link to="/contact" className="btn btn-amber">Get Directions</Link>
-                  <a href="tel:YOUR_PHONE" className="btn btn-outline-light">Call to Order</a>
+                  <a href="tel:+14032442222" className="btn btn-outline-light">Call to Order</a>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={2}>
-              <div className="location-map">
-                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--beige)', opacity: 0.4, fontFamily: 'var(--font-display-sc)', fontSize: 'var(--text-sm)', letterSpacing: '0.15em' }}>MAP</div>
+              <div className="map-card">
+                <div className="map-card-pin">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div className="map-card-address">
+                  <p>120-3725 Rundlehorn Drive NE</p>
+                  <span>Calgary, AB T1Y 3Z4</span>
+                </div>
+                <div className="map-card-links">
+                  <a
+                    href="https://www.google.com/maps/place/Chick+N+Fish/@51.0710703,-113.9858073,17z/data=!3m2!4b1!5s0x537164c580597df9:0xa4d02a6f640fa95a!4m6!3m5!1s0x537164cf3c34adff:0xf00d5373d7f20454!8m2!3d51.071067!4d-113.9809364!16s%2Fg%2F11f4_60d37?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-card-link"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Google Maps
+                  </a>
+                  <a
+                    href="https://maps.apple.com/?address=120-3725+Rundlehorn+Drive+NE,+Calgary,+AB+T1Y+3Z4&ll=51.071067,-113.980936&q=Chick+N+Fish"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-card-link"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Apple Maps
+                  </a>
+                </div>
               </div>
             </ScrollReveal>
           </div>

@@ -207,6 +207,37 @@
       }
     }
 
+    .fish-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: 0;
+    }
+
+    .fish-card {
+      background: rgba(237, 230, 214, 0.25);
+      border: 1px solid var(--beige);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .fish-card .menu-subcategory-title {
+      border-bottom: 1px solid var(--beige);
+      margin-bottom: var(--space-sm);
+    }
+
+    @media (max-width: 768px) {
+      .fish-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .fish-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 480px) {
       .menu-row {
         padding: 12px 0;
@@ -373,30 +404,35 @@
         <span class="menu-section-label">From the Fryer</span>
         <h2 class="menu-category-title">Fish &amp; Chips</h2>
 
-        <div class="menu-columns">
-
-          <!-- English Fish &amp; Chips -->
-          <div class="menu-subcategory">
-            <p class="menu-subcategory-title">English Fish &amp; Chips</p>
-
-            <div class="menu-row"><span class="menu-row-name">1 Pc Pollock</span><span class="menu-row-price">$10.49</span></div>
-            <div class="menu-row"><span class="menu-row-name">2 Pc Pollock</span><span class="menu-row-price">$14.99</span></div>
-            <div class="menu-row"><span class="menu-row-name">3 Pc Pollock</span><span class="menu-row-price">$17.99</span></div>
-
-            <div class="menu-row"><span class="menu-row-name">1 Pc Cod / Haddock</span><span class="menu-row-price">$13.49</span></div>
-            <div class="menu-row"><span class="menu-row-name">2 Pc Cod / Haddock</span><span class="menu-row-price">$20.99</span></div>
-            <div class="menu-row"><span class="menu-row-name">3 Pc Cod / Haddock</span><span class="menu-row-price">$26.49</span></div>
-
-            <div class="menu-row"><span class="menu-row-name">1 Pc Halibut</span><span class="menu-row-price">$22.99</span></div>
-            <div class="menu-row"><span class="menu-row-name">2 Pc Halibut</span><span class="menu-row-price">$35.99</span></div>
+        <!-- Fish types: horizontal cards -->
+        <div class="fish-grid">
+          <div class="fish-card">
+            <p class="menu-subcategory-title">Pollock</p>
+            <div class="menu-row"><span class="menu-row-name">1 Pc</span><span class="menu-row-price">$10.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc</span><span class="menu-row-price">$14.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc</span><span class="menu-row-price">$17.99</span></div>
           </div>
+          <div class="fish-card">
+            <p class="menu-subcategory-title">Cod / Haddock</p>
+            <div class="menu-row"><span class="menu-row-name">1 Pc</span><span class="menu-row-price">$13.49</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc</span><span class="menu-row-price">$20.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc</span><span class="menu-row-price">$26.49</span></div>
+          </div>
+          <div class="fish-card">
+            <p class="menu-subcategory-title">Halibut</p>
+            <div class="menu-row"><span class="menu-row-name">1 Pc</span><span class="menu-row-price">$22.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">2 Pc</span><span class="menu-row-price">$35.99</span></div>
+          </div>
+        </div>
+
+        <div class="menu-columns" style="margin-top: var(--space-xl);">
 
           <!-- Spicy Fish &amp; Chips -->
           <div class="menu-subcategory">
             <p class="menu-subcategory-title">Spicy Fish &amp; Chips</p>
             <div class="menu-row"><span class="menu-row-name">1 Pc Spicy Fish</span><span class="menu-row-price">$10.49</span></div>
             <div class="menu-row"><span class="menu-row-name">2 Pc Spicy Fish</span><span class="menu-row-price">$14.99</span></div>
-            <div class="menu-row"><span class="menu-row-name">4 Pc Spicy Fish</span><span class="menu-row-price">$17.99</span></div>
+            <div class="menu-row"><span class="menu-row-name">3 Pc Spicy Fish</span><span class="menu-row-price">$17.99</span></div>
           </div>
 
           <!-- Butterfly Shrimp -->
@@ -440,19 +476,19 @@
 
         <div style="max-width: 600px;">
           <div class="menu-row">
-            <span class="menu-row-name">Family Combo #1<span class="menu-row-note">Wings only — no strips</span></span>
+            <span class="menu-row-name">Family Combo #1<span class="menu-row-note">9 pc fried chicken, 6 wings, medium fries, 2 salads, 2 L pop</span></span>
             <span class="menu-row-price">$48.99</span>
           </div>
           <div class="menu-row">
-            <span class="menu-row-name">Family Combo #2<span class="menu-row-note">Wings only — no strips</span></span>
+            <span class="menu-row-name">Family Combo #2<span class="menu-row-note">12 pc fried chicken, 10 wings, large fries, 3 salads, 2 L pop</span></span>
             <span class="menu-row-price">$59.99</span>
           </div>
           <div class="menu-row">
-            <span class="menu-row-name">Family Combo #3</span>
+            <span class="menu-row-name">Family Combo #3<span class="menu-row-note">4 pc fried chicken, 2 pc fish &amp; chips, 2 salads, 2 L pop</span></span>
             <span class="menu-row-price">$36.99</span>
           </div>
           <div class="menu-row">
-            <span class="menu-row-name">Family Combo #4</span>
+            <span class="menu-row-name">Family Combo #4<span class="menu-row-note">4 pc fried chicken, 3 pc fish &amp; chips, 3 salads, 2 L pop</span></span>
             <span class="menu-row-price">$42.99</span>
           </div>
         </div>
