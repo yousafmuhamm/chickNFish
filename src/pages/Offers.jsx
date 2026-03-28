@@ -28,7 +28,7 @@ export default function Offers() {
                 </div>
                 <div className="offer-featured-pricing">
                   <span className="price" style={{ fontSize: 'var(--text-3xl)' }}>from $12.25</span>
-                  <span className="was" style={{ textAlign: 'center' }}>1pc $12.25 &nbsp;&middot;&nbsp; 2pc $18.90 &nbsp;&middot;&nbsp; 3pc $24.49</span>
+                  <span style={{ textAlign: 'center', display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', marginTop: 'var(--space-xs)' }}>1pc $12.25 &nbsp;&middot;&nbsp; 2pc $18.90 &nbsp;&middot;&nbsp; 3pc $24.49</span>
                 </div>
               </div>
             </div>
