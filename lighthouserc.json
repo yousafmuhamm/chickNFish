@@ -1,13 +1,14 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./dist",
+      "startServerCommand": "npx serve dist --single --listen 3000",
+      "startServerReadyPattern": "Accepting connections",
       "url": [
-        "http://localhost/",
-        "http://localhost/menu",
-        "http://localhost/contact",
-        "http://localhost/offers",
-        "http://localhost/gallery"
+        "http://localhost:3000/",
+        "http://localhost:3000/menu",
+        "http://localhost:3000/contact",
+        "http://localhost:3000/offers",
+        "http://localhost:3000/gallery"
       ],
       "numberOfRuns": 1
     },
