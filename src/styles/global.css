@@ -1872,6 +1872,17 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: env(safe-area-inset-bottom);
   }
 
+  /* Extend background colour into the safe-area/home-indicator zone */
+  .bottom-nav::after {
+    content: '';
+    position: absolute;
+    bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-bottom, 0px);
+    background: var(--green-dark, #1B3A2F);
+  }
+
   .bottom-nav-item {
     flex: 1;
     display: flex;
