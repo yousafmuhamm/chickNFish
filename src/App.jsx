@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import HalalBar from './components/HalalBar'
 import Navbar from './components/Navbar'
 import MobileNav from './components/MobileNav'
+import BottomNav from './components/BottomNav'
 import Footer from './components/Footer'
 import OrderModal from './components/OrderModal'
 import Home from './pages/Home'
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <BottomNav />
       <OrderModal />
     </>
   )
