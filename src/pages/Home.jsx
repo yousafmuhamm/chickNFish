@@ -46,18 +46,26 @@ export default function Home() {
           {/* Left — cards + big text */}
           <div className="hero-big-text">
             <div className="hero-cards">
-              <div className="hero-card hero-card-amber">
+              <a href="tel:+14032442222" className="hero-card hero-card-amber hero-card-btn">
                 <div className="hero-card-body">
-                  <h3>THE LOCAL FAVOURITE.</h3>
-                  <p>Hand-battered to order, every single time.</p>
+                  <h3>RING IN YOUR ORDER.</h3>
+                  <p>Call us direct — we'll have it ready when you arrive.</p>
+                  <span className="hero-card-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 9.84a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (403) 244-2222
+                  </span>
                 </div>
-              </div>
-              <div className="hero-card hero-card-green">
+              </a>
+              <button onClick={openOrderModal} className="hero-card hero-card-green hero-card-btn">
                 <div className="hero-card-body">
-                  <h3>FRESH TO ORDER.</h3>
-                  <p>Made when you order it, every single time.</p>
+                  <h3>ORDER ONLINE.</h3>
+                  <p>UberEats or DoorDash — delivered straight to your door.</p>
+                  <span className="hero-card-cta">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Order Now
+                  </span>
                 </div>
-              </div>
+              </button>
             </div>
             <span className="hero-word">CRISPY</span>
             <span className="hero-word">GOLDEN</span>
