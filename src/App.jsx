@@ -27,14 +27,16 @@ export default function App() {
       <HalalBar />
       <Navbar />
       <MobileNav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/offers" element={<Offers />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <main className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </main>
       <BottomNav />
       <OrderModal />
     </>

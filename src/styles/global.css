@@ -278,7 +278,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  height: 28px;
+  height: calc(28px + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
   z-index: 1001;
   background-color: var(--green-deep);
   display: flex;
@@ -307,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Navbar --- */
 .navbar {
   position: fixed;
-  top: 28px;
+  top: calc(28px + env(safe-area-inset-top));
   left: 0;
   right: 0;
   z-index: 1000;
@@ -1929,7 +1930,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Push page content above bottom nav */
-  main, .footer {
+  main.page-content {
     padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
 }
