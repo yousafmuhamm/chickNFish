@@ -17,7 +17,8 @@
       "Bash(git clone:*)",
       "Bash(ls -lhS /Users/muhammadyousaf/chickNFish-2/images/*.jpg /Users/muhammadyousaf/chickNFish-2/images/*.png)",
       "WebFetch(domain:chicknfish.ca)",
-      "Bash(wc -l /Users/muhammadyousaf/chickNFish-2/src/styles/*.css)"
+      "Bash(wc -l /Users/muhammadyousaf/chickNFish-2/src/styles/*.css)",
+      "Bash(wc -l \"c:/Users/something something/chickNFish-1/src/styles\"/*.css)"
     ]
   }
 }
