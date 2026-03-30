@@ -89,15 +89,48 @@ html {
   touch-action: manipulation;
 }
 
+html, body {
+  overscroll-behavior: none;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.65;
   color: var(--text-body);
-  background-color: var(--cream-light);
+  background-color: var(--green-deep, #1B3A2F);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main.page-content {
+  background-color: var(--cream-light);
+}
+
+/* Safari color-tinting trick — invisible fixed bars that force Safari
+   to tint the status bar and bottom toolbar with our brand colour.
+   Requirements: within 4px of top OR 3px of bottom, >=80% wide, >=3px tall */
+.safari-tint {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: var(--green-deep, #1B3A2F);
+  transform: translateZ(0);
+}
+
+.safari-tint-top {
+  top: 0;
+  height: 4px;
+}
+
+.safari-tint-bottom {
+  bottom: 0;
+  height: 3px;
 }
 
 img {

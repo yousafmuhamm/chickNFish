@@ -24,6 +24,9 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      {/* Safari color-tinting: invisible fixed bars that force Safari to tint status/toolbar areas */}
+      <div className="safari-tint safari-tint-top" aria-hidden="true" />
+      <div className="safari-tint safari-tint-bottom" aria-hidden="true" />
       <HalalBar />
       <Navbar />
       <MobileNav />
