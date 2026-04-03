@@ -38,7 +38,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero + Ticker fill exactly one viewport */}
+      <div className="hero-viewport">
       <section className="hero" id="heroSection">
         <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: 0 }}>Halal Fish &amp; Chips and Fried Chicken in Calgary NE</h1>
         <div className="hero-editorial">
@@ -73,6 +74,7 @@ export default function Home() {
 
       {/* Promo Ticker */}
       <PromoBanner />
+      </div>
 
       {/* Signature Items */}
       <section id="signatures" className="section">
@@ -168,67 +170,6 @@ export default function Home() {
               <Link to="/offers" className="btn btn-outline">View All Offers</Link>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="section story-section">
-        <div className="container">
-          <div className="story-grid">
-            <ScrollReveal className="reveal-left">
-              <div className="story-image">
-                <picture>
-                  <source srcSet="/images/fried-chicken-tray.webp" type="image/webp" />
-                  <img src="/images/fried-chicken-tray.png" alt="Tray of crispy fried chicken at Chick N Fish Calgary" loading="lazy" decoding="async" width="600" height="400" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-md)' }} />
-                </picture>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal className="reveal-right" delay={2}>
-              <div className="story-text">
-                <h2>Built on Simple Food, Done Properly</h2>
-                <p>Chick N Fish started with a simple idea: serve the best fish and chips and fried chicken you can make, and do it the same way every time. No shortcuts, no compromises.</p>
-                <blockquote>"We believe great food doesn't need to be complicated. It just needs to be done right."</blockquote>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Menu Preview */}
-      <section className="section" style={{ backgroundColor: 'var(--beige)' }}>
-        <div className="container">
-          <ScrollReveal>
-            <div className="section-header">
-              <span className="label label-accent">Quick Look</span>
-              <h2>From the Menu</h2>
-              <div className="section-divider"></div>
-            </div>
-          </ScrollReveal>
-
-          <div className="menu-list" style={{ maxWidth: 700, margin: '0 auto' }}>
-            {[
-              { title: '2 Pc Haddock & Chips', desc: 'Two hand-battered haddock fillets with golden fries and tartar sauce', price: '$20.99', delay: 1 },
-              { title: '6 Pc Chicken Combo', desc: 'Six pieces of fried chicken served with fries and a drink', price: '$22.49', delay: 2 },
-              { title: '1 Pc Halibut & Chips', desc: 'Premium halibut fillet, hand-battered and fried to order with fries', price: '$22.99', delay: 3 },
-              { title: 'Family Combo #1', desc: 'A full spread for the family — chicken, wings, fries, and more', price: '$48.99', delay: 4 },
-            ].map(item => (
-              <ScrollReveal key={item.title} delay={item.delay}>
-                <div className="menu-item">
-                  <div className="menu-item-info">
-                    <h4 className="menu-item-title">{item.title}</h4>
-                    <p className="menu-item-desc">{item.desc}</p>
-                  </div>
-                  <div className="menu-item-right">
-                    <span className="menu-item-price">{item.price}</span>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: 'var(--space-2xl)' }}>
-            <Link to="/menu" className="btn btn-secondary">Full Menu</Link>
-          </div>
         </div>
       </section>
 

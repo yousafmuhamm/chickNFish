@@ -25,13 +25,6 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo">
-            <picture>
-              <source srcSet="/images/logo.webp" type="image/webp" />
-              <img src="/images/logo.png" alt="Chick N Fish" className="navbar-logo-img" width="180" height="60" />
-            </picture>
-          </Link>
-
           <div className="nav-links">
             {navLinks.map(({ to, label }) => (
               <Link
@@ -43,6 +36,13 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+
+          <Link to="/" className="navbar-logo">
+            <picture>
+              <source srcSet="/images/logo.webp" type="image/webp" />
+              <img src="/images/logo.png" alt="Chick N Fish" className="navbar-logo-img" width="180" height="60" />
+            </picture>
+          </Link>
 
           <button
             className={`menu-toggle${isOpen ? ' active' : ''}`}
