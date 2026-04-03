@@ -319,6 +319,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  /* Extend background upward to cover iOS overscroll */
+  box-shadow: 0 -100vh 0 0 var(--green-deep);
 }
 
 .halal-bar span {
@@ -1798,6 +1800,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Hero — stack on tablet */
   .hero-editorial {
     grid-template-columns: 1fr;
+    padding-top: calc(28px + env(safe-area-inset-top) + 72px);
   }
 
   .hero-big-text {
@@ -1811,6 +1814,15 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero-right {
     padding: var(--space-lg) clamp(1rem, 5vw, 4rem);
+  }
+
+  /* Allow hero to grow beyond viewport on mobile so content doesn't overlap */
+  .hero-viewport {
+    min-height: auto;
+  }
+
+  .hero {
+    overflow: visible;
   }
 
   .hero-cards {
@@ -1953,6 +1965,8 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--green-dark, #1B3A2F);
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-bottom: env(safe-area-inset-bottom, 20px);
+    /* Extend background downward to cover iOS overscroll */
+    box-shadow: 0 100vh 0 0 var(--green-dark, #1B3A2F);
   }
 
   .bottom-nav-item {
