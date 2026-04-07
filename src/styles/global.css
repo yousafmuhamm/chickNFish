@@ -132,7 +132,9 @@ main.page-content {
 
 .safari-tint-bottom {
   bottom: 0;
-  height: 3px;
+  height: 150px;
+  z-index: 999;  /* below bottom-nav (1000) so icons stay visible,
+                     above page content so Safari only sees green */
 }
 
 img {
@@ -1841,11 +1843,10 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
-  /* Allow hero to grow beyond viewport on mobile, add bottom padding so
-     content never sits behind the taller bottom nav */
+  /* Allow hero to grow beyond viewport on mobile */
   .hero-viewport {
     min-height: auto;
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 20px) + 50px);
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 20px));
   }
 
   .hero {
@@ -1992,11 +1993,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000;
     background: var(--green-dark, #1B3A2F);
     border-top: 1px solid rgba(255,255,255,0.08);
-    /* Large padding fills the entire gap below the nav icons —
-       safe-area covers the home indicator, +50px covers Safari's
-       tab bar and any remaining browser chrome. The nav's own
-       green background paints through this padding. */
-    padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 50px);
+    padding-bottom: env(safe-area-inset-bottom, 20px);
   }
 
   .bottom-nav-item {
@@ -2044,9 +2041,9 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 
-  /* Push page content above the taller bottom nav */
+  /* Push page content above bottom nav */
   main.page-content {
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 20px) + 50px);
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 20px));
   }
 }
 
