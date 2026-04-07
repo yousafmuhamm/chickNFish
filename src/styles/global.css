@@ -132,9 +132,7 @@ main.page-content {
 
 .safari-tint-bottom {
   bottom: 0;
-  height: 150px;
-  z-index: 999;  /* below bottom-nav (1000) so icons stay visible,
-                     above page content so Safari only sees green */
+  height: 4px;
 }
 
 img {
@@ -1993,7 +1991,9 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000;
     background: var(--green-dark, #1B3A2F);
     border-top: 1px solid rgba(255,255,255,0.08);
-    padding-bottom: env(safe-area-inset-bottom, 20px);
+    /* env() returns 0 when Safari toolbar is visible —
+       34px fallback covers the home indicator regardless */
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 34px);
   }
 
   .bottom-nav-item {
