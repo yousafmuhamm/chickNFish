@@ -29,6 +29,8 @@ export default function PromoBanner() {
         <span>Order Now on DoorDash</span>
         <span>Order Now on Uber Eats</span>
         <span>Order Now on DoorDash</span>
+        <span>Order Now on Uber Eats</span>
+        <span>Order Now on DoorDash</span>
       </div>
     </div>
   )
