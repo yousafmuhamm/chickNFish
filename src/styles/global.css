@@ -321,6 +321,10 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
   /* Extend background upward to cover iOS overscroll */
   box-shadow: 0 -100vh 0 0 var(--green-deep);
+  /* Force GPU layer so iOS Safari never detaches it during scroll */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .halal-bar span {
@@ -350,6 +354,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--cream, #F5F0E1);
   border-bottom: 1px solid rgba(92, 61, 46, 0.1);
   transition: all var(--transition-base);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .navbar.scrolled {
@@ -1806,6 +1812,14 @@ h1, h2, h3, h4, h5, h6 {
   .hero-big-text {
     text-align: center;
     align-items: center;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .hero-order-btns {
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
   }
 
   .hero-word {
@@ -1976,11 +1990,18 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--green-dark, #1B3A2F);
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-bottom: env(safe-area-inset-bottom, 20px);
-    /* Extend background downward to cover iOS overscroll and safe-area gap */
-    box-shadow: 0 100vh 0 0 var(--green-dark, #1B3A2F);
-    /* Ensure absolutely nothing bleeds through */
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+  }
+
+  /* Solid green fill below the nav — covers safe area and any browser chrome gap */
+  .bottom-nav::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: var(--green-dark, #1B3A2F);
+    pointer-events: none;
   }
 
   .bottom-nav-item {
