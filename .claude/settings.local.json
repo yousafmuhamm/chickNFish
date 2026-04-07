@@ -19,7 +19,13 @@
       "WebFetch(domain:chicknfish.ca)",
       "Bash(wc -l /Users/muhammadyousaf/chickNFish-2/src/styles/*.css)",
       "Bash(wc -l \"c:/Users/something something/chickNFish-1/src/styles\"/*.css)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 16_0 like Mac OS X\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/16.0 Mobile/15E148 Safari/604.1\" \"https://www.popeyeschicken.ca\" -o /tmp/popeyes.html)",
+      "Read(//tmp/**)",
+      "WebFetch(domain:www.popeyeschicken.ca)",
+      "Bash(curl -s -L --compressed -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 16_0 like Mac OS X\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/16.0 Mobile/15E148 Safari/604.1\" \"https://www.popeyeschicken.ca\" -o /tmp/popeyes_decoded.html)",
+      "Bash(curl -s -L -H 'Accept-Encoding: gzip, deflate, br' -A \"Mozilla/5.0 \\(iPhone; CPU iPhone OS 16_0 like Mac OS X\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/16.0 Mobile/15E148 Safari/604.1\" https://www.popeyeschicken.ca -o /tmp/popeyes_raw.gz)",
+      "Bash(gunzip -c /tmp/popeyes_raw.gz)"
     ]
   }
 }
