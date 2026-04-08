@@ -127,10 +127,9 @@ main.page-content {
 
 .safari-tint-top {
   top: 0;
-  /* Match halal bar height — acts as green backstop behind status bar
-     so content never bleeds through during iOS momentum scroll */
   height: calc(28px + env(safe-area-inset-top, 44px));
-  z-index: 1000; /* below halal bar (1001) but above page content */
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 .safari-tint-bottom {
@@ -326,11 +325,9 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
   /* Extend background upward to cover iOS overscroll */
   box-shadow: 0 -100vh 0 0 var(--green-deep);
-  /* Force GPU layer — translate3d prevents iOS Safari scroll bleed */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  transition: transform 0.3s ease;
 }
 
 .halal-bar span {
@@ -359,15 +356,25 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1000;
   background-color: var(--cream, #F5F0E1);
   border-bottom: 1px solid rgba(92, 61, 46, 0.1);
-  transition: all var(--transition-base);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  transition: transform 0.3s ease, box-shadow var(--transition-base);
 }
 
 .navbar.scrolled {
   box-shadow: var(--shadow-md);
+}
+
+/* Hide header on scroll down (mobile) */
+html.header-hidden .halal-bar,
+html.header-hidden .safari-tint-top {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+html.header-hidden .navbar {
+  -webkit-transform: translate3d(0, calc(-100% - 28px - env(safe-area-inset-top, 44px)), 0);
+  transform: translate3d(0, calc(-100% - 28px - env(safe-area-inset-top, 44px)), 0);
 }
 
 /* Override container inside navbar — go full viewport width */

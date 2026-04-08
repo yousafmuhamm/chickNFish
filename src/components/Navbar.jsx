@@ -16,7 +16,21 @@ export default function Navbar() {
   const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    let lastY = 0
+    const handleScroll = () => {
+      const y = window.scrollY
+      setScrolled(y > 50)
+
+      // Hide header on scroll down, show on scroll up (mobile only)
+      if (window.innerWidth <= 768) {
+        if (y > lastY && y > 100) {
+          document.documentElement.classList.add('header-hidden')
+        } else {
+          document.documentElement.classList.remove('header-hidden')
+        }
+      }
+      lastY = y
+    }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
