@@ -323,10 +323,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
   /* Extend background upward to cover iOS overscroll */
   box-shadow: 0 -100vh 0 0 var(--green-deep);
-  /* Force GPU layer so iOS Safari never detaches it during scroll */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
+  /* Force GPU layer — translate3d prevents iOS Safari scroll bleed */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .halal-bar span {
@@ -356,8 +357,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--cream, #F5F0E1);
   border-bottom: 1px solid rgba(92, 61, 46, 0.1);
   transition: all var(--transition-base);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .navbar.scrolled {
@@ -1990,8 +1993,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     z-index: 1000;
     background: var(--green-dark, #1B3A2F);
-    border-top: 1px solid rgba(255,255,255,0.08);
     padding-bottom: env(safe-area-inset-bottom, 12px);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .bottom-nav-item {
