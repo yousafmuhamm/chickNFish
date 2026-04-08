@@ -127,7 +127,10 @@ main.page-content {
 
 .safari-tint-top {
   top: 0;
-  height: 4px;
+  /* Match halal bar height — acts as green backstop behind status bar
+     so content never bleeds through during iOS momentum scroll */
+  height: calc(28px + env(safe-area-inset-top, 44px));
+  z-index: 1000; /* below halal bar (1001) but above page content */
 }
 
 .safari-tint-bottom {
@@ -1832,8 +1835,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-right {
-    padding: var(--space-lg) clamp(1rem, 5vw, 4rem);
-    padding-bottom: 0;
+    padding: var(--space-xl) var(--space-xl);
+    padding-bottom: var(--space-md);
   }
 
   .hero-food-img {
@@ -1842,6 +1845,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     margin: 0 auto;
     display: block;
+    border-radius: var(--radius-lg);
   }
 
   /* Allow hero to grow beyond viewport on mobile */
