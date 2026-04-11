@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import '../styles/menu.css'
 
 const categories = [
@@ -58,6 +59,11 @@ export default function Menu() {
 
   return (
     <>
+      <SEO
+        title="Menu — Chick N Fish Calgary | Halal Fish &amp; Chips · Fried Chicken"
+        description="Explore our full menu of halal fish and chips, fried chicken, combos, wings, sandwiches, and more. Order online or visit us in Calgary NE."
+        canonical="https://chicknfish.ca/menu"
+      />
       <PageHeader label="Chick N Fish" title="The Menu" subtitle="Everything battered, fried, and served fresh." />
 
       <div className="container">

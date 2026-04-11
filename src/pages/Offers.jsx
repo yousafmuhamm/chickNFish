@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import '../styles/offers.css'
 
 export default function Offers() {
   return (
     <>
+      <SEO
+        title="Deals &amp; Offers — Chick N Fish Calgary"
+        description="Check out our latest deals and combo offers on halal fish and chips and fried chicken in Calgary NE."
+        canonical="https://chicknfish.ca/offers"
+      />
       {/* Hero Header */}
       <section className="offers-hero">
         <div className="container">

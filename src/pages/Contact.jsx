@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import '../styles/contact.css'
 
 const hours = [
@@ -18,6 +19,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact &amp; Hours — Chick N Fish Calgary"
+        description="Find us at 120-3725 Rundlehorn Drive NE, Calgary. Open Tuesday–Sunday. Call us or send a message online."
+        canonical="https://chicknfish.ca/contact"
+      />
       <PageHeader label="Come Visit" title="Find Chick N Fish in Calgary NE" subtitle="We're easy to find and always happy to see you." />
 
       {/* Map */}

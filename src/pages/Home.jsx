@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useOrderModal } from '../components/OrderModal'
 import PromoBanner from '../components/PromoBanner'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 function getWebpPath(src) {
   return src.replace(/\.(jpg|jpeg|png)$/i, '.webp')
@@ -38,6 +39,11 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Chick N Fish Calgary | Halal Fish &amp; Chips · Fried Chicken"
+        description="100% halal-certified fish and chips and fried chicken in Calgary NE. Hand-battered cod, haddock, and halibut. Crispy fried chicken made fresh to order. Visit us at Rundlehorn Drive."
+        canonical="https://chicknfish.ca/"
+      />
       {/* Hero + Ticker fill exactly one viewport */}
       <div className="hero-viewport">
       <section className="hero" id="heroSection">

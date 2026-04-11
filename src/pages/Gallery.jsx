@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 const galleryImages = [
   { webp: '/images/fish-and-chicken-combo.webp', fallback: '/images/fish-and-chicken-combo.png', alt: 'Fish and chicken combo platter' },
@@ -17,6 +18,11 @@ const galleryImages = [
 export default function Gallery() {
   return (
     <>
+      <SEO
+        title="Gallery — Chick N Fish Calgary"
+        description="See our food in action — hand-battered fish, crispy fried chicken, and more from our kitchen in Calgary NE."
+        canonical="https://chicknfish.ca/gallery"
+      />
       <PageHeader label="A Look Inside" title="The Gallery" subtitle="The food, the space, the atmosphere. This is Chick N Fish." />
 
       <section className="section">
